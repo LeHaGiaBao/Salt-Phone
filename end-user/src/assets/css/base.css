@@ -4,6 +4,7 @@
     --black-color:#000;
     --gray-text-color: rgba(0, 0, 0, 0.5);
     --primary-color:#EE8488;
+    --blue-color: #4FCFE6;
     --border-color: #dbdbdb;
 
 }
@@ -20,40 +21,35 @@
     padding-top: 40px;
 }
 
-/*Label và input*/
-.label-input {
-    height: 12%;
+.p-b-8px {
+    padding-bottom: 8px;
+}
+
+.p-t-24px {
+    padding-top: 24px;
+}
+
+.m-t-24px {
+    margin-top: 24px;
+}
+
+
+.bg-color-primary {
+    background-color: var(--primary-color);
+}
+
+.bg-color-blue-color {
+    background-color: var(--blue-color);
+}
+
+/* Button */
+.sign-in-btn {
     width: 100%;
-}
-
-.label-input label {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    color: var(--gray-text-color);
-}
-
-input.input-box, textarea {
-    background: #fff;
-    border: none;
-}
-
-.label-input input::placeholder {
-    color: var(--black-color);
-}
-ik
-/* Form chung */
-.signIn-form {
-    position: relative;
-    left: 0;
-}
-
-.signIn-form_title {
-    text-align: center;
+    border-radius: 100px;
+    color: var(--white-color);
+    padding: 24px;
     font-style: normal;
     font-weight: 600;
-    font-size: 40px;
-    line-height: 48px;
-    color: var(--primary-color);
+    font-size: 24px;
+    line-height: 29px;
 }
