@@ -1,1 +1,59 @@
 /*Viết base.css ở đây*/
+:root {
+    --white-color:#fff;
+    --black-color:#000;
+    --gray-text-color: rgba(0, 0, 0, 0.5);
+    --primary-color:#EE8488;
+    --border-color: #dbdbdb;
+
+}
+
+.p-t-12 {
+    padding-top: 12%;
+}
+
+.p-t-16px {
+    padding-top: 16px;
+}
+
+.p-t-40px {
+    padding-top: 40px;
+}
+
+/*Label và input*/
+.label-input {
+    height: 12%;
+    width: 100%;
+}
+
+.label-input label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--gray-text-color);
+}
+
+input.input-box, textarea {
+    background: #fff;
+    border: none;
+}
+
+.label-input input::placeholder {
+    color: var(--black-color);
+}
+ik
+/* Form chung */
+.signIn-form {
+    position: relative;
+    left: 0;
+}
+
+.signIn-form_title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    color: var(--primary-color);
+}
