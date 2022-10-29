@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
-import Form from '../assets/image/Form.png'
-import google from '../assets/image/google.png'
+import './SignInForm.css'
+import Form from '../../assets/image/Form.png'
+import google from '../../assets/image/google.png'
 import {BsEyeFill} from 'react-icons/bs'
 
 function SignInForm() {

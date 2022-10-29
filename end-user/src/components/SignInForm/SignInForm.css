@@ -1,0 +1,134 @@
+/*Viết style.css ở đây*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.screen {
+    max-height: 1024px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 78%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Label và input*/
+.label-input {
+    height: 12%;
+    width: 100%;
+}
+
+.label-input label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--gray-text-color);
+}
+
+input.input-box, textarea {
+    background-color: #fff;
+    padding: 8px 0;
+    width: 100%;
+    border-bottom: 1px solid var(--gray-text-color);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.ShowPassword {
+    height: 30px;
+    width: 20px;
+    float: right;
+}
+
+.label-input input::placeholder {
+    color: var(--black-color);
+}
+
+.signIn-form_text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: var(--gray-text-color);
+}
+
+.signIn-form_text_recover-password {
+    text-decoration: underline;
+    color: var(--black-color);
+}
+
+/* Form chung */
+.signIn-form {
+    position: relative;
+    left: 0;
+    width: 46%;
+}
+
+.signIn-form_title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    color: var(--primary-color);
+}
+
+.signIn-img {
+    width: 42%;
+}
+
+.signIn-form_google-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.signIn-form_or {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gray-text-color);
+}
+
+.signIn-form_or_line {
+    width: 44%;
+    height: 0px;
+    border-top: 1px solid var(--gray-text-color);
+}
+
+.connect-google-btn {
+    border: 1px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--black-color);
+}
+
+.signIn-form_google-icon {
+    margin-right: 16px;
+}
+
+.back-to-sign-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrowback-icon {
+    line-height: 32px;
+    padding-right: 12px;
+}

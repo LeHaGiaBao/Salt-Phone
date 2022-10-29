@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import Form from '../assets/image/Form.png'
+import './SignUpForm.css'
+import Form from '../../assets/image/Form.png'
 import {BsEyeFill} from 'react-icons/bs'
 
 function SignUpForm() {
