@@ -5,7 +5,7 @@ import google from '../assets/image/google.png'
 function SignInForm() {
 	return (
 		<div className="screen">
-			<div className='container'>
+			<div className="container m-t-4">
 				<div className="signIn-img">
 					<img src={Form} alt="" />
 				</div>
