@@ -46,6 +46,9 @@
 }
 
 
+.color-grey {
+    color: var(--gray-text-color);
+}
 
 .bg-color-primary {
     background-color: var(--primary-color);
