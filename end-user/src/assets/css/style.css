@@ -121,3 +121,14 @@ input.input-box, textarea {
 .signIn-form_google-icon {
     margin-right: 16px;
 }
+
+.back-to-sign-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrowback-icon {
+    line-height: 32px;
+    padding-right: 12px;
+}
