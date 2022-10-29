@@ -3,13 +3,13 @@ import './assets/css/base.css'
 import './assets/css/grid.css'
 import './assets/css/style.css'
 import './assets/css/responsive.css'
-import RecoverPassword from './components/RecoverPassword'
+import SignInForm from './components/SignInForm'
 
 function App() {
 	return (
 		<div>
 			<div>
-				<RecoverPassword />
+				<SignInForm />
 			</div>
 		</div>
 	)
