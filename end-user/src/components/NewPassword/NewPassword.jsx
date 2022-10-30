@@ -20,7 +20,7 @@ function NewPassword() {
 
 				<div className='signIn-form'>
 					{/* Tiêu đề */}
-					<h2 className='signIn-form_title'>Đăng nhập</h2>
+					<h2 className='signIn-form_title'>Đặt lại mật khẩu</h2>
 					{/* Điền thông tin */}
 					<form action='' className='p-t-12'>
 						<div className='label-input p-t-40px'>
