@@ -2,7 +2,7 @@ import React from 'react'
 import Form from '../../assets/image/Form.png'
 import {BiArrowBack} from 'react-icons/bi'
 
-function SignInForm() {
+function RecoverPassword() {
 	return (
 		<div className="screen">
 			<div className="container m-t-8">
@@ -41,4 +41,4 @@ function SignInForm() {
 	)
 }
 
-export default SignInForm
+export default RecoverPassword

@@ -1,13 +1,13 @@
 import React from 'react'
 import './App.css'
 import SignInForm from './components/SignInForm/SignInForm'
-import RecoverPasswordOTP from './components/RecoverPasswordOTP/RecoverPasswordOTP'
+import NewPassword from './components/NewPassword/NewPassword'
 
 function App() {
 	return (
 		<div>
 			<div>
-				<RecoverPasswordOTP />
+				<NewPassword />
 			</div>
 		</div>
 	)

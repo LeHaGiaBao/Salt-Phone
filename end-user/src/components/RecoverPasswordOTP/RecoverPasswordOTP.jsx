@@ -2,8 +2,7 @@ import React, {useState} from 'react'
 import './RecoverPasswordOTP.css'
 import Form from '../../assets/image/Form.png'
 
-function SignUpForm() {
-
+function RecoverPasswordOTP() {
 	return (
 		<div className='screen'>
 			<div className='container m-t-8'>
@@ -45,4 +44,4 @@ function SignUpForm() {
 	)
 }
 
-export default SignUpForm
+export default RecoverPasswordOTP
