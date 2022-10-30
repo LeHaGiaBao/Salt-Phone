@@ -1,13 +1,13 @@
 import React from 'react'
 import './App.css'
 import SignInForm from './components/SignInForm/SignInForm'
-import SignUpForm from './components/SignUpForm/SignUpForm'
+import RecoverPassword from './components/RecoverPassword/RecoverPassword'
 
 function App() {
 	return (
 		<div>
 			<div>
-				<SignUpForm />
+				<RecoverPassword />
 			</div>
 		</div>
 	)
