@@ -15,7 +15,7 @@ function RecoverPasswordOTP() {
 					<h2 className='signIn-form_title'>Quên mật khẩu</h2>
 
 					{/* Điền thông tin */}
-					<form action='' className='p-t-12'>
+					<form action='' className='m-t-4'>
 						<div className='label-input'>
 							<label htmlFor=''>Nhập mã OTP</label>
 							<br />

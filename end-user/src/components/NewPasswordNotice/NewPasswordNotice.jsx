@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
+import './NewPasswordNotice.css'
 import Form from '../../assets/image/Form.png'
 import {BiArrowBack} from 'react-icons/bi'
 import {BsEyeFill} from 'react-icons/bs'
 
 
-function NewPassword() {
+function NewPasswordNotice() {
     const [passwordShow, setPasswordShow] = useState(false)
 
 	const togglePasswordVisibility = () => {
@@ -13,6 +14,9 @@ function NewPassword() {
 
 	return (
 		<div className='screen'>
+            <div className="noti-text m-t-4">
+                Đã lưu mật khẩu mới! Đăng nhập lại ngay!
+            </div>
 			<div className='container m-t-4'>
 				<div className='signIn-img'>
 					<img src={Form} alt='' />
@@ -70,4 +74,4 @@ function NewPassword() {
 	)
 }
 
-export default NewPassword
+export default NewPasswordNotice

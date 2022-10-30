@@ -15,7 +15,7 @@ function RecoverPassword() {
 					<h2 className="signIn-form_title">Quên mật khẩu</h2>
 
 					{/* Điền thông tin */}
-					<form action="" className='p-t-12'>
+					<form action="" className='m-t-4'>
 						<div className="label-input">
 							<label htmlFor="">Số điện thoại</label><br/>
 							<input type="text" name="" id="" placeholder='0967xxxxxx'className='p-t-16px input-box p-b-8px'/>
