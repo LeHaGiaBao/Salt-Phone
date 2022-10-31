@@ -4,19 +4,23 @@ import Form from '../../assets/image/Form.png'
 import {BiArrowBack} from 'react-icons/bi'
 import {BsEyeFill} from 'react-icons/bs'
 
-
 function NewPasswordNotice() {
-    const [passwordShow, setPasswordShow] = useState(false)
+	const [passwordShow1, setPasswordShow1] = useState(false)
+	const [passwordShow2, setPasswordShow2] = useState(false)
 
-	const togglePasswordVisibility = () => {
-		setPasswordShow(passwordShow ? false : true)
+	const togglePasswordVisibility1 = () => {
+		setPasswordShow1(passwordShow1 ? false : true)
+	}
+
+	const togglePasswordVisibility2 = () => {
+		setPasswordShow2(passwordShow2 ? false : true)
 	}
 
 	return (
 		<div className='screen'>
-            <div className="noti-text m-t-4">
-                Đã lưu mật khẩu mới! Đăng nhập lại ngay!
-            </div>
+			<div className='noti-text m-t-4'>
+				Đã lưu mật khẩu mới! Đăng nhập lại ngay!
+			</div>
 			<div className='container m-t-4'>
 				<div className='signIn-img'>
 					<img src={Form} alt='' />
@@ -29,14 +33,14 @@ function NewPasswordNotice() {
 					<form action='' className='m-t-4'>
 						<div className='label-input p-t-40px'>
 							<label htmlFor=''>Mật khẩu mới</label>
-							<div className="input-password">
+							<div className='input-password'>
 								<input
-									type={passwordShow ? 'text' : 'password'}
+									type={passwordShow1 ? 'text' : 'password'}
 									placeholder='************'
 									className='p-t-16px input-box'
 								/>
 								<BsEyeFill
-									onClick={togglePasswordVisibility}
+									onClick={togglePasswordVisibility1}
 									className='ShowPassword'
 								/>
 							</div>
@@ -45,14 +49,14 @@ function NewPasswordNotice() {
 
 						<div className='label-input p-t-40px'>
 							<label htmlFor=''>Nhập lại mật khẩu</label>
-							<div className="input-password">
+							<div className='input-password'>
 								<input
-									type={passwordShow ? 'text' : 'password'}
+									type={passwordShow2 ? 'text' : 'password'}
 									placeholder='************'
 									className='p-t-16px input-box'
 								/>
 								<BsEyeFill
-									onClick={togglePasswordVisibility}
+									onClick={togglePasswordVisibility2}
 									className='ShowPassword'
 								/>
 							</div>
@@ -64,10 +68,12 @@ function NewPasswordNotice() {
 						Lưu mật khẩu
 					</button>
 
-					<button className="back-to-sign-in sign-in-btn bg-color-primary m-t-24px">
-                        <div className='arrowback-icon'><BiArrowBack /></div>
-                        <p className="">Quay lại đăng nhập</p>
-                    </button>
+					<button className='back-to-sign-in sign-in-btn bg-color-primary m-t-24px'>
+						<div className='arrowback-icon'>
+							<BiArrowBack />
+						</div>
+						<p className=''>Quay lại đăng nhập</p>
+					</button>
 				</div>
 			</div>
 		</div>
