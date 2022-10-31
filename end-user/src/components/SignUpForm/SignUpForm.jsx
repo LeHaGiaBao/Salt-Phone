@@ -26,7 +26,7 @@ function SignUpForm() {
 					<h2 className='signIn-form_title'>Đăng ký</h2>
 
 					{/* Điền thông tin */}
-					<form action='' className='p-t-12'>
+					<form action='' className='m-t-4'>
 						<div className='label-input'>
 							<label htmlFor=''>Số điện thoại</label>
 							<br />

@@ -2,7 +2,7 @@ import React from 'react'
 import Form from '../../assets/image/Form.png'
 import {BiArrowBack} from 'react-icons/bi'
 
-function SignInForm() {
+function RecoverPassword() {
 	return (
 		<div className="screen">
 			<div className="container m-t-8">
@@ -15,7 +15,7 @@ function SignInForm() {
 					<h2 className="signIn-form_title">Quên mật khẩu</h2>
 
 					{/* Điền thông tin */}
-					<form action="" className='p-t-12'>
+					<form action="" className='m-t-4'>
 						<div className="label-input">
 							<label htmlFor="">Số điện thoại</label><br/>
 							<input type="text" name="" id="" placeholder='0967xxxxxx'className='p-t-16px input-box p-b-8px'/>
@@ -41,4 +41,4 @@ function SignInForm() {
 	)
 }
 
-export default SignInForm
+export default RecoverPassword

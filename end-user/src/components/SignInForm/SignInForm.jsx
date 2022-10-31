@@ -22,7 +22,7 @@ function SignInForm() {
 					{/* Tiêu đề */}
 					<h2 className='signIn-form_title'>Đăng nhập</h2>
 					{/* Điền thông tin */}
-					<form action='' className='p-t-12'>
+					<form action='' className='m-t-4'>
 						<div className='label-input'>
 							<label htmlFor=''>Số điện thoại</label>
 							<br />
@@ -38,15 +38,17 @@ function SignInForm() {
 
 						<div className='label-input p-t-40px'>
 							<label htmlFor=''>Mật khẩu</label>
-							<input
-								type={passwordShow ? 'text' : 'password'}
-								placeholder='************'
-								className='p-t-16px input-box'
-							/>
-							<BsEyeFill
-								onClick={togglePasswordVisibility}
-								className='ShowPassword'
-							/>
+							<div className="input-password">
+								<input
+									type={passwordShow ? 'text' : 'password'}
+									placeholder='************'
+									className='p-t-16px input-box'
+								/>
+								<BsEyeFill
+									onClick={togglePasswordVisibility}
+									className='ShowPassword'
+								/>
+							</div>
 							<div className='label-input_line'></div>
 						</div>
 					</form>
