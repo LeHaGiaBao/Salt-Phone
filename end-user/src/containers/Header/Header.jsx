@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.css'
 
-import {FiSearch, FiShoppingCart} from 'react-icons/fi'
+import {FiSearch, FiShoppingCart, FiX} from 'react-icons/fi'
 
 function Header() {
 	return (
@@ -69,6 +69,11 @@ function Header() {
 					<a href='#'>
 						<FiSearch />
 					</a>
+					<div className='searchBox'>
+						<FiSearch />
+						<input type='text' placeholder='Tìm kiếm sản phẩm' />
+						<FiX />
+					</div>
 				</li>
 				<li>
 					<a href='#'>

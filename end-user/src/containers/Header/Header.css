@@ -16,11 +16,12 @@ header {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	position: relative;
 }
 .main-nav li,
-svg {
+.main-nav svg {
 	height: 100%;
-	line-height: 6rem;
+	line-height: 96px !important;
 }
 .main-nav li a {
 	color: white;
@@ -31,7 +32,8 @@ svg {
 	font-weight: bold;
 }
 .main-nav li:nth-child(2):hover .sub-nav-dth,
-.main-nav li:nth-child(3):hover .sub-nav-pkien {
+.main-nav li:nth-child(3):hover .sub-nav-pkien,
+.main-nav li:nth-child(5):hover .searchBox {
 	visibility: visible;
 }
 /* Dien thoai, phu kien navigation */
@@ -55,4 +57,42 @@ svg {
 .sub-nav-pkien li a {
 	color: black;
 	font-weight: bold;
+}
+/* Search box */
+.searchBox {
+	width: 100vw;
+	height: 96px;
+	padding: 16px;
+	position: absolute;
+	top: 96px;
+	left: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+}
+.searchBox svg {
+	display: inline-block;
+}
+.searchBox svg:nth-child(1),
+.searchBox svg:nth-child(3) {
+	color: #ee8488;
+	margin-right: 28px;
+	width: 24px;
+	height: 24px;
+}
+.searchBox svg:nth-child(3) {
+	cursor: pointer;
+}
+.searchBox input {
+	width: 400px;
+	height: 29px;
+	background: transparent;
+	outline: none;
+	font-size: 16px;
+	color: black;
+}
+.searchBox input::placeholder {
+	color: #ee8488;
 }
