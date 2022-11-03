@@ -1,0 +1,314 @@
+/*Viết base.css ở đây*/
+:root {
+    --white-color:#fff;
+    --black-color:#000;
+    --gray-text-color: rgba(0, 0, 0, 0.5);
+    --primary-color:#EE8488;
+    --blue-color: #4FCFE6;
+    --border-color: #dbdbdb;
+    --product-form: rgba(238, 132, 136, 0.1);
+}
+  
+.p-t-12 {
+    padding-top: 12%;
+}
+  
+.p-t-16px {
+    padding-top: 16px;
+}
+  
+.p-t-40px {
+    padding-top: 40px;
+  }
+
+.m-lr-2 {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+  
+  .p-b-8px {
+    padding-bottom: 8px;
+  }
+  
+  .p-t-24px {
+    padding-top: 24px;
+  }
+  
+  .m-t-14 {
+    margin-top: 14%;
+  }
+  
+  .m-t-24px {
+    margin-top: 24px;
+  }
+  
+  .m-t-8 {
+    margin-top: 8%;
+  }
+  
+  .m-t-6 {
+    margin-top: 6%;
+  }
+  .m-t-4 {
+    margin-top: 4%;
+  }
+  
+  .m-b-4 {
+    margin-bottom: 4%;
+  }
+
+  .color-grey {
+    color: var(--gray-text-color);
+  }
+  
+  .bg-color-primary {
+    background-color: var(--primary-color);
+  }
+  
+  .bg-color-blue-color {
+    background-color: var(--blue-color);
+  }
+
+  .w-50 {
+    width: 50%;
+  }
+
+  .h-66 {
+    height: 66%;
+  }
+
+  .h-100 {
+    height: 100%;
+  }
+
+  .float-l {
+    float: left;
+  }
+
+  .float-r {
+    float: right;
+  }
+  
+  /* Button */
+  .sign-in-btn {
+    width: 100%;
+    border-radius: 100px;
+    color: var(--white-color);
+    padding: 24px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+  }
+  
+  .product-form_btn_big-size,
+  .product-form_btn_mini-size {
+    width: 50%;
+    padding: 2% 8%;
+    height: 8%;
+    background: #EE8488;
+    border-radius: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--white-color);
+  }
+
+  .product-form_btn_big-size {
+    font-size: 40px;
+    margin-top: 6%;
+  }
+
+  .product-form_btn_mini-size {
+    font-size: 16px;
+  }
+
+/* main.css */
+.screen {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.best-seller-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+    color: var(--primary-color);
+}
+
+.best-seller-title_line {
+    width: 32%;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 0px 10px 10px 0px;
+
+}
+
+/* Product */
+.list-products {
+  width: 73%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-products_divide-big-four {
+  min-height: 1080px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-products_divide-big-four_biggest_hot {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.list-products_4-col {
+  display: flex;
+  flex-wrap: wrap;
+} 
+
+.list-products_divide-big-four_mini-item {
+  width: 46%;
+  margin-left: 4%;
+  margin-bottom: 3%;
+}
+
+.list-products_divide-big-four_biggest_hot {
+  width: 36%;
+  height: 16%;
+  left: 0;
+  top: 0;
+  border-top: 100px solid #32557f;
+  border-right: 100px solid transparent;
+  border-top-left-radius: 20px;
+  
+}
+
+.list-products_divide-big-four_biggest_hot_text {
+  position: absolute;
+  left: 10%;
+  top: -99%;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+
+  color: #FFFEFE;
+
+  transform: rotate(-45deg);
+}
+
+/* Product form */
+.normal-product-form {
+  position: relative;
+  background-color: var(--product-form);
+  text-align: center;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-form_img_big-size {
+  width: 68%;
+  margin-top: 8%;
+}
+
+.product-form_img_mini-size {
+  width: 80%;
+  margin-top: 4%;
+}
+
+.product-form_new_mini-size,
+.product-form_new_big-size {
+  height: 4.4%;
+  font-style: normal;
+  font-weight: 400;
+  color: #FF3D00;
+  margin-bottom: 8%;
+}
+
+.product-form_new_big-size {
+  font-size: 40px;
+}
+
+.product-form_new_mini-size {
+  font-size: 20px;
+}
+
+.product-form__infor {
+  margin-top: 2%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-form_infor_name_mini-size,
+.product-form_infor_name_big-size {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--black-color);
+  height: 64%;
+}
+
+.product-form_infor_name_mini-size {
+  font-size: 24px;
+}
+
+.product-form_infor_name_big-size {
+  font-size: 64px;
+}
+
+.product-form_infor_price_mini-size,
+.product-form_infor_price_big-size {
+  height: 26%;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--black-color);
+  margin-bottom: 10%;
+}
+
+.product-form_infor_price_mini-size {
+  font-size: 20px;
+}
+
+.product-form_infor_price_big-size {
+  font-size: 48px;
+}
+
+.product-form_more-info_big-size,
+.product-form_more-info_mini-size {
+  width: 100%;
+  height: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+.product-form_more-info_big-size {
+  font-size: 32px;
+  margin-bottom: 4%;
+}
+
+
+.product-form_more-info_icon {
+  padding-left: 4%;
+}
+
+/* Đang sửa tới width của mini-form */
