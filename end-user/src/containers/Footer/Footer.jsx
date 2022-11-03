@@ -75,6 +75,7 @@ function Footer() {
 					<li>
 						<GoLocation />
 						<span>Hàn Thuyên, Linh Trung </span>
+						<br />
 						<span>TP. Thủ Đức, TP. HCM</span>
 					</li>
 				</ul>
