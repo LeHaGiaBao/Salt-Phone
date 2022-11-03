@@ -2,6 +2,7 @@ import React from 'react'
 import './Header.css'
 
 import {FiSearch, FiShoppingCart} from 'react-icons/fi'
+import {Link} from 'react-router-dom'
 
 function Header() {
 	return (
@@ -35,13 +36,7 @@ function Header() {
 							<a href='#'>Asus</a>
 						</li>
 						<li>
-							<a href='#'>Masstel</a>
-						</li>
-						<li>
 							<a href='#'>Nokia</a>
-						</li>
-						<li>
-							<a href='#'>itel</a>
 						</li>
 					</ul>
 				</li>
@@ -76,7 +71,9 @@ function Header() {
 					</a>
 				</li>
 				<li>
-					<a href='#'>Đăng nhập</a>
+					<Link to='/SignIn'>
+						<a href='#'>Đăng nhập</a>
+					</Link>
 				</li>
 			</ul>
 		</header>
