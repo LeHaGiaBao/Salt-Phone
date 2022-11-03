@@ -1,8 +1,7 @@
 import React from 'react'
 import './Header.css'
 
-import {FiSearch, FiShoppingCart} from 'react-icons/fi'
-import {Link} from 'react-router-dom'
+import {FiSearch, FiShoppingCart, FiX} from 'react-icons/fi'
 
 function Header() {
 	return (
@@ -36,7 +35,13 @@ function Header() {
 							<a href='#'>Asus</a>
 						</li>
 						<li>
+							<a href='#'>Masstel</a>
+						</li>
+						<li>
 							<a href='#'>Nokia</a>
+						</li>
+						<li>
+							<a href='#'>itel</a>
 						</li>
 					</ul>
 				</li>
@@ -64,6 +69,11 @@ function Header() {
 					<a href='#'>
 						<FiSearch />
 					</a>
+					<div className='searchBox'>
+						<FiSearch />
+						<input type='text' placeholder='Tìm kiếm sản phẩm' />
+						<FiX />
+					</div>
 				</li>
 				<li>
 					<a href='#'>
@@ -71,9 +81,7 @@ function Header() {
 					</a>
 				</li>
 				<li>
-					<Link to='/SignIn'>
-						<a href='#'>Đăng nhập</a>
-					</Link>
+					<a href='#'>Đăng nhập</a>
 				</li>
 			</ul>
 		</header>
