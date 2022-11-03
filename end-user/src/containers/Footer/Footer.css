@@ -7,14 +7,16 @@ footer {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 }
-
 footer div:nth-child(1) {
 	font-size: 24px;
 	text-align: center;
 	line-height: 296px;
 }
 footer .title {
+	color: white;
 	margin: 40px 0 24px;
+	position: unset;
+	padding: 0;
 }
 footer ul li:nth-child(1) {
 	margin-top: 40px;
