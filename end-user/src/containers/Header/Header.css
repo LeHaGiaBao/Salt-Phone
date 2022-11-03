@@ -84,6 +84,7 @@ header {
 	top: 96px;
 	left: 0;
 	display: flex;
+	background-color: white;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;

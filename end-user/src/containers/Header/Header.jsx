@@ -35,13 +35,7 @@ function Header() {
 							<a href='#'>Asus</a>
 						</li>
 						<li>
-							<a href='#'>Masstel</a>
-						</li>
-						<li>
 							<a href='#'>Nokia</a>
-						</li>
-						<li>
-							<a href='#'>itel</a>
 						</li>
 					</ul>
 				</li>

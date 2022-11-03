@@ -4,6 +4,7 @@ import Slider from '../containers/Slider/Slider'
 import NewProduct from '../components/NewProduct/NewProduct'
 import BestSellerProducts from '../components/BestSellerProducts/BestSellerProducts'
 import TopAccessory from '../components/TopAccessory/TopAccessory'
+import Footer from '../containers/Footer/Footer'
 
 function Home() {
 	return (
@@ -13,6 +14,7 @@ function Home() {
 			<NewProduct />
 			<BestSellerProducts />
 			<TopAccessory />
+			<Footer />
 		</div>
 	)
 }
