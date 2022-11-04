@@ -1,6 +1,6 @@
 import React from 'react'
 import './Header.css'
-
+import {Link} from 'react-router-dom'
 import {FiSearch, FiShoppingCart, FiX} from 'react-icons/fi'
 
 function Header() {
@@ -74,9 +74,11 @@ function Header() {
 						<FiShoppingCart />
 					</a>
 				</li>
-				<li>
-					<a href='#'>Đăng nhập</a>
-				</li>
+				<Link to='/SignIn'>
+					<li>
+						<a href='#'>Đăng nhập</a>
+					</li>
+				</Link>
 			</ul>
 		</header>
 	)
