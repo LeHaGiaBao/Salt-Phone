@@ -1,0 +1,195 @@
+:root {
+    --border-brand: #EE8488;
+    --text-color: #000000;
+    --border-info: #D9D9D9;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.screen {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.main-content {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.brand, .type {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.type {
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 16px;
+}
+
+.brand-item {
+    min-width: 160px;
+    height: 32px;
+    border: 1.5px solid #EE8488;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 32px;
+    margin: 16px;
+}
+
+.type-item {
+    padding: 8px 16px;
+    border: 1.5px solid #D9D9D9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 12px;
+}
+
+.type-item:hover {
+    border: 1.5px solid #EE8488;
+}
+
+.type-item_icon {
+    padding-left: 4px;
+    font-size: 16px;
+}
+
+.type-filter {
+    z-index: 1;
+    position: relative;
+}
+
+.type-filter:hover .type-filter_content,
+.type-brand:hover .type-filter_content,
+.type-price:hover .type-filter_content,
+.type-ram:hover .type-filter_content,
+.type-memory:hover .type-filter_content,
+.type-battery:hover .type-filter_content {
+    display: flex;
+}
+
+.type-filter_content {
+    position: absolute;
+    width: 928px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 36px 32px;
+    margin-left: 12px;
+    margin-right: 12px;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+}
+
+
+.type-filter_content::before {
+    content: "";
+    border-width: 17px 24px;
+    border-style:  solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    left: 32px;
+    top: -24px;
+}
+
+.type-filter_other {
+    width: 90%;
+}
+
+.type-filter_brand_content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.type-filter_brand_content-ram {
+    width: 80%;
+}
+
+.type-filter_brand_item {
+    padding: 8px 16px;
+    border: 1.5px solid #D9D9D9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 12px;
+}
+
+.type-filter_brand_item:hover {
+    border: 1.5px solid #EE8488;
+    background: rgba(238, 132, 136, 0.1);
+}
+
+.type-filter_title {
+    font-weight: 500;
+    padding-left: 16px;
+}
+
+.type-filter_price-and-ram,
+.type-filter_memory-and-battery {
+    display: flex;
+    flex-direction: column;
+}
+
+.type-filter_footer,
+.type-filter_other {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.type-filter_footer {
+    padding-left: 16px;
+    padding-top: 40px;
+}
+
+.type-filter_footer input {
+    margin-right: 8px;
+}
+
+.type-filter_footer_result_btn {
+    padding: 8px 46px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.type-filter_footer_result_btn:focus {
+    background: #4FCFE6;
+}
+
+.type-price,
+.type-brand {
+    position: relative;
+}
+
+
+.type-filter_price {
+    width: 509px;
+}
+
+.type-filter_memory {
+    width: 674px;
+}
+
+
+
+
+
+
