@@ -6,12 +6,15 @@ import BestSellerProducts from '../components/BestSellerProducts/BestSellerProdu
 import TopAccessory from '../components/TopAccessory/TopAccessory'
 import Footer from '../containers/Footer/Footer'
 
-import ListProducts from '../components/ListProducts/ListProducts'
-
 function Home() {
 	return (
 		<div>
-			<ListProducts />
+			<Header />
+			<Slider />
+			<NewProduct />
+			<BestSellerProducts />
+			<TopAccessory />
+			<Footer />
 		</div>
 	)
 }
