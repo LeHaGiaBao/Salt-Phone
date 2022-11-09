@@ -6,11 +6,12 @@ import BestSellerProducts from '../components/BestSellerProducts/BestSellerProdu
 import TopAccessory from '../components/TopAccessory/TopAccessory'
 import Footer from '../containers/Footer/Footer'
 import Brand from '../components/Brand/Brand'
+import ProductInformation from '../components/ProductInformation/ProductInformation'
 
 function Home() {
 	return (
 		<div>
-			<Brand/>
+			<ProductInformation/>
 		</div>
 	)
 }
