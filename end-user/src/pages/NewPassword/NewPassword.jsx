@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import '../assets/css/style.css'
-import Form from '../assets/image/Form.png'
+import './NewPassword.css'
+import Form from '../../assets/image/Form.png'
 import {BiArrowBack} from 'react-icons/bi'
 import {BsEyeFill} from 'react-icons/bs'
 import {Link, useActionData} from 'react-router-dom'

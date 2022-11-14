@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import '../assets/css/style.css'
-import Form from '../assets/image/Form.png'
+import './SignUp.css'
+import Form from '../../assets/image/Form.png'
 import {BsEyeFill} from 'react-icons/bs'
 import {Link} from 'react-router-dom'
 

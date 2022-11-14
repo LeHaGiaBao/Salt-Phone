@@ -1,6 +1,6 @@
 import React from 'react'
-import '../assets/css/style.css'
-import Form from '../assets/image/Form.png'
+import './RecoverPassword.css'
+import Form from '../../assets/image/Form.png'
 import {BiArrowBack} from 'react-icons/bi'
 import {Link} from 'react-router-dom'
 
