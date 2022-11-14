@@ -9,6 +9,7 @@ import SignUp from './pages/SignUp/SignUp'
 import RecoverPassword from './pages/RecoverPassword/RecoverPassword'
 import RecoverPasswordOTP from './pages/RecoverPasswordOTP/RecoverPasswordOTP'
 import NewPassword from './pages/NewPassword/NewPassword'
+import PageNotFound from './pages/PageNotFound/PageNotFound'
 
 const router = createBrowserRouter([
 	{
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
 	{
 		path: '/NewPassword',
 		element: <NewPassword />,
+	},
+	{
+		path: '/404',
+		element: <PageNotFound />,
 	},
 ])
 

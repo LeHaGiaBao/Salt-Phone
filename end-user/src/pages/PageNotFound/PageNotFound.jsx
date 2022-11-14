@@ -1,7 +1,9 @@
 import './PageNotFound.css'
 import {BsArrowLeftShort} from 'react-icons/bs'
-import NotFoundNum4 from '../assets/image/NotFoundNum4.png'
-import NotFoundNum0 from '../assets/image/NotFoundNum0.png'
+import NotFoundNum4 from '../../assets/image/NotFoundNum4.png'
+import NotFoundNum0 from '../../assets/image/NotFoundNum0.png'
+import {Link} from 'react-router-dom'
+import Header from '../../containers/Header/Header'
 
 function PageNotFound() {
 	return (
@@ -14,9 +16,11 @@ function PageNotFound() {
 			<p className='PageNotFound-content'>
 				Rất tiếc, không thể tải được trang :(
 			</p>
-			<button className='PageNotFound-action'>
-				<BsArrowLeftShort /> Quay lại trang chủ
-			</button>
+			<Link to='/'>
+				<button className='PageNotFound-action'>
+					<BsArrowLeftShort /> Quay lại trang chủ
+				</button>
+			</Link>
 		</div>
 	)
 }

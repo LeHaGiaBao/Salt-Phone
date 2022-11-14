@@ -1,6 +1,7 @@
 ::-webkit-scrollbar {
 	display: none;
 }
+
 .PageNotFound {
 	width: 100vw;
 	height: 100vh;
@@ -11,6 +12,7 @@
 	justify-content: center;
 	align-items: center;
 }
+
 .PageNotFound-img {
 	width: fit-content;
 	margin-bottom: 100px;
@@ -18,16 +20,19 @@
 	justify-content: space-between;
 	gap: 10px;
 }
+
 .PageNotFound-img img:not(img:nth-child(2)) {
 	width: 210px;
 	height: 270px;
 }
+
 .PageNotFound-content {
 	margin-bottom: 64px;
 	font-size: 36px;
 	font-weight: 600;
 	color: #fff;
 }
+
 .PageNotFound-action {
 	width: 512px;
 	height: 72px;
@@ -40,12 +45,14 @@
 	line-height: 32px;
 	font-weight: bold;
 }
+
 .PageNotFound-action svg {
 	width: 30px;
 	height: 30px;
 	display: inline-block;
 	margin-bottom: 3px;
 }
+
 @media only screen and (max-width: 739px) {
 	.PageNotFound-img img:not(img:nth-child(2)) {
 		width: 58px;
