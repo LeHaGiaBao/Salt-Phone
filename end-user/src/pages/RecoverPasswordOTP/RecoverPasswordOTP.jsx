@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import '../assets/css/style.css'
-import Form from '../assets/image/Form.png'
+import './RecoverPasswordOTP.css'
+import Form from '../../assets/image/Form.png'
 
 function RecoverPasswordOTP() {
 	return (
