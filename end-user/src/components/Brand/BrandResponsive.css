@@ -1,0 +1,26 @@
+/*Tablet*/
+@media only screen and (max-width: 1023px) and (min-width: 740px) {
+    .type-filter_content {
+        width: 524px;
+    }
+
+    .type-filter_other {
+        flex-direction: column;
+        margin-left: 46px;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 739px) {
+    .brand-item {
+        margin: 4px;
+    }
+
+    .type {
+        margin: 4px 6px;
+    }
+
+    .type-filter_content {
+        width: 304px;
+    }
+}
