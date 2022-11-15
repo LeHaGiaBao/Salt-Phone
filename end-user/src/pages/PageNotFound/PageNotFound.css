@@ -6,7 +6,6 @@
 	width: 100vw;
 	height: 100vh;
 	background: #ee8488;
-	margin-top: 96px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -15,7 +14,8 @@
 
 .PageNotFound-img {
 	width: fit-content;
-	margin-bottom: 100px;
+	margin-top: 10px;
+	margin-bottom: 80px;
 	display: flex;
 	justify-content: space-between;
 	gap: 10px;
