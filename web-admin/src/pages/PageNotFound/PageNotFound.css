@@ -1,0 +1,75 @@
+::-webkit-scrollbar {
+	display: none;
+}
+
+.PageNotFound {
+	width: 100vw;
+	height: 100vh;
+	background: #ee8488;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.PageNotFound-img {
+	width: fit-content;
+	margin-top: 10px;
+	margin-bottom: 80px;
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.PageNotFound-img img:not(img:nth-child(2)) {
+	width: 210px;
+	height: 270px;
+}
+
+.PageNotFound-content {
+	margin-bottom: 64px;
+	font-size: 36px;
+	font-weight: 600;
+	color: #fff;
+}
+
+.PageNotFound-action {
+	width: 512px;
+	height: 72px;
+	padding: 20px;
+	border-radius: 50px;
+	background: #fff;
+	text-align: center;
+	color: #ee8488;
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: bold;
+}
+
+.PageNotFound-action svg {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	margin-bottom: 3px;
+}
+
+@media only screen and (max-width: 739px) {
+	.PageNotFound-img img:not(img:nth-child(2)) {
+		width: 58px;
+		height: 74px;
+	}
+	.PageNotFound-img img:nth-child(2) {
+		width: 78px;
+		height: 78px;
+	}
+	.PageNotFound-content {
+		font-size: 16px;
+	}
+	.PageNotFound-action {
+		width: 311px;
+		height: 48px;
+		padding: 10px;
+		font-size: 16px;
+		line-height: 28px;
+	}
+}
