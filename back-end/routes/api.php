@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\HangDienThoaiController;
+use App\Http\Controllers\BrandController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('hangdienthoai', HangDienThoaiController::class);
+Route::apiResource('brands', BrandController::class);

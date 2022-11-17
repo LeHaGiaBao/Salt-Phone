@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreHangDienThoaiRequest extends FormRequest
+class StoreBrandRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class StoreHangDienThoaiRequest extends FormRequest
     public function rules()
     {
         return [
-            "TenHangDienThoai" => "required",
+            'tenhangdienthoai' => 'required'
         ];
     }
 }
