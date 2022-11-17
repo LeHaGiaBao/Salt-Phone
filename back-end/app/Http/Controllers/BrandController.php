@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\HangDienThoai;
+use App\Http\Requests\StoreBrandRequest;
+use App\Models\Brand;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
-class HangDienThoaiController extends Controller
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,10 @@ class HangDienThoaiController extends Controller
      */
     public function index()
     {
-        $hangDienThoai = HangDienThoai::all();
+        $brand = Brand::all();
         return response()->json([
-            'Hang Dien Thoai' => $hangDienThoai
+            'Status' => true,
+            'Hang dien thoai' => $brand
         ]);
     }
 
@@ -38,34 +38,35 @@ class HangDienThoaiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBrandRequest $request)
     {
-        $hangDienThoai = HangDienThoai::create($request->all());
+        $brand = Brand::create($request->all());
 
         return response()->json([
-            'message' => "Hang Dien Thoai saved successfully!",
-            'Hang Dien Thoai' => $hangDienThoai
+            'Status' => true,
+            'Message' => "Hang dien thoai created successfully!",
+            'Hang dien thoai' => $brand
         ], 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\HangDienThoai  $hangDienThoai
+     * @param  \App\Models\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function show(HangDienThoai $hangDienThoai)
+    public function show(Brand $brand)
     {
-        //
+        return $brand;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\HangDienThoai  $hangDienThoai
+     * @param  \App\Models\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(HangDienThoai $hangDienThoai)
+    public function edit(Brand $brand)
     {
         //
     }
@@ -74,31 +75,33 @@ class HangDienThoaiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\HangDienThoai  $hangDienThoai
+     * @param  \App\Models\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HangDienThoai $hangDienThoai)
+    public function update(StoreBrandRequest $request, Brand $brand)
     {
-        $hangDienThoai->update($request->all());
+        $brand->update($request->all());
 
         return response()->json([
-            'message' => "HangDienThoai updated successfully!",
-            'HangDienThoai' => $hangDienThoai
+            'status' => true,
+            'Message' => "Hang dien thoai updated successfully!",
+            'Hang dien thoai' => $brand
         ], 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\HangDienThoai  $hangDienThoai
+     * @param  \App\Models\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HangDienThoai $hangDienThoai)
+    public function destroy(Brand $brand)
     {
-        $hangDienThoai->delete();
+        $brand->delete();
 
         return response()->json([
-            'message' => "Hang Dien Thoai deleted successfully!",
+            'Status' => true,
+            'Message' => "Hang dien thoai deleted successfully!",
         ], 200);
     }
 }
