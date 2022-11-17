@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\HangDienThoai;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class HangDienThoaiController extends Controller
 {
@@ -15,9 +16,9 @@ class HangDienThoaiController extends Controller
      */
     public function index()
     {
-        $HangDienThoai = HangDienThoai::all();
+        $hangDienThoai = HangDienThoai::all();
         return response()->json([
-            'HangDienThoai' => $HangDienThoai,
+            'Hang Dien Thoai' => $hangDienThoai
         ]);
     }
 
@@ -39,11 +40,11 @@ class HangDienThoaiController extends Controller
      */
     public function store(Request $request)
     {
-        $HangDienThoai = HangDienThoai::create($request->all());
+        $hangDienThoai = HangDienThoai::create($request->all());
 
         return response()->json([
-            'message' => 'HangDienThoai save successfully!',
-            'HangDienThoai' => $HangDienThoai,
+            'message' => "Hang Dien Thoai saved successfully!",
+            'Hang Dien Thoai' => $hangDienThoai
         ], 200);
     }
 
@@ -64,7 +65,7 @@ class HangDienThoaiController extends Controller
      * @param  \App\Models\HangDienThoai  $hangDienThoai
      * @return \Illuminate\Http\Response
      */
-    public function edit(HangDienThoai $HangDienThoai)
+    public function edit(HangDienThoai $hangDienThoai)
     {
         //
     }
@@ -76,13 +77,13 @@ class HangDienThoaiController extends Controller
      * @param  \App\Models\HangDienThoai  $hangDienThoai
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HangDienThoai $HangDienThoai)
+    public function update(Request $request, HangDienThoai $hangDienThoai)
     {
-        $HangDienThoai->update($request->all());
+        $hangDienThoai->update($request->all());
 
         return response()->json([
-            'message' => "Product updated successfully!",
-            'HangDienThoai' => $HangDienThoai,
+            'message' => "HangDienThoai updated successfully!",
+            'HangDienThoai' => $hangDienThoai
         ], 200);
     }
 
@@ -92,12 +93,12 @@ class HangDienThoaiController extends Controller
      * @param  \App\Models\HangDienThoai  $hangDienThoai
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HangDienThoai $HangDienThoai)
+    public function destroy(HangDienThoai $hangDienThoai)
     {
-        $HangDienThoai->delete();
+        $hangDienThoai->delete();
 
         return response()->json([
-            'message' => "HangDienThoai deleted successfully!",
+            'message' => "Hang Dien Thoai deleted successfully!",
         ], 200);
     }
 }
