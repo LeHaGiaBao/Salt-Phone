@@ -24,7 +24,7 @@ class StoreHangDienThoaiRequest extends FormRequest
     public function rules()
     {
         return [
-            "HangDienThoai" => "required",
+            "TenHangDienThoai" => "required",
         ];
     }
 }
