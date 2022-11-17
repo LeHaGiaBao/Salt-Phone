@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.navbar {
+    width: 30%;
+    padding: 0 64px;
+}
+
+.navbar_user_nickname_fix,
+.navbar_user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar_user_avt {
+    font-size: 60px;
+    color: #EE8488;
+    padding-right: 24px;
+}
+
+.navbar_user_nickname_name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #EE8488;
+}
+
+.navbar_user_nickname_fix {
+    padding-top: 8px;
+}
+
+.navbar_user_nickname_fix_text {
+    padding-right: 16px;
+}
+
+
+
