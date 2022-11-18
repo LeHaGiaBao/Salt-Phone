@@ -1,6 +1,7 @@
 import logo from './logo.svg'
 import './assets/css/base.css'
 import './assets/css/style.css'
+import 'antd/dist/antd.css'
 import {createBrowserRouter, RouterProvider, Route} from 'react-router-dom'
 import SignIn from './pages/SignIn/SignIn'
 import RecoverPassword from '../../web-admin/src/pages/RecoverPassword/RecoverPassword'
