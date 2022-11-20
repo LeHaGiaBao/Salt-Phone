@@ -4,7 +4,20 @@ import SiderMenu from '../containers/SiderMenu'
 
 const {Header, Content, Sider} = Layout
 
-function Dashboard(props) {
+const getItem = (label, key) => {
+	return {
+		key,
+		label,
+	}
+}
+
+const items1 = [
+	getItem('Thương hiệu', '1'),
+	getItem('Điện thoại', '2'),
+	getItem('Hãng điện thoại', '3'),
+]
+
+function Product(props) {
 	return (
 		<div>
 			<Layout>
@@ -29,8 +42,20 @@ function Dashboard(props) {
 							fontSize: '20px',
 							width: '25%',
 						}}>
-						Trang chủ
+						Sản phẩm
 					</h1>
+					<Menu
+						theme='dark'
+						mode='horizontal'
+						defaultSelectedKeys={['1']}
+						defaultOpenKeys={['1']}
+						items={items1}
+						style={{
+							backgroundColor: '#EE8488',
+							color: '#FFFFFF',
+							fontSize: '17px',
+						}}
+					/>
 				</Header>
 				<Layout>
 					<Sider width={240} className='site-layout-background'>
@@ -57,4 +82,4 @@ function Dashboard(props) {
 	)
 }
 
-export default Dashboard
+export default Product
