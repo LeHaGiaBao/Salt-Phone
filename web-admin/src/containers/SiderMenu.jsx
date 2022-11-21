@@ -10,6 +10,7 @@ import {MdManageAccounts} from 'react-icons/md'
 import {IoMdSettings} from 'react-icons/io'
 import {TbDiscount2} from 'react-icons/tb'
 import {FaBuilding} from 'react-icons/fa'
+import {BiLogOut} from 'react-icons/bi'
 
 const getItem = (label, key, icon) => {
 	return {
@@ -29,6 +30,7 @@ const items = [
 	getItem(<a href={`Voucher`}>Mã giảm giá</a>, 'sub7', <TbDiscount2 />),
 	getItem(<a href={`Office`}>Chi nhánh</a>, 'sub8', <FaBuilding />),
 	getItem(<a href={`Setting`}>Cài đặt</a>, 'sub9', <IoMdSettings />),
+	getItem(<a href={`/`}>Đăng xuất</a>, 'sub10', <BiLogOut />),
 ]
 
 function SiderMenu(props) {

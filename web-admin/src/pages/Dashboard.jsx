@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
 
 const {Header, Content, Sider} = Layout
 
 function Dashboard(props) {
+	useEffect(() => {
+		document.title = 'Dashboard'
+	}, 1)
+
 	return (
 		<div>
 			<Layout>
