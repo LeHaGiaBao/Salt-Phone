@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './SignIn.css'
 import Form from '../../assets/image/Form.png'
 import google from '../../assets/image/google.png'
@@ -11,6 +11,10 @@ function SignInForm() {
 	const togglePasswordVisibility = () => {
 		setPasswordShow(passwordShow ? false : true)
 	}
+
+	useEffect(() => {
+		document.title = 'Sign In'
+	}, 1)
 
 	return (
 		<div className='screen'>
