@@ -1,14 +1,14 @@
 import React from "react";
-import './UserInformation.css'
-import './UserInformationResponsive.css'
+import './UserChangePassword.css'
+import './UserChangePassword.css'
 import {BiUserCircle} from 'react-icons/bi'
 import {BsPen} from 'react-icons/bs'
 import {AiOutlineUser} from 'react-icons/ai'
 import {TbReportMoney} from 'react-icons/tb'
 
-function UserInformation() {
+function UserChangePassword() {
     return (
-        <div className="w-100">
+        <div>
             <div className="user-information_container">
                 <div className="navbar">
                     <div className="navbar_user">
@@ -50,75 +50,47 @@ function UserInformation() {
                 </div>
 
                 <div className="content">
-                    <div className="content_title">Hồ sơ của tôi</div>
+                    <div className="content_title">Đổi mật khẩu</div>
 
                     <div className="content_text">
-                        <div className="content_text_title">Quản lý thông tin cá nhân</div>
-                        <a href="" className="content_text_edit">Chỉnh sửa</a>
+                        Để đảm bảo an toàn, vui lòng không chia sẻ mật khẩu cho người dùng khác
                     </div>
 
                     <table className="content_form">
                         <tr className="content_form_item">
                             <td  className="content_form_item_label">
-                                <label htmlFor="">Tên</label>
+                                <label htmlFor="">Mật khẩu hiện tại</label>
                             </td>
                             <td  className="content_form_item_input">
-                                <input type="text" placeholder="User.123" className="content_form_item_input_date w-312"/>
+                                <input type="text" className="content_form_item_input_date"/>
+                                <a href="" className="content_form_item_input_forget">Quên mật khẩu?</a>
                             </td>
                         </tr>
                         <tr className="content_form_item">
                             <td  className="content_form_item_label">
-                                <label htmlFor="">Email</label>
+                                <label htmlFor="">Mật khẩu mới</label>
                             </td>
-                            <td  className="flex content_form_item_input">
-                                <div className="w-312 w-260 content_form_item_input">user***********@gmail.com</div>
-                                <a href="" className="content_form_item_change">Thay đổi</a>
-                            </td>
-                        </tr>
-                        <tr className="content_form_item">
-                            <td  className="content_form_item_label">
-                                <label htmlFor="">Số điện thoại</label>
-                            </td>
-                            <td  className="flex content_form_item_input">
-                                <div className="w-312 w-260 content_form_item_input">*******986</div>
-                                <a href="" className="content_form_item_change">Thay đổi</a>
+                            <td  className="content_form_item_input">
+                                <input type="text" className="content_form_item_input_date"/>
                             </td>
                         </tr>
-                        <tr className="content_form_item">
-                            <td  className="content_form_item_label">
-                                <label htmlFor="">Giới tính</label>
-    
-                            </td>
-                            <td  className="content_form_item_input input_sex">
-                                <input type="checkbox" /> Nam 
-                                <input type="checkbox" className="content_form_item_input_item"/> Nữ
-                            </td>
-                        </tr>
-                        <tr className="content_form_item">
-                            <td  className="content_form_item_label">
-                                <label htmlFor="">Ngày sinh</label>
 
+                        <tr className="content_form_item">
+                            <td  className="content_form_item_label">
+                                <label htmlFor="">Nhập lại mật khẩu</label>
                             </td>
-                            <td className="content_form_item_input">
-                                <input type="number" min={1} max={31} step={1} className="content_form_item_input_date"/>
-                                <input type="number" min={1} max={12} step={1} className="content_form_item_input_item content_form_item_input_date"/>
-                                <input type="number" min={1900} max={2022} step={1} className="content_form_item_input_item content_form_item_input_date"/>
-
+                            <td  className="content_form_item_input">
+                                <input type="text" className="content_form_item_input_date"/>
                             </td>
                         </tr>
+                        
                     </table>
-
-                    <div className="content_password">
-                        <div className="content_text_title">Mật khẩu</div>
-                        <div className="content_password_text">
-                            <div className="content_password_text_label">Đổi mật khẩu</div>
-                            <a href="" className="content_password_text_change">Đổi mật khẩu</a>
-                        </div>
-                    </div>
                 </div>
+
+                <button>Lưu mật khẩu</button>
             </div>
         </div>
     )
 }
 
-export default UserInformation;
+export default UserChangePassword;
