@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
+import PhoneTable from '../components/Tables/PhoneTable'
 
 const {Header, Content, Sider} = Layout
 
@@ -18,6 +19,10 @@ const items1 = [
 ]
 
 function Product(props) {
+	useEffect(() => {
+		document.title = 'Sản phẩm'
+	}, 1)
+
 	return (
 		<div>
 			<Layout>
@@ -42,9 +47,9 @@ function Product(props) {
 							fontSize: '20px',
 							width: '25%',
 						}}>
-						Sản phẩm
+						Sản phẩm kinh doanh
 					</h1>
-					<Menu
+					{/* <Menu
 						theme='dark'
 						mode='horizontal'
 						defaultSelectedKeys={['1']}
@@ -55,7 +60,7 @@ function Product(props) {
 							color: '#FFFFFF',
 							fontSize: '17px',
 						}}
-					/>
+					/> */}
 				</Header>
 				<Layout>
 					<Sider width={240} className='site-layout-background'>
@@ -73,7 +78,14 @@ function Product(props) {
 								margin: 0,
 								minHeight: 280,
 							}}>
-							Dashboard
+							<h1
+								style={{
+									fontSize: '20px',
+									paddingBottom: 20,
+								}}>
+								Điện thoại
+							</h1>
+							<PhoneTable />
 						</Content>
 					</Layout>
 				</Layout>
