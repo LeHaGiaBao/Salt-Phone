@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {Form, Input, InputNumber, Popconfirm, Table, Typography} from 'antd'
 import {AiFillEdit} from 'react-icons/ai'
 const originData = []
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 5; i++) {
 	originData.push({
 		key: i.toString(),
 		name: `Edrward ${i}`,

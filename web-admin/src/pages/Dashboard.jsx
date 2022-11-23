@@ -6,7 +6,7 @@ const {Header, Content, Sider} = Layout
 
 function Dashboard(props) {
 	useEffect(() => {
-		document.title = 'Dashboard'
+		document.title = 'Trang chủ'
 	}, 1)
 
 	return (
