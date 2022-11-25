@@ -88,9 +88,13 @@
         font-size: 14px;
         line-height: 17px;
     }
+
+    .content_form_item_input_item {
+        margin-left: 4px;
+    }
     
     .w-312 {
-        min-width: 290px;
+        min-width: 250px;
     }
 
     .content_password_text_change,
