@@ -5,6 +5,9 @@ import StatisticMenu from '../components/Statistics/StatisticsMenu'
 import PieChart from '../components/Charts/PieChart'
 import ColumnChart from '../components/Charts/ColumnChart'
 import LineChart from '../components/Charts/LineChart'
+import GaugeChart from '../components/Charts/GaugeChart'
+import StackedChart from '../components/Charts/StackedChart'
+import GradientsChart from '../components/Charts/GradientsChart'
 
 const {Header, Content, Sider} = Layout
 
@@ -44,14 +47,11 @@ function Dashboard(props) {
 					<Sider width={240} className='site-layout-background'>
 						<SiderMenu />
 					</Sider>
-					<Layout
-						style={{
-							padding: '0 24px 24px',
-						}}>
+					<Layout>
 						<Content
 							className='site-layout-background'
 							style={{
-								padding: 24,
+								padding: 20,
 								height: '100%',
 								margin: 0,
 								minHeight: 280,
@@ -62,12 +62,24 @@ function Dashboard(props) {
 									<LineChart />
 								</Col>
 							</Row>
+
 							<Row gutter={16}>
 								<Col span={12}>
 									<ColumnChart />
 								</Col>
-								<Col span={12}>
+								<Col span={6}>
 									<PieChart />
+								</Col>
+								<Col span={6}>
+									<GaugeChart />
+								</Col>
+							</Row>
+							<Row gutter={16}>
+								<Col span={12}>
+									<StackedChart />
+								</Col>
+								<Col span={12}>
+									<GradientsChart />
 								</Col>
 							</Row>
 						</Content>

@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom'
-import {Line} from '@ant-design/plots'
+import {Area} from '@ant-design/plots'
 
-const LineChart = () => {
+function GradientsChart() {
 	const [data, setData] = useState([])
 
 	useEffect(() => {
@@ -11,7 +11,7 @@ const LineChart = () => {
 
 	const asyncFetch = () => {
 		fetch(
-			'https://gw.alipayobjects.com/os/bmw-prod/e00d52f4-2fa6-47ee-a0d7-105dd95bde20.json'
+			'https://gw.alipayobjects.com/os/bmw-prod/1d565782-dde4-4bb6-8946-ea6a38ccf184.json'
 		)
 			.then((response) => response.json())
 			.then((json) => setData(json))
@@ -21,29 +21,21 @@ const LineChart = () => {
 	}
 	const config = {
 		data,
-		xField: 'year',
-		yField: 'gdp',
-		seriesField: 'name',
-		yAxis: {
-			label: {
-				formatter: (v) => `${(v / 10e8).toFixed(1)} B`,
-			},
+		xField: 'Date',
+		yField: 'scales',
+		xAxis: {
+			range: [0, 1],
+			tickCount: 5,
 		},
-		legend: {
-			position: 'top',
-		},
-		smooth: true,
-		// @TODO 后续会换一种动画方式
-		animation: {
-			appear: {
-				animation: 'path-in',
-				duration: 5000,
-			},
+		areaStyle: () => {
+			return {
+				fill: 'l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff',
+			}
 		},
 	}
 
 	return (
-		<Line
+		<Area
 			{...config}
 			style={{
 				marginTop: '20px',
@@ -51,10 +43,10 @@ const LineChart = () => {
 				backgroundColor: '#FFFFFF',
 				borderRadius: '10px',
 				width: '100%',
-				height: '94%',
+				height: '93%',
 			}}
 		/>
 	)
 }
 
-export default LineChart
+export default GradientsChart

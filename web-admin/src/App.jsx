@@ -14,8 +14,6 @@ import Customer from './pages/Customer'
 import Cart from './pages/Cart'
 import Statistics from './pages/Statistics'
 import Account from './pages/Account'
-import Voucher from './pages/Voucher'
-import Office from './pages/Office'
 import Setting from './pages/Setting'
 
 const router = createBrowserRouter([
@@ -62,14 +60,6 @@ const router = createBrowserRouter([
 	{
 		path: '/Account',
 		element: <Account />,
-	},
-	{
-		path: '/Voucher',
-		element: <Voucher />,
-	},
-	{
-		path: '/Office',
-		element: <Office />,
 	},
 	{
 		path: '/Setting',

@@ -81,7 +81,7 @@ function SiderMenu(props) {
 					paddingTop: 10,
 					paddingLeft: 5,
 					paddingRight: 5,
-					height: 1000,
+					height: 1100,
 					fontSize: '16px',
 					borderRight: 0,
 					backgroundColor: '#F6F9FA',
