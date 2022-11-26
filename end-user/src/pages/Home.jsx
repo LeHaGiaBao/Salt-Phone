@@ -5,12 +5,16 @@ import NewProduct from '../components/NewProduct/NewProduct'
 import BestSellerProducts from '../components/BestSellerProducts/BestSellerProducts'
 import TopAccessory from '../components/TopAccessory/TopAccessory'
 import Footer from '../containers/Footer/Footer'
-import PurchaseHistory from '../pages/PurchaseHistory/PurchaseHistory'
 
 function Home() {
 	return (
 		<div>
-			<PurchaseHistory></PurchaseHistory>
+			<Header />
+			<Slider />
+			<NewProduct />
+			<BestSellerProducts />
+			<TopAccessory />
+			<Footer />
 		</div>
 	)
 }
