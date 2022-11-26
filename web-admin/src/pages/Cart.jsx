@@ -1,6 +1,7 @@
 import React from 'react'
 import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
+import CartTable from '../components/Tables/Cart/CartTable'
 
 const {Header, Content, Sider} = Layout
 
@@ -42,9 +43,9 @@ function Cart(props) {
 							fontSize: '20px',
 							width: '25%',
 						}}>
-						Chi nhánh
+						Giỏ hàng
 					</h1>
-					<Menu
+					{/* <Menu
 						theme='dark'
 						mode='horizontal'
 						defaultSelectedKeys={['1']}
@@ -55,7 +56,7 @@ function Cart(props) {
 							color: '#FFFFFF',
 							fontSize: '17px',
 						}}
-					/>
+					/> */}
 				</Header>
 				<Layout>
 					<Sider width={240} className='site-layout-background'>
@@ -73,7 +74,14 @@ function Cart(props) {
 								margin: 0,
 								minHeight: 280,
 							}}>
-							Dashboard
+							<h1
+								style={{
+									fontSize: '20px',
+									paddingBottom: 20,
+								}}>
+								Chi tiết giỏ hàng
+							</h1>
+							<CartTable />
 						</Content>
 					</Layout>
 				</Layout>
