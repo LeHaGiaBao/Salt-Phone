@@ -32,12 +32,12 @@ function ColumnChart() {
 		<Column
 			{...config}
 			style={{
-				marginTop: '30px',
+				marginTop: '20px',
 				padding: '20px',
 				backgroundColor: '#FFFFFF',
 				borderRadius: '10px',
 				width: '100%',
-				height: '90%',
+				height: '93%',
 			}}
 		/>
 	)

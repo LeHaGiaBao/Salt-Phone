@@ -1,63 +1,66 @@
 import React from 'react'
-import {ArrowDownOutlined, ArrowUpOutlined} from '@ant-design/icons'
 import {Card, Col, Row, Statistic} from 'antd'
+import {BiUser} from 'react-icons/bi'
+import {MdPhoneIphone} from 'react-icons/md'
+import {BsFillCartCheckFill} from 'react-icons/bs'
+import {AiOutlineLineChart} from 'react-icons/ai'
 
 function StatisticMenu() {
 	return (
 		<div className='site-statistic-demo-card'>
 			<Row gutter={16}>
 				<Col span={6}>
-					<Card>
+					<Card className='font-bold'>
 						<Statistic
-							title='Active'
+							title='Khách hàng'
 							value={11.28}
 							precision={2}
 							valueStyle={{
-								color: '#3f8600',
+								color: '#23BFCE',
 							}}
-							prefix={<ArrowUpOutlined />}
+							prefix={<BiUser />}
 							suffix='%'
 						/>
 					</Card>
 				</Col>
 				<Col span={6}>
-					<Card>
+					<Card className='font-bold'>
 						<Statistic
-							title='Idle'
+							title='Sản phẩm'
 							value={9.3}
 							precision={2}
 							valueStyle={{
-								color: '#cf1322',
+								color: '#23BFCE',
 							}}
-							prefix={<ArrowDownOutlined />}
+							prefix={<MdPhoneIphone />}
 							suffix='%'
 						/>
 					</Card>
 				</Col>
 				<Col span={6}>
-					<Card>
+					<Card className='font-bold'>
 						<Statistic
-							title='Active'
+							title='Bán ra'
 							value={11.28}
 							precision={2}
 							valueStyle={{
-								color: '#3f8600',
+								color: '#1DD1A1',
 							}}
-							prefix={<ArrowUpOutlined />}
+							prefix={<BsFillCartCheckFill />}
 							suffix='%'
 						/>
 					</Card>
 				</Col>
 				<Col span={6}>
-					<Card>
+					<Card className='font-bold'>
 						<Statistic
-							title='Idle'
+							title='Doanh thu'
 							value={9.3}
 							precision={2}
 							valueStyle={{
-								color: '#cf1322',
+								color: '#E7492D',
 							}}
-							prefix={<ArrowDownOutlined />}
+							prefix={<AiOutlineLineChart />}
 							suffix='%'
 						/>
 					</Card>
