@@ -1,6 +1,10 @@
 import React, {useEffect} from 'react'
-import {Layout, Menu} from 'antd'
+import {Layout, Menu, Col, Row} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
+import StatisticMenu from '../components/Statistics/StatisticsMenu'
+import PieChart from '../components/Charts/PieChart'
+import ColumnChart from '../components/Charts/ColumnChart'
+import LineChart from '../components/Charts/LineChart'
 
 const {Header, Content, Sider} = Layout
 
@@ -52,7 +56,20 @@ function Dashboard(props) {
 								margin: 0,
 								minHeight: 280,
 							}}>
-							Dashboard
+							<StatisticMenu />
+							<Row gutter={16}>
+								<Col span={24}>
+									<LineChart />
+								</Col>
+							</Row>
+							<Row gutter={16}>
+								<Col span={12}>
+									<ColumnChart />
+								</Col>
+								<Col span={12}>
+									<PieChart />
+								</Col>
+							</Row>
 						</Content>
 					</Layout>
 				</Layout>

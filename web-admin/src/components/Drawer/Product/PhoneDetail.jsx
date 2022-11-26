@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {PlusOutlined} from '@ant-design/icons'
+import {ExclamationCircleFilled, PlusOutlined} from '@ant-design/icons'
 import {
 	Button,
 	Col,
@@ -11,22 +11,43 @@ import {
 	Row,
 	Select,
 	Space,
+	Modal,
 } from 'antd'
-
 import {BiEdit} from 'react-icons/bi'
-
-import iphone14 from '../../assets/image/iphone14.png'
+import iphone14 from '../../../assets/image/iphone14.png'
 
 const {Option} = Select
 
-const DrawerTest = () => {
+const {confirm} = Modal
+
+const showDeleteConfirm = () => {
+	confirm({
+		title: 'Bạn có chắc muốn xoá điện thoại này không?',
+		icon: <ExclamationCircleFilled />,
+		// content: 'Some descriptions',
+		okText: 'Yes',
+		okType: 'danger',
+		cancelText: 'No',
+		width: '35%',
+		onOk() {
+			console.log('OK')
+		},
+		onCancel() {
+			console.log('Cancel')
+		},
+	})
+}
+
+function PhoneDetail() {
 	const [open, setOpen] = useState(false)
+
 	const showDrawer = () => {
 		setOpen(true)
 	}
 	const onClose = () => {
 		setOpen(false)
 	}
+
 	return (
 		<>
 			<Button type='primary' onClick={showDrawer} className='bg-primary'>
@@ -148,12 +169,19 @@ const DrawerTest = () => {
 				</Row>
 				<Divider />
 				<div className='w-full text-center mt-10'>
-					<Button className='bg-sky-500 hover:bg-sky-300 w-7/12 h-14 text-2xl text-white font-semibold rounded-lg '>
+					<button className='text-2xl font-semibold text-white bg-first hover:bg-primary w-6/12 h-14  rounded-lg'>
 						Chỉnh sửa
-					</Button>
+					</button>
+				</div>
+				<div className='w-full text-center mt-5'>
+					<button
+						className='text-2xl font-semibold text-white bg-red-500 hover:bg-red-700 w-6/12 h-14  rounded-lg'
+						onClick={showDeleteConfirm}>
+						Xoá điện thoại
+					</button>
 				</div>
 			</Drawer>
 		</>
 	)
 }
-export default DrawerTest
+export default PhoneDetail

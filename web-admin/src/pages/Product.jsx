@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react'
 import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
-import PhoneTable from '../components/Tables/PhoneTable'
+import PhoneTable from '../components/Tables/Product/PhoneTable'
+import NewPhone from '../components/Drawer/Product/NewPhone'
 
 const {Header, Content, Sider} = Layout
 
@@ -85,6 +86,9 @@ function Product(props) {
 								}}>
 								Điện thoại
 							</h1>
+							<div className='float-right mb-5 bg-first rounded-lg'>
+								<NewPhone />
+							</div>
 							<PhoneTable />
 						</Content>
 					</Layout>

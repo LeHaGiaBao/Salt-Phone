@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import {Button, Form, Input, Popconfirm, Table} from 'antd'
-import iphone14 from '../../assets/image/iphone14.png'
-import iphone14plus from '../../assets/image/iphone14plus.jpg'
-import iphone14promax from '../../assets/image/iphone14promax.png'
-import DrawerTest from '../Drawer/DrawerTest'
+import iphone14 from '../../../assets/image/iphone14.png'
+import iphone14plus from '../../../assets/image/iphone14plus.jpg'
+import iphone14promax from '../../../assets/image/iphone14promax.png'
+import PhoneDetail from '../../Drawer/Product/PhoneDetail'
 
 function PhoneTable(props) {
 	const [dataSource, setDataSource] = useState([
@@ -13,7 +13,8 @@ function PhoneTable(props) {
 			brand: 'Apple',
 			image: <img src={iphone14} />,
 			price: 24990000,
-			operate: <DrawerTest />,
+			amount: 100,
+			operate: <PhoneDetail />,
 		},
 		{
 			key: '1',
@@ -21,7 +22,8 @@ function PhoneTable(props) {
 			brand: 'Apple',
 			image: <img src={iphone14plus} />,
 			price: 27990000,
-			operate: <DrawerTest />,
+			amount: 200,
+			operate: <PhoneDetail />,
 		},
 		{
 			key: '2',
@@ -29,7 +31,8 @@ function PhoneTable(props) {
 			brand: 'Apple',
 			image: <img src={iphone14promax} />,
 			price: 33990000,
-			operate: <DrawerTest />,
+			amount: 300,
+			operate: <PhoneDetail />,
 		},
 	])
 
@@ -56,9 +59,15 @@ function PhoneTable(props) {
 			sorter: (a, b) => a.price - b.price,
 		},
 		{
+			title: 'Số lượng',
+			dataIndex: 'amount',
+			width: '10%',
+			sorter: (a, b) => a.price - b.price,
+		},
+		{
 			title: 'Thao tác',
 			dataIndex: 'operate',
-			width: '20%',
+			width: '10%',
 		},
 	]
 

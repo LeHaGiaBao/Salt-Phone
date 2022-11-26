@@ -1,6 +1,8 @@
 import React from 'react'
 import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
+import StatisticMenu from '../components/Statistics/StatisticsMenu'
+import PieChart from '../components/Charts/PieChart'
 
 const {Header, Content, Sider} = Layout
 
@@ -44,7 +46,7 @@ function Statistics(props) {
 						}}>
 						Thống kê
 					</h1>
-					<Menu
+					{/* <Menu
 						theme='dark'
 						mode='horizontal'
 						defaultSelectedKeys={['1']}
@@ -55,7 +57,7 @@ function Statistics(props) {
 							color: '#FFFFFF',
 							fontSize: '17px',
 						}}
-					/>
+					/> */}
 				</Header>
 				<Layout>
 					<Sider width={240} className='site-layout-background'>
@@ -73,7 +75,7 @@ function Statistics(props) {
 								margin: 0,
 								minHeight: 280,
 							}}>
-							Dashboard
+							<StatisticMenu />
 						</Content>
 					</Layout>
 				</Layout>
