@@ -51,7 +51,7 @@ const LineChart = () => {
 				backgroundColor: '#FFFFFF',
 				borderRadius: '10px',
 				width: '100%',
-				height: '94%',
+				height: '95%',
 			}}
 		/>
 	)

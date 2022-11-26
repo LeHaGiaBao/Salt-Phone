@@ -53,7 +53,7 @@ function Product(props) {
 						<Content
 							className='site-layout-background'
 							style={{
-								padding: 24,
+								padding: 20,
 								height: '100%',
 								margin: 0,
 								minHeight: 280,
@@ -61,7 +61,6 @@ function Product(props) {
 							<h1
 								style={{
 									fontSize: '20px',
-									paddingBottom: 20,
 								}}>
 								Điện thoại
 							</h1>
