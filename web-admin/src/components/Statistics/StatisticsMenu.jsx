@@ -13,13 +13,13 @@ function StatisticMenu() {
 					<Card className='font-bold'>
 						<Statistic
 							title='Khách hàng'
-							value={11.28}
-							precision={2}
+							value={2000}
+							// precision={2}
 							valueStyle={{
-								color: '#23BFCE',
+								color: '#FEBE8C',
 							}}
 							prefix={<BiUser />}
-							suffix='%'
+							// suffix='Người'
 						/>
 					</Card>
 				</Col>
@@ -27,13 +27,13 @@ function StatisticMenu() {
 					<Card className='font-bold'>
 						<Statistic
 							title='Sản phẩm'
-							value={9.3}
-							precision={2}
+							value={1000}
+							// precision={2}
 							valueStyle={{
 								color: '#23BFCE',
 							}}
 							prefix={<MdPhoneIphone />}
-							suffix='%'
+							// suffix='Sản phẩm'
 						/>
 					</Card>
 				</Col>
@@ -41,13 +41,13 @@ function StatisticMenu() {
 					<Card className='font-bold'>
 						<Statistic
 							title='Bán ra'
-							value={11.28}
-							precision={2}
+							value={1500}
+							// precision={2}
 							valueStyle={{
 								color: '#1DD1A1',
 							}}
 							prefix={<BsFillCartCheckFill />}
-							suffix='%'
+							// suffix='Sản phẩm'
 						/>
 					</Card>
 				</Col>
@@ -55,13 +55,13 @@ function StatisticMenu() {
 					<Card className='font-bold'>
 						<Statistic
 							title='Doanh thu'
-							value={9.3}
-							precision={2}
+							value={1000000000}
+							// precision={2}
 							valueStyle={{
 								color: '#E7492D',
 							}}
 							prefix={<AiOutlineLineChart />}
-							suffix='%'
+							suffix='đ'
 						/>
 					</Card>
 				</Col>

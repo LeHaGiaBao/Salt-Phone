@@ -52,7 +52,7 @@ function Customer(props) {
 						<Content
 							className='site-layout-background'
 							style={{
-								padding: 24,
+								padding: 20,
 								height: '100%',
 								margin: 0,
 								minHeight: 280,
