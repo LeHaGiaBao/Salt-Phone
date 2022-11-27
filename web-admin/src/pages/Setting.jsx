@@ -1,8 +1,11 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
+import axios from 'axios'
 
 const {Header, Content, Sider} = Layout
+
+const baseURL = 'http://127.0.0.1:8000/api/phones'
 
 const getItem = (label, key) => {
 	return {
@@ -12,9 +15,17 @@ const getItem = (label, key) => {
 }
 
 function Setting(props) {
+	const [phone, setPhone] = useState(null)
+
 	useEffect(() => {
-		document.title = 'Cài đặt'
-	}, 1)
+		axios.get(baseURL).then((response) => {
+			setPhone(response.data)
+		})
+	}, [])
+
+	// useEffect(() => {
+	// 	document.title = 'Cài đặt'
+	// }, 1)
 
 	return (
 		<div>
@@ -57,6 +68,7 @@ function Setting(props) {
 								minHeight: 280,
 							}}>
 							Dashboard
+							<h1>{phone}</h1>
 						</Content>
 					</Layout>
 				</Layout>
