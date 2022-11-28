@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const {Header, Content, Sider} = Layout
 
-const baseURL = 'http://127.0.0.1:8000/api/phones'
+const baseURL = 'http://127.0.0.1:8000/api/dienthoai'
 
 const getItem = (label, key) => {
 	return {
@@ -15,13 +15,15 @@ const getItem = (label, key) => {
 }
 
 function Setting(props) {
-	const [phone, setPhone] = useState(null)
+	const [posts, setPosts] = useState(null)
 
 	useEffect(() => {
 		axios.get(baseURL).then((response) => {
-			setPhone(response.data)
+			setPosts(response.data)
 		})
 	}, [])
+
+	if (!posts) return null
 
 	// useEffect(() => {
 	// 	document.title = 'Cài đặt'
@@ -68,7 +70,16 @@ function Setting(props) {
 								minHeight: 280,
 							}}>
 							Dashboard
-							<h1>{phone}</h1>
+							{posts.map((post) => {
+								return (
+									<div className='post-card' key={post.id}>
+										<h2 className='post-title'>
+											{post.tendienthoai}
+										</h2>
+										<img src={post.hinhanh} />
+									</div>
+								)
+							})}
 						</Content>
 					</Layout>
 				</Layout>
