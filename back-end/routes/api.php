@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\PhoneController;
-use App\Models\Phone;
+use App\Http\Controllers\DienthoaiController;
+use App\Http\Controllers\HangdienthoaiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,12 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('phones', PhoneController::class);
-
-// Route::get('/phones', function () {
-//     return Phone::all()->toJson();
-// });
-
-// Route::get('/phones/{id}', function () {
-//     return Phone::all()->toJson();
-// });
+Route::apiResource('hangdienthoai', HangdienthoaiController::class);
+Route::apiResource('dienthoai', DienthoaiController::class);
