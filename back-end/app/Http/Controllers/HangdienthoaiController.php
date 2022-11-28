@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Phone;
+use App\Models\Hangdienthoai;
 use Illuminate\Http\Request;
 
-class PhoneController extends Controller
+class HangdienthoaiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class PhoneController extends Controller
      */
     public function index()
     {
-        // $phone = Phone::all();
-        // return response()->json($phone);
-        return Phone::all();
+        $hangdienthoai = Hangdienthoai::all();
+        return response()->json($hangdienthoai);
     }
 
     /**
@@ -37,35 +36,43 @@ class PhoneController extends Controller
      */
     public function store(Request $request)
     {
-        if (Phone::where($request->all())->count() > 0) {
+        $request->validate([
+            'tenhangdienthoai' => 'required',
+        ]);
+
+        if (Hangdienthoai::where($request->all())->count() > 0) {
             return response()->json([
                 'Status' => true,
-                'Message' => 'Dien thoai da ton tai!',
+                'Message' => 'Hang dien thoai da ton tai!',
             ], 200);
         } else {
-            $phone = Phone::create($request->all());
-            return response()->json($phone);
+            $hangdienthoai = Hangdienthoai::create($request->all());
+
+            return response()->json([
+                'message' => 'Hang dien thoai tao thanh cong',
+                'Hang dien thoai' => $hangdienthoai
+            ], 200);
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Phone  $phone
+     * @param  \App\Models\Hangdienthoai  $hangdienthoai
      * @return \Illuminate\Http\Response
      */
-    public function show(Phone $phone)
+    public function show(Hangdienthoai $hangdienthoai)
     {
-        return response()->json($phone);
+        return response()->json($hangdienthoai);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Phone  $phone
+     * @param  \App\Models\Hangdienthoai  $hangdienthoai
      * @return \Illuminate\Http\Response
      */
-    public function edit(Phone $phone)
+    public function edit(Hangdienthoai $hangdienthoai)
     {
         //
     }
@@ -74,39 +81,37 @@ class PhoneController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Phone  $phone
+     * @param  \App\Models\Hangdienthoai  $hangdienthoai
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Phone $phone)
+    public function update(Request $request, Hangdienthoai $hangdienthoai)
     {
-        if (Phone::where($request->all())->count() < 0) {
+        if (Hangdienthoai::where($request->all())->count() < 0) {
             return response()->json([
                 'Status' => true,
-                'Message' => 'Dien thoai khong ton tai!',
+                'Message' => 'Hang dien thoai khong ton tai!',
             ], 200);
         } else {
-            $phone->update($request->all());
-            return response()->json([
-                $phone
-            ], 200);
+            $hangdienthoai->update($request->all());
+            return response()->json($hangdienthoai);
         }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Phone  $phone
+     * @param  \App\Models\Hangdienthoai  $hangdienthoai
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Phone $phone)
+    public function destroy(Hangdienthoai $hangdienthoai)
     {
-        if (!$phone) {
+        if (!$hangdienthoai) {
             return response()->json([
                 'Status' => true,
                 'Message' => "Hang dien thoai khong ton tai!",
             ], 200);
         } else {
-            $phone->delete();
+            $hangdienthoai->delete();
             return response()->json([
                 'Status' => true,
                 'Message' => "Xoa hang dien thoai thanh cong!",
