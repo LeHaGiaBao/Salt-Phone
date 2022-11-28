@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('dienthoais', function (Blueprint $table) {
             $table->id()->unique()->nullable(false);
             $table->text('tendienthoai')->nullable(false);
+            $table->text('hangdienthoai')->nullable(false);
             $table->text('hinhanh')->nullable(false);
             $table->integer('giadienthoai')->nullable(false);
             $table->text('manhinh')->nullable(false);
@@ -27,7 +28,6 @@ return new class extends Migration
             $table->integer('bonho')->nullable(false);
             $table->integer('dungluongpin')->nullable(false);
             $table->integer('soluong')->nullable(false);
-            $table->foreignId('mahangdienthoai')->constrained('hangdienthoais');
             $table->timestamps();
         });
     }

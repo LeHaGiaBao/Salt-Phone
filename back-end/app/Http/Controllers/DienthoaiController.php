@@ -48,7 +48,7 @@ class DienthoaiController extends Controller
             'bonho'  => 'required',
             'dungluongpin'  => 'required',
             'soluong'  => 'required',
-            'mahangdienthoai'  => 'required',
+            'hangdienthoai'  => 'required',
         ]);
 
         if (Dienthoai::where($request->all())->count() > 0) {

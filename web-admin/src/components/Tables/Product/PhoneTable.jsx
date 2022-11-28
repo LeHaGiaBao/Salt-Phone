@@ -1,46 +1,51 @@
-import React, {useState} from 'react'
-import {Button, Form, Input, Popconfirm, Table} from 'antd'
-import iphone14 from '../../../assets/image/iphone14.png'
-import iphone14plus from '../../../assets/image/iphone14plus.jpg'
-import iphone14promax from '../../../assets/image/iphone14promax.png'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+import {Table} from 'antd'
 import PhoneDetail from '../../Drawer/Product/PhoneDetail'
 
-function PhoneTable(props) {
-	const [dataSource, setDataSource] = useState([
-		{
-			key: '0',
-			name: 'Iphone 14',
-			brand: 'Apple',
-			image: <img src={iphone14} />,
-			price: 24990000,
-			amount: 100,
-			operate: <PhoneDetail />,
-		},
-		{
-			key: '1',
-			name: 'Iphone 14 Plus',
-			brand: 'Apple',
-			image: <img src={iphone14plus} />,
-			price: 27990000,
-			amount: 200,
-			operate: <PhoneDetail />,
-		},
-		{
-			key: '2',
-			name: 'Iphone 14 Pro Max',
-			brand: 'Apple',
-			image: <img src={iphone14promax} />,
-			price: 33990000,
-			amount: 300,
-			operate: <PhoneDetail />,
-		},
-	])
+function PhoneTable() {
+	const [state, setstate] = useState([])
+	useEffect(() => {
+		getData()
+	}, [])
 
-	const defaultColumns = [
+	const getData = async () => {
+		await axios.get('http://127.0.0.1:8000/api/dienthoai').then((res) => {
+			setstate(
+				res.data.map((row) => ({
+					id: row.id,
+					name: row.tendienthoai,
+					brand: row.hangdienthoai,
+					image: <img src={row.hinhanh} />,
+					price: row.giadienthoai,
+					amount: row.soluong,
+					operate: (
+						<PhoneDetail
+							hinhanh={row.hinhanh}
+							tendienthoai={row.tendienthoai}
+							manhinh={row.manhinh}
+							hangdienthoai={row.hangdienthoai}
+							giadienthoai={row.giadienthoai}
+							camerasau={row.camerasau}
+							cameratruoc={row.camerasau}
+							cpu={row.cpu}
+							hedieuhanh={row.hedieuhanh}
+							ram={row.ram}
+							bonho={row.bonho}
+							dungluongpin={row.dungluongpin}
+							soluong={row.soluong}
+						/>
+					),
+				}))
+			)
+		})
+	}
+
+	const columns = [
 		{
 			title: 'Tên điện thoại',
 			dataIndex: 'name',
-			width: '20%',
+			width: '12%',
 		},
 		{
 			title: 'Hãng điện thoại',
@@ -71,32 +76,13 @@ function PhoneTable(props) {
 		},
 	]
 
-	const columns = defaultColumns.map((col) => {
-		if (!col.editable) {
-			return col
-		}
-		return {
-			...col,
-			onCell: (record) => ({
-				// record,
-				// editable: col.editable,
-				dataIndex: col.dataIndex,
-				title: col.title,
-				// handleSave,
-			}),
-		}
-	})
-
 	return (
-		<div>
-			<Table
-				columns={columns}
-				dataSource={dataSource}
-				// scroll={{
-				// 	y: 500,
-				// }}
-			/>
-		</div>
+		<Table
+			columns={columns}
+			dataSource={state}
+			pagination={{pageSize: 50}}
+			// scroll={{y: 240}}
+		/>
 	)
 }
 
