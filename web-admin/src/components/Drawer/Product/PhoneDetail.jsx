@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {ExclamationCircleFilled, PlusOutlined} from '@ant-design/icons'
 import {
 	Button,
@@ -15,6 +15,7 @@ import {
 } from 'antd'
 import {BiEdit} from 'react-icons/bi'
 import iphone14 from '../../../assets/image/iphone14.png'
+import axios from 'axios'
 
 const {Option} = Select
 
@@ -24,7 +25,6 @@ const showDeleteConfirm = () => {
 	confirm({
 		title: 'Bạn có chắc muốn xoá điện thoại này không?',
 		icon: <ExclamationCircleFilled />,
-		// content: 'Some descriptions',
 		okText: 'Yes',
 		okType: 'danger',
 		cancelText: 'No',
@@ -38,7 +38,7 @@ const showDeleteConfirm = () => {
 	})
 }
 
-function PhoneDetail() {
+function PhoneDetail(props) {
 	const [open, setOpen] = useState(false)
 
 	const showDrawer = () => {
@@ -74,7 +74,7 @@ function PhoneDetail() {
 				}>
 				<Row>
 					<Col span={10}>
-						<img src={iphone14} className='w-96 h-96 mt-20' />
+						<img src={props.hinhanh} className='w-96 h-96 mt-20' />
 					</Col>
 					<Col span={5} className='mt-8 text-xl'>
 						<div className='inline-flex'>
@@ -120,50 +120,58 @@ function PhoneDetail() {
 						<div className='inline-flex'>
 							<p className='text-right font-bold'>Pin: </p>
 						</div>
+						<br />
+						<div className='inline-flex'>
+							<p className='text-right font-bold'>Số lượng: </p>
+						</div>
 					</Col>
 					<Col span={7} className='mt-8 text-xl'>
 						<div className='inline-flex'>
-							<p className='text-right'>iPhone 14</p>
+							<p className='text-right'>{props.tendienthoai}</p>
 						</div>
 						<br />
 						<div className='inline-flex'>
-							<p className='right-0'>Apple </p>
+							<p className='right-0'>{props.hangdienthoai} </p>
 						</div>
 						<br />
 						<div className='inline-flex'>
-							<p className='right-0'>24.990.000</p>
+							<p className='right-0'>{props.giadienthoai}đ</p>
 						</div>
 						<br />
 						<div className='inline-flex'>
-							<p className='right-0'>OLED6.1"Super Retina XDR</p>
+							<p className='right-0'>{props.manhinh}</p>
 						</div>
 						<br />
 						<div className='inline-flex'>
-							<p className='right-0'>2 camera 12 MP</p>
+							<p className='right-0'>{props.camerasau}</p>
 						</div>
 						<br />
 						<div className='inline-flex'>
-							<p className='right-0'>12 MP</p>
+							<p className='right-0'>{props.cameratruoc}</p>
 						</div>
 						<br />
 						<div className='inline-flex'>
-							<p className='right-0'>iOS 16</p>
+							<p className='right-0'>{props.hedieuhanh}</p>
 						</div>
 						<br />
 						<div className='inline-flex'>
-							<p className='right-0'>Apple A15 Bionic</p>
+							<p className='right-0'>{props.cpu}</p>
 						</div>
 						<br />
 						<div className='inline-flex'>
-							<p className='right-0'>4GB</p>
+							<p className='right-0'>{props.ram}GB</p>
 						</div>
 						<br />
 						<div className='inline-flex'>
-							<p className='right-0'>128 GB</p>
+							<p className='right-0'>{props.bonho}GB</p>
 						</div>
 						<br />
 						<div className='inline-flex'>
-							<p className='right-0'>3279mAh</p>
+							<p className='right-0'>{props.dungluongpin}mAh</p>
+						</div>
+						<br />
+						<div className='inline-flex'>
+							<p className='right-0'>{props.soluong}</p>
 						</div>
 					</Col>
 				</Row>

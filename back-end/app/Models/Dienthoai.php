@@ -22,6 +22,6 @@ class Dienthoai extends Model
         'bonho',
         'dungluongpin',
         'soluong',
-        'mahangdienthoai',
+        'hangdienthoai',
     ];
 }
