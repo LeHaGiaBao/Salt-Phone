@@ -55,7 +55,7 @@ function PhoneDetail(props) {
 			</Button>
 			<Drawer
 				title='THÔNG TIN CHI TIẾT SẢN PHẨM'
-				width={900}
+				width={1000}
 				onClose={onClose}
 				open={open}
 				bodyStyle={{
@@ -73,10 +73,8 @@ function PhoneDetail(props) {
 					</Space>
 				}>
 				<Row>
-					<Col span={10}>
-						<img src={props.hinhanh} className='w-96 h-96 mt-20' />
-					</Col>
-					<Col span={5} className='mt-8 text-xl'>
+					<img src={props.hinhanh} className='w-56 h-56 mt-20' />
+					<Col span={5} className='mt-8 ml-10 text-xl'>
 						<div className='inline-flex'>
 							<p className='text-right font-bold'>Điện thoại: </p>
 						</div>
@@ -125,7 +123,7 @@ function PhoneDetail(props) {
 							<p className='text-right font-bold'>Số lượng: </p>
 						</div>
 					</Col>
-					<Col span={7} className='mt-8 text-xl'>
+					<Col span={12} className='mt-8 text-xl'>
 						<div className='inline-flex'>
 							<p className='text-right'>{props.tendienthoai}</p>
 						</div>
