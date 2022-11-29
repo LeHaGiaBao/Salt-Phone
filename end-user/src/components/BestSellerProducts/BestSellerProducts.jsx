@@ -1,63 +1,34 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './BestSellerProducts.css'
+import axios from 'axios'
 
 function BestSellerProducts() {
+	const [phones, setPhones] = useState([])
+
+	useEffect(() => {
+		axios.get('http://127.0.0.1:8000/api/dienthoai').then((response) => {
+			setPhones(response.data)
+		})
+	}, [])
+
 	return (
 		<div className='NewProduct'>
-			<h1 className='title'>SẢN PHẨM BÁN CHẠY</h1>
+			<h1 className='title'>SẢN PHẨM MỚI</h1>
 			<div className='products'>
-				<div className='product'>
-					<img
-						src='https://cdn.tgdd.vn/Products/Images/42/251192/iphone-14-pro-max-tim-thumb-600x600.jpg'
-						alt=''
-					/>
-					<p className='product-newtag'>Mới</p>
-					<h2 className='product-name'>iPhone 14 Plus</h2>
-					<p className='product-price'>27.990.000đ</p>
-					<button className='product-buynow'>Mua ngay</button>
-					<a className='product-more' href='#'>
-						Tìm hiểu thêm &gt;
-					</a>
-				</div>
-				<div className='product'>
-					<img
-						src='https://cdn.tgdd.vn/Products/Images/42/251192/iphone-14-pro-max-tim-thumb-600x600.jpg'
-						alt=''
-					/>
-					<p className='product-newtag'>Mới</p>
-					<h2 className='product-name'>iPhone 14 Pro Max</h2>
-					<p className='product-price'>33.990.000đ</p>
-					<button className='product-buynow'>Mua ngay</button>
-					<a className='product-more' href='#'>
-						Tìm hiểu thêm &gt;
-					</a>
-				</div>
-				<div className='product'>
-					<img
-						src='https://cdn.tgdd.vn/Products/Images/42/251192/iphone-14-pro-max-tim-thumb-600x600.jpg'
-						alt=''
-					/>
-					<p className='product-newtag'>Mới</p>
-					<h2 className='product-name'>Samsung Galaxy Z Flip4 5G</h2>
-					<p className='product-price'>27.990.000đ</p>
-					<button className='product-buynow'>Mua ngay</button>
-					<a className='product-more' href='#'>
-						Tìm hiểu thêm &gt;
-					</a>
-				</div>
-				<div className='product'>
-					<img
-						src='https://cdn.tgdd.vn/Products/Images/42/251192/iphone-14-pro-max-tim-thumb-600x600.jpg'
-						alt=''
-					/>
-					<p className='product-newtag'>Mới</p>
-					<h2 className='product-name'>OPPO Reno8 Pro 5G</h2>
-					<p className='product-price'>18.990.000đ</p>
-					<button className='product-buynow'>Mua ngay</button>
-					<a className='product-more' href='#'>
-						Tìm hiểu thêm &gt;
-					</a>
-				</div>
+				{phones.map((phone) => {
+					return (
+						<div className='product'>
+							<img src={phone.hinhanh} alt='' />
+							<p className='product-newtag'>Mới</p>
+							<h2 className='product-name'>{phone.tendienthoai}</h2>
+							<p className='product-price'>{phone.giadienthoai}</p>
+							<button className='product-buynow'>Mua ngay</button>
+							<a className='product-more' href='#'>
+								Tìm hiểu thêm &gt;
+							</a>
+						</div>
+					)
+				})}
 			</div>
 			<a className='more' href='#'>
 				Xem thêm sản phẩm &gt;
