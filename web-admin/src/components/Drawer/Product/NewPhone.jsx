@@ -18,7 +18,7 @@ import axios from 'axios'
 const {Option} = Select
 
 function NewPhone() {
-	const [phone, setPhone] = useState({
+	const [input, setInput] = useState({
 		tendienthoai: '',
 		hinhanh: '',
 		giadienthoai: '',
@@ -34,6 +34,22 @@ function NewPhone() {
 		hangdienthoai: '',
 	})
 
+	const handleChange = (e) => {
+		const {value, name} = e.target
+		setInput({...input, [name]: value})
+	}
+
+	const handleSubmit = (e) => {
+		setOpen(false)
+		e.preventDefault()
+		const data = {...input}
+
+		axios.post('http://127.0.0.1:8000/api/dienthoai/').then((res) => {
+			setInput(res.data)
+			console.log(res.data)
+		})
+	}
+
 	const [open, setOpen] = useState(false)
 
 	const showDrawer = () => {
@@ -42,22 +58,6 @@ function NewPhone() {
 
 	const onClose = () => {
 		setOpen(false)
-
-		axios.post('http://127.0.0.1:8000/api/dienthoai/', {
-			tendienthoai: 'iPhone 14 256GB',
-			hinhanh: 'https://cdn.tgdd.vn/Products/Images/42/289663/iPhone-14-plus-thumb-den-600x600.jpg',
-			giadienthoai: 27990000,
-			manhinh: 'OLED6.1"Super Retina XDR',
-			camerasau: '2 camera 12 MP',
-			cameratruoc: '12MP',
-			cpu: 'Apple A15 Bionic',
-			hedieuhanh: 'iOS 16',
-			ram: 4,
-			bonho: 256,
-			dungluongpin: 3279,
-			soluong: 150,
-			hangdienthoai: 'Apple',
-		})
 	}
 
 	return (
@@ -80,7 +80,7 @@ function NewPhone() {
 					<Space>
 						<Button onClick={onClose}>Cancel</Button>
 						<Button
-							onClick={onClose}
+							onClick={handleSubmit}
 							type='primary'
 							className='bg-primary font-bold'>
 							Submit
@@ -100,7 +100,8 @@ function NewPhone() {
 								]}>
 								<Input
 									placeholder='iPhone 14'
-									value={phone.tendienthoai}
+									value={input.tendienthoai}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -115,7 +116,8 @@ function NewPhone() {
 								]}>
 								<Input
 									placeholder='Apple'
-									value={phone.hangdienthoai}
+									value={input.hangdienthoai}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -132,7 +134,8 @@ function NewPhone() {
 								]}>
 								<Input
 									placeholder='OLED6.1"Super Retina XDR'
-									value={phone.manhinh}
+									value={input.manhinh}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -147,7 +150,8 @@ function NewPhone() {
 								]}>
 								<Input
 									placeholder='iOS 16'
-									value={phone.hedieuhanh}
+									value={input.hedieuhanh}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -164,7 +168,8 @@ function NewPhone() {
 								]}>
 								<Input
 									placeholder='Apple A15 Bionic'
-									value={phone.cpu}
+									value={input.cpu}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -180,7 +185,8 @@ function NewPhone() {
 								<InputNumber
 									placeholder='3279'
 									style={{width: '100%'}}
-									value={phone.dungluongpin}
+									value={input.dungluongpin}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -198,7 +204,8 @@ function NewPhone() {
 								<InputNumber
 									placeholder='4'
 									style={{width: '100%'}}
-									value={phone.ram}
+									value={input.ram}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -214,7 +221,8 @@ function NewPhone() {
 								<InputNumber
 									placeholder='128'
 									style={{width: '100%'}}
-									value={phone.bonho}
+									value={input.bonho}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -231,7 +239,8 @@ function NewPhone() {
 								]}>
 								<Input
 									placeholder='2 camera 12 MP'
-									value={phone.camerasau}
+									value={input.camerasau}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -246,7 +255,8 @@ function NewPhone() {
 								]}>
 								<Input
 									placeholder='12 MP'
-									value={phone.cameratruoc}
+									value={input.cameratruoc}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -264,7 +274,8 @@ function NewPhone() {
 								<InputNumber
 									placeholder='27990000'
 									style={{width: '100%'}}
-									value={phone.giadienthoai}
+									value={input.giadienthoai}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -280,7 +291,8 @@ function NewPhone() {
 								<InputNumber
 									placeholder='100'
 									style={{width: '100%'}}
-									value={phone.soluong}
+									value={input.soluong}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
@@ -297,7 +309,8 @@ function NewPhone() {
 								]}>
 								<Input
 									placeholder='Link hình'
-									value={phone.hinhanh}
+									value={input.hinhanh}
+									onChange={(e) => e.target.value}
 								/>
 							</Form.Item>
 						</Col>
