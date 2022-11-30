@@ -212,6 +212,10 @@
     color: #000000;
 }
 
+.content_form_birth {
+    display: flex;
+}
+
 .flex-between {
     display: flex;
 }
@@ -223,6 +227,22 @@
 .content_password {
     display: none;
 }
+
+.content_form_item_change_icon {
+    display: none;
+}
+
+.content_form_item_change_icon {
+    width: 20px;
+    color: #4FCFE6;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 
 
 
