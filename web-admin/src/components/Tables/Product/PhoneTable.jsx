@@ -21,6 +21,7 @@ function PhoneTable() {
 					amount: row.soluong,
 					operate: (
 						<PhoneDetail
+							id={row.id}
 							hinhanh={row.hinhanh}
 							tendienthoai={row.tendienthoai}
 							manhinh={row.manhinh}

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DienthoaiController;
-use App\Http\Controllers\HangdienthoaiController;
+use App\Http\Controllers\KhachhangController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('hangdienthoai', HangdienthoaiController::class);
 Route::apiResource('dienthoai', DienthoaiController::class);
+Route::apiResource('khachhang', KhachhangController::class);
