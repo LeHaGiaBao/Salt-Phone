@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('khachhangs', function (Blueprint $table) {
+        Schema::create('taikhoans', function (Blueprint $table) {
             $table->id()->unique()->nullable(false);
-            $table->text('hovaten')->nullable(false);
             $table->string('email')->unique()->nullable(false);
-            $table->string('sodienthoai')->unique()->nullable(false);
-            $table->boolean('gioitinh')->nullable(false);
-            $table->date('ngaysinh')->nullable(false);
+            $table->string('matkhau')->nullable(false);
+            $table->foreignId('makhachhang')->constrained('khachhangs');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('khachhangs');
+        Schema::dropIfExists('taikhoans');
     }
 };

@@ -12,13 +12,8 @@ class Khachhang extends Model
     protected $fillable = [
         'hovaten',
         'email',
-        'password',
         'sodienthoai',
         'gioitinh',
         'ngaysinh',
-    ];
-
-    protected $hidden = [
-        'password',
     ];
 }

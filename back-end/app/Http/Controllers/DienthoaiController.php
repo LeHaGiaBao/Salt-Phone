@@ -61,7 +61,7 @@ class DienthoaiController extends Controller
 
             return response()->json([
                 'message' => 'Dien thoai tao thanh cong',
-                'Hang dien thoai' => $dienthoai
+                'Dien thoai' => $dienthoai
             ], 200);
         }
     }

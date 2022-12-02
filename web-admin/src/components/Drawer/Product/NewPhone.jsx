@@ -40,11 +40,14 @@ function NewPhone() {
 	}
 
 	const handleSubmit = (e) => {
-		setOpen(false)
 		e.preventDefault()
+	}
+
+	const handleSetInput = () => {
+		setOpen(false)
 		const data = {...input}
 
-		axios.post('http://127.0.0.1:8000/api/dienthoai/').then((res) => {
+		axios.post('http://127.0.0.1:8000/api/dienthoai/', {}).then((res) => {
 			setInput(res.data)
 			console.log(res.data)
 		})
@@ -80,14 +83,14 @@ function NewPhone() {
 					<Space>
 						<Button onClick={onClose}>Cancel</Button>
 						<Button
-							onClick={handleSubmit}
+							onClick={handleSetInput}
 							type='primary'
 							className='bg-primary font-bold'>
 							Submit
 						</Button>
 					</Space>
 				}>
-				<Form layout='vertical' hideRequiredMark>
+				<Form layout='vertical' hideRequiredMark onChange={handleSubmit}>
 					<Row gutter={16}>
 						<Col span={12}>
 							<Form.Item
@@ -101,7 +104,7 @@ function NewPhone() {
 								<Input
 									placeholder='iPhone 14'
 									value={input.tendienthoai}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -117,7 +120,7 @@ function NewPhone() {
 								<Input
 									placeholder='Apple'
 									value={input.hangdienthoai}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -135,7 +138,7 @@ function NewPhone() {
 								<Input
 									placeholder='OLED6.1"Super Retina XDR'
 									value={input.manhinh}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -151,7 +154,7 @@ function NewPhone() {
 								<Input
 									placeholder='iOS 16'
 									value={input.hedieuhanh}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -169,7 +172,7 @@ function NewPhone() {
 								<Input
 									placeholder='Apple A15 Bionic'
 									value={input.cpu}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -186,7 +189,7 @@ function NewPhone() {
 									placeholder='3279'
 									style={{width: '100%'}}
 									value={input.dungluongpin}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -205,7 +208,7 @@ function NewPhone() {
 									placeholder='4'
 									style={{width: '100%'}}
 									value={input.ram}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -222,7 +225,7 @@ function NewPhone() {
 									placeholder='128'
 									style={{width: '100%'}}
 									value={input.bonho}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -240,7 +243,7 @@ function NewPhone() {
 								<Input
 									placeholder='2 camera 12 MP'
 									value={input.camerasau}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -256,7 +259,7 @@ function NewPhone() {
 								<Input
 									placeholder='12 MP'
 									value={input.cameratruoc}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -275,7 +278,7 @@ function NewPhone() {
 									placeholder='27990000'
 									style={{width: '100%'}}
 									value={input.giadienthoai}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -292,7 +295,7 @@ function NewPhone() {
 									placeholder='100'
 									style={{width: '100%'}}
 									value={input.soluong}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
@@ -310,7 +313,7 @@ function NewPhone() {
 								<Input
 									placeholder='Link hình'
 									value={input.hinhanh}
-									onChange={(e) => e.target.value}
+									onChange={handleChange}
 								/>
 							</Form.Item>
 						</Col>
