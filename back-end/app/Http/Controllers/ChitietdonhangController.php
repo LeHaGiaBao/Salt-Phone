@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Khachhang;
+use App\Models\Chitietdonhang;
 use Illuminate\Http\Request;
 
-class KhachhangController extends Controller
+class ChitietdonhangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class KhachhangController extends Controller
      */
     public function index()
     {
-        $khachhang = Khachhang::all();
-        return response()->json($khachhang);
+        $chitietdonhang = Chitietdonhang::all();
+        return response()->json($chitietdonhang);
     }
 
     /**
@@ -37,24 +37,22 @@ class KhachhangController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'hovaten' => 'required',
-            'email'  => 'required',
-            'sodienthoai'  => 'required',
-            'gioitinh'  => 'required',
-            'ngaysinh'  => 'required',
+            'madonhang'  => 'required',
+            'masanpham'  => 'required',
+            'soluong' => 'required',
         ]);
 
-        if (Khachhang::where($request->all())->count() > 0) {
+        if (Chitietdonhang::where($request->all())->count() > 0) {
             return response()->json([
                 'Status' => true,
-                'Message' => 'Khach hang da ton tai!',
+                'Message' => 'Chi tiet don hang da ton tai!',
             ], 200);
         } else {
-            $khachhang = Khachhang::create($request->all());
+            $chitietdonhang = Chitietdonhang::create($request->all());
 
             return response()->json([
-                'message' => 'Khach hang tao thanh cong',
-                'Khach hang' => $khachhang
+                'message' => 'Chi tiet don hang tao thanh cong',
+                'Hang dien thoai' => $chitietdonhang
             ], 200);
         }
     }
@@ -62,21 +60,21 @@ class KhachhangController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Khachhang  $khachhang
+     * @param  \App\Models\Chitietdonhang  $chitietdonhang
      * @return \Illuminate\Http\Response
      */
-    public function show(Khachhang $khachhang)
+    public function show(Chitietdonhang $chitietdonhang)
     {
-        return response()->json($khachhang);
+        return response()->json($chitietdonhang);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Khachhang  $khachhang
+     * @param  \App\Models\Chitietdonhang  $chitietdonhang
      * @return \Illuminate\Http\Response
      */
-    public function edit(Khachhang $khachhang)
+    public function edit(Chitietdonhang $chitietdonhang)
     {
         //
     }
@@ -85,40 +83,40 @@ class KhachhangController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Khachhang  $khachhang
+     * @param  \App\Models\Chitietdonhang  $chitietdonhang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Khachhang $khachhang)
+    public function update(Request $request, Chitietdonhang $chitietdonhang)
     {
-        if (Khachhang::where($request->all())->count() < 0) {
+        if (Chitietdonhang::where($request->all())->count() < 0) {
             return response()->json([
                 'Status' => true,
-                'Message' => 'Khach hang khong ton tai!',
+                'Message' => 'Chi tiet don hang khong ton tai!',
             ], 200);
         } else {
-            $khachhang->update($request->all());
-            return response()->json($khachhang);
+            $chitietdonhang->update($request->all());
+            return response()->json($chitietdonhang);
         }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Khachhang  $khachhang
+     * @param  \App\Models\Chitietdonhang  $chitietdonhang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Khachhang $khachhang)
+    public function destroy(Chitietdonhang $chitietdonhang)
     {
-        if (!$khachhang) {
+        if (!$chitietdonhang) {
             return response()->json([
                 'Status' => true,
-                'Message' => "Khach hang khong ton tai!",
+                'Message' => "Chi tiet don hang khong ton tai!",
             ], 200);
         } else {
-            $khachhang->delete();
+            $chitietdonhang->delete();
             return response()->json([
                 'Status' => true,
-                'Message' => "Xoa khach hang thanh cong!",
+                'Message' => "Xoa chi tiet don hang thanh cong!",
             ], 200);
         }
     }

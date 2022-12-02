@@ -29,13 +29,13 @@ function SignInForm() {
 					{/* Điền thông tin */}
 					<form action='' className='m-t-4'>
 						<div className='label-input'>
-							<label htmlFor=''>Số điện thoại</label>
+							<label htmlFor=''>Email</label>
 							<br />
 							<input
 								type='text'
 								name=''
 								id=''
-								placeholder='0967xxxxxx'
+								// placeholder='0967xxxxxx'
 								className='p-t-16px input-box p-b-8px'
 							/>
 							<div className='label-input_line'></div>
@@ -46,7 +46,7 @@ function SignInForm() {
 							<div className='input-password'>
 								<input
 									type={passwordShow ? 'text' : 'password'}
-									placeholder='************'
+									// placeholder='************'
 									className='p-t-16px input-box'
 								/>
 								<BsEyeFill
@@ -57,7 +57,7 @@ function SignInForm() {
 							<div className='label-input_line'></div>
 						</div>
 					</form>
-					<div className='signIn-form_text p-t-24px'>
+					{/* <div className='signIn-form_text p-t-24px'>
 						Bạn quên mật khẩu?{' '}
 						<Link to='/RecoverPassword'>
 							<a
@@ -66,9 +66,9 @@ function SignInForm() {
 								Khôi phục ngay
 							</a>
 						</Link>
-					</div>
+					</div> */}
 					<Link to='/Dashboard'>
-						<button className='sign-in-btn bg-color-blue-color m-t-24px'>
+						<button className='sign-in-btn bg-color-blue-color mt-16'>
 							Đăng nhập
 						</button>{' '}
 					</Link>

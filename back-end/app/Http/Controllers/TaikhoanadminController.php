@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Khachhang;
+use App\Models\Taikhoanadmin;
 use Illuminate\Http\Request;
 
-class KhachhangController extends Controller
+class TaikhoanadminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class KhachhangController extends Controller
      */
     public function index()
     {
-        $khachhang = Khachhang::all();
-        return response()->json($khachhang);
+        $taikhoanadmin = Taikhoanadmin::all();
+        return response()->json($taikhoanadmin);
     }
 
     /**
@@ -37,24 +37,21 @@ class KhachhangController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'hovaten' => 'required',
-            'email'  => 'required',
-            'sodienthoai'  => 'required',
-            'gioitinh'  => 'required',
-            'ngaysinh'  => 'required',
+            'email' => 'required',
+            'matkhau' => 'required',
         ]);
 
-        if (Khachhang::where($request->all())->count() > 0) {
+        if (Taikhoanadmin::where($request->all())->count() > 0) {
             return response()->json([
                 'Status' => true,
-                'Message' => 'Khach hang da ton tai!',
+                'Message' => 'Tai khoan da ton tai!',
             ], 200);
         } else {
-            $khachhang = Khachhang::create($request->all());
+            $taikhoanadmin = Taikhoanadmin::create($request->all());
 
             return response()->json([
-                'message' => 'Khach hang tao thanh cong',
-                'Khach hang' => $khachhang
+                'message' => 'Tai khoan tao thanh cong',
+                'Tai khoan' => $taikhoanadmin
             ], 200);
         }
     }
@@ -62,21 +59,21 @@ class KhachhangController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Khachhang  $khachhang
+     * @param  \App\Models\Taikhoanadmin  $taikhoanadmin
      * @return \Illuminate\Http\Response
      */
-    public function show(Khachhang $khachhang)
+    public function show(Taikhoanadmin $taikhoanadmin)
     {
-        return response()->json($khachhang);
+        return response()->json($taikhoanadmin);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Khachhang  $khachhang
+     * @param  \App\Models\Taikhoanadmin  $taikhoanadmin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Khachhang $khachhang)
+    public function edit(Taikhoanadmin $taikhoanadmin)
     {
         //
     }
@@ -85,40 +82,40 @@ class KhachhangController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Khachhang  $khachhang
+     * @param  \App\Models\Taikhoanadmin  $taikhoanadmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Khachhang $khachhang)
+    public function update(Request $request, Taikhoanadmin $taikhoanadmin)
     {
-        if (Khachhang::where($request->all())->count() < 0) {
+        if (Taikhoanadmin::where($request->all())->count() < 0) {
             return response()->json([
                 'Status' => true,
-                'Message' => 'Khach hang khong ton tai!',
+                'Message' => 'Tai khoan khong ton tai!',
             ], 200);
         } else {
-            $khachhang->update($request->all());
-            return response()->json($khachhang);
+            $taikhoanadmin->update($request->all());
+            return response()->json($taikhoanadmin);
         }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Khachhang  $khachhang
+     * @param  \App\Models\Taikhoanadmin  $taikhoanadmin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Khachhang $khachhang)
+    public function destroy(Taikhoanadmin $taikhoanadmin)
     {
-        if (!$khachhang) {
+        if (!$taikhoanadmin) {
             return response()->json([
                 'Status' => true,
-                'Message' => "Khach hang khong ton tai!",
+                'Message' => "Tai khoan khong ton tai!",
             ], 200);
         } else {
-            $khachhang->delete();
+            $taikhoanadmin->delete();
             return response()->json([
                 'Status' => true,
-                'Message' => "Xoa khach hang thanh cong!",
+                'Message' => "Xoa tai khoan thanh cong!",
             ], 200);
         }
     }

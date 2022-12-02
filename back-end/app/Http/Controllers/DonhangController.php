@@ -14,7 +14,8 @@ class DonhangController extends Controller
      */
     public function index()
     {
-        //
+        $donhang = Donhang::all();
+        return response()->json($donhang);
     }
 
     /**
@@ -35,7 +36,27 @@ class DonhangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tongsotien' => 'required',
+            'ngaymuahang' => 'required',
+            'diachigiaohang' => 'required',
+            'trangthaidonhang' => 'required',
+            'makhachhang' => 'required',
+        ]);
+
+        if (Donhang::where($request->all())->count() > 0) {
+            return response()->json([
+                'Status' => true,
+                'Message' => 'Dien thoai da ton tai!',
+            ], 200);
+        } else {
+            $donhang = Donhang::create($request->all());
+
+            return response()->json([
+                'message' => 'Dien thoai tao thanh cong',
+                'Don hang' => $donhang
+            ], 200);
+        }
     }
 
     /**
@@ -46,7 +67,7 @@ class DonhangController extends Controller
      */
     public function show(Donhang $donhang)
     {
-        //
+        return response()->json($donhang);
     }
 
     /**
@@ -69,7 +90,15 @@ class DonhangController extends Controller
      */
     public function update(Request $request, Donhang $donhang)
     {
-        //
+        if (Donhang::where($request->all())->count() < 0) {
+            return response()->json([
+                'Status' => true,
+                'Message' => 'Dien thoai khong ton tai!',
+            ], 200);
+        } else {
+            $donhang->update($request->all());
+            return response()->json($donhang);
+        }
     }
 
     /**
@@ -80,6 +109,17 @@ class DonhangController extends Controller
      */
     public function destroy(Donhang $donhang)
     {
-        //
+        if (!$donhang) {
+            return response()->json([
+                'Status' => true,
+                'Message' => 'Don hang khong ton tai',
+            ], 200);
+        } else {
+            $donhang->delete();
+            return response()->json([
+                'Status' => true,
+                'Message' => "Xoa don hang thanh cong!",
+            ], 200);
+        }
     }
 }
