@@ -14,29 +14,8 @@ import {
 	Modal,
 } from 'antd'
 import {BiEdit} from 'react-icons/bi'
-import iphone14 from '../../../assets/image/iphone14.png'
 import axios from 'axios'
-
-const {Option} = Select
-
-const {confirm} = Modal
-
-const showDeleteConfirm = () => {
-	confirm({
-		title: 'Bạn có chắc muốn xoá điện thoại này không?',
-		icon: <ExclamationCircleFilled />,
-		okText: 'Yes',
-		okType: 'danger',
-		cancelText: 'No',
-		width: '35%',
-		onOk() {
-			console.log('OK')
-		},
-		onCancel() {
-			console.log('Cancel')
-		},
-	})
-}
+import Swal from 'sweetalert2'
 
 function PhoneDetail(props) {
 	const [open, setOpen] = useState(false)
@@ -50,7 +29,10 @@ function PhoneDetail(props) {
 
 	return (
 		<>
-			<Button type='primary' onClick={showDrawer} className='bg-primary'>
+			<Button
+				type='primary'
+				onClick={showDrawer}
+				className='bg-[#31d1a9] mr-2 font-bold font-extrabold'>
 				Chi tiết
 			</Button>
 			<Drawer
@@ -60,18 +42,7 @@ function PhoneDetail(props) {
 				open={open}
 				bodyStyle={{
 					paddingBottom: 80,
-				}}
-				extra={
-					<Space>
-						<Button onClick={onClose}>Cancel</Button>
-						<Button
-							onClick={onClose}
-							type='primary'
-							className='bg-primary font-bold'>
-							OK
-						</Button>
-					</Space>
-				}>
+				}}>
 				<Row>
 					<img src={props.hinhanh} className='w-56 h-56 mt-20' />
 					<Col span={5} className='mt-8 ml-10 text-xl'>
@@ -174,18 +145,6 @@ function PhoneDetail(props) {
 					</Col>
 				</Row>
 				<Divider />
-				<div className='w-full text-center mt-10'>
-					<button className='text-2xl font-semibold text-white bg-first hover:bg-primary w-6/12 h-14  rounded-lg'>
-						Chỉnh sửa
-					</button>
-				</div>
-				<div className='w-full text-center mt-5'>
-					<button
-						className='text-2xl font-semibold text-white bg-red-500 hover:bg-red-700 w-6/12 h-14  rounded-lg'
-						onClick={showDeleteConfirm}>
-						Xoá điện thoại
-					</button>
-				</div>
 			</Drawer>
 		</>
 	)

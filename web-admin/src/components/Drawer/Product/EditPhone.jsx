@@ -15,7 +15,7 @@ import {
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
-function NewPhone() {
+function EditPhone(props) {
 	const [phone, setPhone] = useState({
 		tendienthoai: '',
 		hangdienthoai: '',
@@ -60,8 +60,7 @@ function NewPhone() {
 
 	const handleSubmitButton = () => {
 		setOpen(false)
-		Swal.fire('Nhập điện thoại thành công!', '', 'success')
-		// window.location.reload()
+		Swal.fire('Cập nhật điện thoại thành công!', '', 'success')
 	}
 
 	const handleChange = (e) => {
@@ -70,7 +69,7 @@ function NewPhone() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		axios.post('http://127.0.0.1:8000/api/dienthoai/', phone)
+		axios.put(`http://127.0.0.1:8000/api/dienthoai/${props.id}`, phone)
 			.then((response) => console.log(response))
 			.catch((error) => console.log(error))
 	}
@@ -80,8 +79,8 @@ function NewPhone() {
 			<Button
 				type='primary'
 				onClick={showDrawer}
-				className='text-lg h-10 w-48 font-bold'>
-				Sản phẩm mới
+				className='bg-[#1777F2] mr-2 font-extrabold'>
+				Cập nhật
 			</Button>
 			<Drawer
 				title='Thêm sản phẩm mới'
@@ -99,6 +98,7 @@ function NewPhone() {
 							name='tendienthoai'
 							value={phone.tendienthoai}
 							onChange={handleChange}
+							placeholder={props.tendienthoai}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -109,6 +109,7 @@ function NewPhone() {
 							name='hangdienthoai'
 							value={phone.hangdienthoai}
 							onChange={handleChange}
+							placeholder={props.hangdienthoai}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -120,6 +121,7 @@ function NewPhone() {
 							name='hinhanh'
 							value={phone.hinhanh}
 							onChange={handleChange}
+							placeholder={props.hinhanh}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -131,6 +133,7 @@ function NewPhone() {
 							name='giadienthoai'
 							value={phone.giadienthoai}
 							onChange={handleChange}
+							placeholder={props.giadienthoai}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -142,6 +145,7 @@ function NewPhone() {
 							name='manhinh'
 							value={phone.manhinh}
 							onChange={handleChange}
+							placeholder={props.manhinh}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -153,6 +157,7 @@ function NewPhone() {
 							name='camerasau'
 							value={phone.camerasau}
 							onChange={handleChange}
+							placeholder={props.camerasau}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -164,6 +169,7 @@ function NewPhone() {
 							name='cameratruoc'
 							value={phone.cameratruoc}
 							onChange={handleChange}
+							placeholder={props.cameratruoc}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -175,6 +181,7 @@ function NewPhone() {
 							name='cpu'
 							value={phone.cpu}
 							onChange={handleChange}
+							placeholder={props.cpu}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -186,6 +193,7 @@ function NewPhone() {
 							name='hedieuhanh'
 							value={phone.hedieuhanh}
 							onChange={handleChange}
+							placeholder={props.hedieuhanh}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -197,6 +205,7 @@ function NewPhone() {
 							name='ram'
 							value={phone.ram}
 							onChange={handleChange}
+							placeholder={props.ram}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -208,6 +217,7 @@ function NewPhone() {
 							name='bonho'
 							value={phone.bonho}
 							onChange={handleChange}
+							placeholder={props.bonho}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -219,6 +229,7 @@ function NewPhone() {
 							name='dungluongpin'
 							value={phone.dungluongpin}
 							onChange={handleChange}
+							placeholder={props.dungluongpin}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -230,6 +241,7 @@ function NewPhone() {
 							name='soluong'
 							value={phone.soluong}
 							onChange={handleChange}
+							placeholder={props.soluong}
 							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
 						/>
 					</div>
@@ -246,4 +258,4 @@ function NewPhone() {
 	)
 }
 
-export default NewPhone
+export default EditPhone
