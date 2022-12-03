@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {Table} from 'antd'
 import PhoneDetail from '../../Drawer/Product/PhoneDetail'
-import DeletePhone from '../../Button/Product/DeletePhone'
+import DeletePhone from '../../Drawer/Product/DeletePhone'
 import EditPhone from '../../Drawer/Product/EditPhone'
 
 function PhoneTable() {
@@ -94,7 +94,7 @@ function PhoneTable() {
 		{
 			title: 'Thao tác',
 			dataIndex: 'operate',
-			width: '25%',
+			width: '20%',
 		},
 	]
 
@@ -102,7 +102,7 @@ function PhoneTable() {
 		<Table
 			columns={columns}
 			dataSource={state}
-			pagination={{pageSize: 50}}
+			pagination={{pageSize: 5}}
 			// scroll={{y: 240}}
 		/>
 	)

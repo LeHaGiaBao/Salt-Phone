@@ -60,7 +60,7 @@ function EditPhone(props) {
 
 	const handleSubmitButton = () => {
 		setOpen(false)
-		Swal.fire('Nhập điện thoại thành công!', '', 'success')
+		Swal.fire('Cập nhật điện thoại thành công!', '', 'success')
 	}
 
 	const handleChange = (e) => {
@@ -76,7 +76,10 @@ function EditPhone(props) {
 
 	return (
 		<>
-			<Button type='primary' onClick={showDrawer} className='bg-primary'>
+			<Button
+				type='primary'
+				onClick={showDrawer}
+				className='bg-[#1777F2] mr-2 font-extrabold'>
 				Cập nhật
 			</Button>
 			<Drawer

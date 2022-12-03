@@ -29,7 +29,10 @@ function PhoneDetail(props) {
 
 	return (
 		<>
-			<Button type='primary' onClick={showDrawer} className='bg-primary'>
+			<Button
+				type='primary'
+				onClick={showDrawer}
+				className='bg-[#31d1a9] mr-2 font-bold font-extrabold'>
 				Chi tiết
 			</Button>
 			<Drawer

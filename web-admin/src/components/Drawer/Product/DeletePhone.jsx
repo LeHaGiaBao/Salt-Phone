@@ -25,7 +25,10 @@ function DeletePhone(props) {
 	}
 
 	return (
-		<Button type='primary' onClick={handleDelete} className='bg-primary'>
+		<Button
+			type='primary'
+			onClick={handleDelete}
+			className='bg-red-500 font-extrabold hover:bg-red-700'>
 			Xoá
 		</Button>
 	)
