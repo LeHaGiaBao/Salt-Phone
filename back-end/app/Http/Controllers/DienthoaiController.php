@@ -37,6 +37,7 @@ class DienthoaiController extends Controller
     {
         $request->validate([
             'tendienthoai'  => 'required',
+            'hangdienthoai'  => 'required',
             'hinhanh'  => 'required',
             'giadienthoai'  => 'required',
             'manhinh'  => 'required',
@@ -48,7 +49,6 @@ class DienthoaiController extends Controller
             'bonho'  => 'required',
             'dungluongpin'  => 'required',
             'soluong'  => 'required',
-            'hangdienthoai'  => 'required',
         ]);
 
         if (Dienthoai::where($request->all())->count() > 0) {

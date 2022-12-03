@@ -12,14 +12,13 @@ import {
 	Select,
 	Space,
 } from 'antd'
-
 import axios from 'axios'
-
-const {Option} = Select
+import Swal from 'sweetalert2'
 
 function NewPhone() {
-	const [input, setInput] = useState({
+	const [phone, setPhone] = useState({
 		tendienthoai: '',
+		hangdienthoai: '',
 		hinhanh: '',
 		giadienthoai: '',
 		manhinh: '',
@@ -31,27 +30,23 @@ function NewPhone() {
 		bonho: '',
 		dungluongpin: '',
 		soluong: '',
-		hangdienthoai: '',
 	})
 
-	const handleChange = (e) => {
-		const {value, name} = e.target
-		setInput({...input, [name]: value})
-	}
-
-	const handleSubmit = (e) => {
-		e.preventDefault()
-	}
-
-	const handleSetInput = () => {
-		setOpen(false)
-		const data = {...input}
-
-		axios.post('http://127.0.0.1:8000/api/dienthoai/', {}).then((res) => {
-			setInput(res.data)
-			console.log(res.data)
-		})
-	}
+	const {
+		tendienthoai,
+		hangdienthoai,
+		hinhanh,
+		giadienthoai,
+		manhinh,
+		camerasau,
+		cameratruoc,
+		cpu,
+		hedieuhanh,
+		ram,
+		bonho,
+		dungluongpin,
+		soluong,
+	} = phone
 
 	const [open, setOpen] = useState(false)
 
@@ -61,6 +56,18 @@ function NewPhone() {
 
 	const onClose = () => {
 		setOpen(false)
+		Swal.fire('Nhập điện thoại thành công!', '', 'success')
+	}
+
+	const handleChange = (e) => {
+		setPhone({...phone, [e.target.name]: e.target.value})
+	}
+
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		axios.post('http://127.0.0.1:8000/api/dienthoai/', phone)
+			.then((response) => console.log(response))
+			.catch((error) => console.log(error))
 	}
 
 	return (
@@ -72,255 +79,166 @@ function NewPhone() {
 				Sản phẩm mới
 			</Button>
 			<Drawer
-				title='Thêm điện thoại mới'
-				width={720}
+				title='Thêm sản phẩm mới'
+				width={600}
 				onClose={onClose}
 				open={open}
 				bodyStyle={{
 					paddingBottom: 80,
-				}}
-				extra={
-					<Space>
-						<Button onClick={onClose}>Cancel</Button>
-						<Button
-							onClick={handleSetInput}
-							type='primary'
-							className='bg-primary font-bold'>
-							Submit
-						</Button>
-					</Space>
-				}>
-				<Form layout='vertical' hideRequiredMark onChange={handleSubmit}>
-					<Row gutter={16}>
-						<Col span={12}>
-							<Form.Item
-								name='tendienthoai'
-								label='Tên điện thoại'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<Input
-									placeholder='iPhone 14'
-									value={input.tendienthoai}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-						<Col span={12}>
-							<Form.Item
-								name='hangdienthoai'
-								label='Hãng điện thoại'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<Input
-									placeholder='Apple'
-									value={input.hangdienthoai}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-					</Row>
-					<Row gutter={16}>
-						<Col span={12}>
-							<Form.Item
-								name='manhinh'
-								label='Màn hình'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<Input
-									placeholder='OLED6.1"Super Retina XDR'
-									value={input.manhinh}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-						<Col span={12}>
-							<Form.Item
-								name='hedieuhanh'
-								label='Hệ điều hành'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<Input
-									placeholder='iOS 16'
-									value={input.hedieuhanh}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-					</Row>
-					<Row gutter={16}>
-						<Col span={12}>
-							<Form.Item
-								name='cpu'
-								label='CPU'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<Input
-									placeholder='Apple A15 Bionic'
-									value={input.cpu}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-						<Col span={12}>
-							<Form.Item
-								name='duongluongpin'
-								label='Pin'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<InputNumber
-									placeholder='3279'
-									style={{width: '100%'}}
-									value={input.dungluongpin}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-					</Row>
-					<Row gutter={16}>
-						<Col span={12}>
-							<Form.Item
-								name='ram'
-								label='RAM'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<InputNumber
-									placeholder='4'
-									style={{width: '100%'}}
-									value={input.ram}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-						<Col span={12}>
-							<Form.Item
-								name='bonho'
-								label='Bộ nhớ'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<InputNumber
-									placeholder='128'
-									style={{width: '100%'}}
-									value={input.bonho}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-					</Row>
-					<Row gutter={16}>
-						<Col span={12}>
-							<Form.Item
-								name='camerasau'
-								label='Camera sau'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<Input
-									placeholder='2 camera 12 MP'
-									value={input.camerasau}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-						<Col span={12}>
-							<Form.Item
-								name='cameratruoc'
-								label='Camera trước'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<Input
-									placeholder='12 MP'
-									value={input.cameratruoc}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-					</Row>
-					<Row gutter={16}>
-						<Col span={12}>
-							<Form.Item
-								name='giadienthoai'
-								label='Giá điện thoại'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<InputNumber
-									placeholder='27990000'
-									style={{width: '100%'}}
-									value={input.giadienthoai}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-						<Col span={12}>
-							<Form.Item
-								name='soluong'
-								label='Số lượng'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<InputNumber
-									placeholder='100'
-									style={{width: '100%'}}
-									value={input.soluong}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-					</Row>
-					<Row gutter={16}>
-						<Col span={24}>
-							<Form.Item
-								name='hinhanh'
-								label='Link hình ảnh'
-								rules={[
-									{
-										required: true,
-									},
-								]}>
-								<Input
-									placeholder='Link hình'
-									value={input.hinhanh}
-									onChange={handleChange}
-								/>
-							</Form.Item>
-						</Col>
-					</Row>
-				</Form>
+				}}>
+				<form onSubmit={handleSubmit}>
+					<div>
+						<h1>Tên điện thoại</h1>
+						<input
+							type='text'
+							name='tendienthoai'
+							value={phone.tendienthoai}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+					<h1>Hãng điện thoại</h1>
+					<div>
+						<input
+							type='text'
+							name='hangdienthoai'
+							value={phone.hangdienthoai}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<h1>Link hình ảnh</h1>
+					<div>
+						<input
+							type='text'
+							name='hinhanh'
+							value={phone.hinhanh}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<div>
+						<h1>Giá điện thoại</h1>
+						<input
+							type='number'
+							name='giadienthoai'
+							value={phone.giadienthoai}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<div>
+						<h1>Màn hình</h1>
+						<input
+							type='text'
+							name='manhinh'
+							value={phone.manhinh}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<div>
+						<h1>Camera sau</h1>
+						<input
+							type='text'
+							name='camerasau'
+							value={phone.camerasau}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<div>
+						<h1>Camera trước</h1>
+						<input
+							type='text'
+							name='cameratruoc'
+							value={phone.cameratruoc}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<div>
+						<h1>CPU</h1>
+						<input
+							type='text'
+							name='cpu'
+							value={phone.cpu}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<div>
+						<h1>Hệ điều hành</h1>
+						<input
+							type='text'
+							name='hedieuhanh'
+							value={phone.hedieuhanh}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<div>
+						<h1>RAM</h1>
+						<input
+							type='number'
+							name='ram'
+							value={phone.ram}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<div>
+						<h1>Bộ nhớ</h1>
+						<input
+							type='number'
+							name='bonho'
+							value={phone.bonho}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<div>
+						<h1>Dung lượng pin</h1>
+						<input
+							type='number'
+							name='dungluongpin'
+							value={phone.dungluongpin}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<div>
+						<h1>Số lượng</h1>
+						<input
+							type='number'
+							name='soluong'
+							value={phone.soluong}
+							onChange={handleChange}
+							class='w-full rounded-md border border-[#e0e0e0] bg-white py-1 px-3 mb-2 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+						/>
+					</div>
+
+					<button
+						type='submit'
+						className='block mt-5 uppercase mx-auto shadow bg-primary hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded'
+						onClick={onClose}>
+						submit
+					</button>
+				</form>
 			</Drawer>
 		</>
 	)
 }
+
 export default NewPhone

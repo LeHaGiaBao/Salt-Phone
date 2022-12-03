@@ -3,6 +3,7 @@ import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
 import PhoneTable from '../components/Tables/Product/PhoneTable'
 import NewPhone from '../components/Drawer/Product/NewPhone'
+import Test from '../components/Drawer/Product/Test'
 
 const {Header, Content, Sider} = Layout
 

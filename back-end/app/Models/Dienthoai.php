@@ -11,6 +11,7 @@ class Dienthoai extends Model
 
     protected $fillable = [
         'tendienthoai',
+        'hangdienthoai',
         'hinhanh',
         'giadienthoai',
         'manhinh',
@@ -22,6 +23,5 @@ class Dienthoai extends Model
         'bonho',
         'dungluongpin',
         'soluong',
-        'hangdienthoai',
     ];
 }
