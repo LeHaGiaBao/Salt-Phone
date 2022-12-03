@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {Table} from 'antd'
 import PhoneDetail from '../../Drawer/Product/PhoneDetail'
+import DeletePhone from '../../Button/Product/DeletePhone'
 
 function PhoneTable() {
 	const [state, setstate] = useState([])
@@ -20,22 +21,25 @@ function PhoneTable() {
 					price: row.giadienthoai,
 					amount: row.soluong,
 					operate: (
-						<PhoneDetail
-							id={row.id}
-							hinhanh={row.hinhanh}
-							tendienthoai={row.tendienthoai}
-							manhinh={row.manhinh}
-							hangdienthoai={row.hangdienthoai}
-							giadienthoai={row.giadienthoai}
-							camerasau={row.camerasau}
-							cameratruoc={row.camerasau}
-							cpu={row.cpu}
-							hedieuhanh={row.hedieuhanh}
-							ram={row.ram}
-							bonho={row.bonho}
-							dungluongpin={row.dungluongpin}
-							soluong={row.soluong}
-						/>
+						<div>
+							<PhoneDetail
+								id={row.id}
+								hinhanh={row.hinhanh}
+								tendienthoai={row.tendienthoai}
+								manhinh={row.manhinh}
+								hangdienthoai={row.hangdienthoai}
+								giadienthoai={row.giadienthoai}
+								camerasau={row.camerasau}
+								cameratruoc={row.camerasau}
+								cpu={row.cpu}
+								hedieuhanh={row.hedieuhanh}
+								ram={row.ram}
+								bonho={row.bonho}
+								dungluongpin={row.dungluongpin}
+								soluong={row.soluong}
+							/>
+							<DeletePhone id={row.id} />
+						</div>
 					),
 				}))
 			)
@@ -73,7 +77,7 @@ function PhoneTable() {
 		{
 			title: 'Thao tác',
 			dataIndex: 'operate',
-			width: '10%',
+			width: '25%',
 		},
 	]
 

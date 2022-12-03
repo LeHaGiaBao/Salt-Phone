@@ -56,7 +56,12 @@ function NewPhone() {
 
 	const onClose = () => {
 		setOpen(false)
+	}
+
+	const handleSubmitButton = () => {
+		setOpen(false)
 		Swal.fire('Nhập điện thoại thành công!', '', 'success')
+		// window.location.reload()
 	}
 
 	const handleChange = (e) => {
@@ -231,8 +236,8 @@ function NewPhone() {
 
 					<button
 						type='submit'
-						className='block mt-5 uppercase mx-auto shadow bg-primary hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded'
-						onClick={onClose}>
+						className='block mt-5 uppercase mx-auto shadow font-bold bg-primary hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded'
+						onClick={handleSubmitButton}>
 						submit
 					</button>
 				</form>
