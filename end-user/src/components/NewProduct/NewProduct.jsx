@@ -13,8 +13,9 @@ function NewProduct() {
 	}, [])
 
 	return (
-		<div className='NewProduct'>
-			<h1 className='title'>SẢN PHẨM MỚI</h1>
+		<div className='NewProduct mb-20'>
+			<h1 className='title'>SẢN PHẨM KINH DOANH</h1>
+			<br />
 			<div className='products'>
 				{phones.map((phone) => {
 					return (
@@ -24,7 +25,7 @@ function NewProduct() {
 							<h2 className='product-name'>{phone.tendienthoai}</h2>
 							<p className='product-price'>{phone.giadienthoai}</p>
 							<button className='product-buynow'>Mua ngay</button>
-							<a className='product-more' href='#'>
+							<a className='product-more' href='/ProductInfo'>
 								Tìm hiểu thêm &gt;
 							</a>
 						</div>

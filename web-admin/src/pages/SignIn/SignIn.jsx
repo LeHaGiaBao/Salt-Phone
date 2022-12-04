@@ -35,31 +35,31 @@ function SignInForm() {
 		e.preventDefault()
 	}
 
+	useEffect(() => {})
+
 	const handleSignIn = () => {
 		if (input.email !== '' && input.password !== '') {
-			axios.get('http://127.0.0.1:8000/api/dienthoai').then((response) => {
-				setData(response.data)
-				for (let key in data) {
-					if (
-						input.email === 'admin@gmail.com' &&
-						input.password === '123'
-					) {
-						history('/Dashboard')
-						Swal.fire({
-							icon: 'success',
-							title: 'Đăng nhập thành công',
-							showConfirmButton: false,
-							timer: 1500,
-						})
-					} else {
-						Swal.fire({
-							icon: 'error',
-							title: 'Oops...',
-							text: 'Tài khoản đăng nhập không đúng',
-						})
-					}
-				}
-			})
+			if (input.email === 'admin@gmail.com' && input.password === '123') {
+				history('/Dashboard')
+				Swal.fire({
+					icon: 'success',
+					title: 'Đăng nhập thành công',
+					showConfirmButton: false,
+					timer: 1500,
+				})
+			} else {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Tài khoản đăng nhập không đúng',
+				})
+			}
+			// axios.get('http://127.0.0.1:8000/api/dienthoai').then((response) => {
+			// 	setData(response.data)
+			// })
+			// for (let key in data) {
+
+			// }
 		} else {
 			Swal.fire({
 				icon: 'warning',

@@ -4,6 +4,7 @@ import {Table} from 'antd'
 import PhoneDetail from '../../Drawer/Product/PhoneDetail'
 import DeletePhone from '../../Drawer/Product/DeletePhone'
 import EditPhone from '../../Drawer/Product/EditPhone'
+import Highlighter from 'react-highlight-words'
 
 function PhoneTable() {
 	const [state, setstate] = useState([])

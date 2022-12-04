@@ -9,11 +9,13 @@ function Header() {
 		<header>
 			<ul className='main-nav'>
 				<div className='desktop'>
+					<Link to='/'>
+						<li>
+							<a href='#'>Salt Phone </a>
+						</li>
+					</Link>
 					<li>
-						<a href='#'>Salt Phone </a>
-					</li>
-					<li>
-						<a href='#'>Điện thoại</a>
+						<a href='/ListPhone'>Điện thoại</a>
 						<ul className='sub-nav-dth'>
 							<li>
 								<a href='#'>iPhone</a>
@@ -72,7 +74,7 @@ function Header() {
 						</div>
 					</li>
 					<li>
-						<a href='#'>
+						<a href='/Cart'>
 							<FiShoppingCart />
 						</a>
 					</li>

@@ -11,6 +11,8 @@ import RecoverPasswordOTP from './pages/RecoverPasswordOTP/RecoverPasswordOTP'
 import NewPassword from './pages/NewPassword/NewPassword'
 import PageNotFound from './pages/PageNotFound/PageNotFound'
 import ProductInfo from './pages/ProductInfo'
+import ListPhone from './pages/ListPhone'
+import Cart from './pages/Cart'
 
 const router = createBrowserRouter([
 	{
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
 	{
 		path: '/ProductInfo',
 		element: <ProductInfo />,
+	},
+	{
+		path: '/ListPhone',
+		element: <ListPhone />,
+	},
+	{
+		path: '/Cart',
+		element: <Cart />,
 	},
 ])
 
