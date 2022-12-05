@@ -5,12 +5,12 @@ import NewProduct from '../components/NewProduct/NewProduct'
 import BestSellerProducts from '../components/BestSellerProducts/BestSellerProducts'
 import TopAccessory from '../components/TopAccessory/TopAccessory'
 import Footer from '../containers/Footer/Footer'
-import UserInformation from '../pages/UserInformation/UserInformation'
+import SignIn from '../pages/SignIn/SignIn'
 
 function Home() {
 	return (
 		<div>
-			<UserInformation></UserInformation>
+			<SignIn></SignIn>
 		</div>
 	)
 }

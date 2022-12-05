@@ -5,7 +5,7 @@ import google from '../../assets/image/google.png'
 import {BsEyeFill} from 'react-icons/bs'
 import {Link} from 'react-router-dom'
 
-function SignInForm() {
+function SignIn() {
 	const [passwordShow, setPasswordShow] = useState(false)
 
 	const togglePasswordVisibility = () => {
@@ -14,16 +14,16 @@ function SignInForm() {
 
 	return (
 		<div className='screen'>
-			<div className='container m-t-4'>
+			<div className='container-signIn m-t-4'>
 				<a className='signIn-img'>
 					<img src={Form} alt='' />
 				</a>
 
-				<div className='signIn-form'>
+				<div className='signin-form'>
 					{/* Tiêu đề */}
 					<h2 className='signIn-form_title'>Đăng nhập</h2>
 					{/* Điền thông tin */}
-					<form action='' className='m-t-4'>
+					<form action='' className='m-t-4 form-signIn'>
 						<div className='label-input'>
 							<label htmlFor=''>Số điện thoại</label>
 							<br />
@@ -80,4 +80,4 @@ function SignInForm() {
 	)
 }
 
-export default SignInForm
+export default SignIn

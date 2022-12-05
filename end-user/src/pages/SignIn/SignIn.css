@@ -10,12 +10,12 @@
     justify-content: center;
 }
 
-.container {
+.container-signIn {
     width: 78%;
     height: 70%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -69,10 +69,10 @@ input.input-box, textarea {
 }
 
 /* Form chung */
-.signIn-form {
+.signin-form {
     position: relative;
     left: 0;
-    width: 46%;
+    width: 50%;
 }
 
 .signIn-form_title {
@@ -125,4 +125,26 @@ input.input-box, textarea {
 .input-password {
     display: flex;
     justify-content: space-between;
+}
+
+@media only screen and (max-width: 1023px) {
+
+    .container-signIn {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .signIn-img {
+        display: none;
+    }
+
+    .signin-form {
+        width: 80%;
+    }
+
+    .form-signIn {
+        margin-top: 80px;
+    }
+
 }
