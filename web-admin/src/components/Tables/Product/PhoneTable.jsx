@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import {Table} from 'antd'
+import {Table} from 'ant-table-extensions'
 import PhoneDetail from '../../Drawer/Product/PhoneDetail'
 import DeletePhone from '../../Drawer/Product/DeletePhone'
 import EditPhone from '../../Drawer/Product/EditPhone'
-import Highlighter from 'react-highlight-words'
+import Fuse from 'fuse.js'
 
 function PhoneTable() {
 	const [state, setstate] = useState([])
@@ -104,6 +104,7 @@ function PhoneTable() {
 			columns={columns}
 			dataSource={state}
 			pagination={{pageSize: 5}}
+			// searchable
 			// scroll={{y: 240}}
 		/>
 	)

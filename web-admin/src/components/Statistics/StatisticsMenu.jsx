@@ -14,12 +14,10 @@ function StatisticMenu() {
 						<Statistic
 							title='Khách hàng'
 							value={2000}
-							// precision={2}
 							valueStyle={{
 								color: '#FEBE8C',
 							}}
 							prefix={<BiUser />}
-							// suffix='Người'
 						/>
 					</Card>
 				</Col>
@@ -28,12 +26,10 @@ function StatisticMenu() {
 						<Statistic
 							title='Sản phẩm'
 							value={1000}
-							// precision={2}
 							valueStyle={{
 								color: '#23BFCE',
 							}}
 							prefix={<MdPhoneIphone />}
-							// suffix='Sản phẩm'
 						/>
 					</Card>
 				</Col>
@@ -42,12 +38,10 @@ function StatisticMenu() {
 						<Statistic
 							title='Bán ra'
 							value={1500}
-							// precision={2}
 							valueStyle={{
 								color: '#1DD1A1',
 							}}
 							prefix={<BsFillCartCheckFill />}
-							// suffix='Sản phẩm'
 						/>
 					</Card>
 				</Col>
@@ -56,7 +50,6 @@ function StatisticMenu() {
 						<Statistic
 							title='Doanh thu'
 							value={1000000000}
-							// precision={2}
 							valueStyle={{
 								color: '#E7492D',
 							}}

@@ -14,7 +14,7 @@ class Taikhoanadmin extends Model
         'matkhau',
     ];
 
-    protected $hidden = [
-        'matkhau',
-    ];
+    // protected $hidden = [
+    //     'matkhau',
+    // ];
 }

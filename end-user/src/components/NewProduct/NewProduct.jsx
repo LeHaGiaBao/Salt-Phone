@@ -25,9 +25,7 @@ function NewProduct() {
 							<h2 className='product-name'>{phone.tendienthoai}</h2>
 							<p className='product-price'>{phone.giadienthoai}</p>
 							<button className='product-buynow'>Mua ngay</button>
-							<a
-								className='product-more'
-								href={`/ProductInfo/${phone.id}`}>
+							<a className='product-more' href='/ProductInfo'>
 								Tìm hiểu thêm &gt;
 							</a>
 						</div>
