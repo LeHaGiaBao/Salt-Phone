@@ -32,7 +32,7 @@ function NewProduct() {
 					)
 				})}
 			</div>
-			<a className='more' href='#'>
+			<a className='more' href='/ListPhone'>
 				Xem thêm sản phẩm &gt;
 			</a>
 		</div>

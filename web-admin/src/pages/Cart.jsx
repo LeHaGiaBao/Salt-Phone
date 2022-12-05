@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
+import CartTableTest from '../components/Tables/Cart/CartTableTest'
 import CartTable from '../components/Tables/Cart/CartTable'
 
 const {Header, Content, Sider} = Layout
@@ -64,6 +65,8 @@ function Cart(props) {
 								}}>
 								Chi tiết giỏ hàng
 							</h1>
+							<CartTableTest />
+
 							<CartTable />
 						</Content>
 					</Layout>

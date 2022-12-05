@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
 import CustomerTable from '../components/Tables/Customer/CustomerTable'
+import Test from '../components/Tables/Customer/Test'
 
 const {Header, Content, Sider} = Layout
 
@@ -64,6 +65,7 @@ function Customer(props) {
 								}}>
 								Danh sách khách hàng
 							</h1>
+							<Test />
 							<CustomerTable />
 						</Content>
 					</Layout>

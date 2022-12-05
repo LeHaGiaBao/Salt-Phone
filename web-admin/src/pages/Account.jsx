@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
+import AccountTable from '../components/Tables/Account/AccountTable'
 
 const {Header, Content, Sider} = Layout
 
@@ -56,7 +57,14 @@ function Account(props) {
 								margin: 0,
 								minHeight: 280,
 							}}>
-							Dashboard
+							<h1
+								style={{
+									fontSize: '20px',
+									paddingBottom: 20,
+								}}>
+								Danh sách tài khoản
+							</h1>
+							<AccountTable />
 						</Content>
 					</Layout>
 				</Layout>

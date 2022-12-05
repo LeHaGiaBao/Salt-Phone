@@ -10,8 +10,6 @@ function ListPhone(props) {
 		<div>
 			<Header />
 			<div className='mt-20'>
-				{/* <Brand />
-				<ListProducts /> */}
 				<NewProduct />
 			</div>
 			<Footer />
