@@ -5,6 +5,8 @@ import {BiUserCircle} from 'react-icons/bi'
 import {BsPen} from 'react-icons/bs'
 import {AiOutlineUser} from 'react-icons/ai'
 import {TbReportMoney} from 'react-icons/tb'
+import {FiEdit2} from 'react-icons/fi'
+
 
 function UserInformation() {
     return (
@@ -54,7 +56,6 @@ function UserInformation() {
 
                     <div className="content_text">
                         <div className="content_text_title">Quản lý thông tin cá nhân</div>
-                        <a href="" className="content_text_edit">Chỉnh sửa</a>
                     </div>
 
                     <table className="content_form">
@@ -70,18 +71,24 @@ function UserInformation() {
                             <td  className="content_form_item_label">
                                 <label htmlFor="">Email</label>
                             </td>
-                            <td  className="flex content_form_item_input">
-                                <div className="w-312 w-260 content_form_item_input">user***********@gmail.com</div>
+                            <td  className="flex content_form_item_input content_form_change">
+                                <div className="w-312 w-260 content_form_item_input content_form_item_input_change">user***********@gmail.com</div>
                                 <a href="" className="content_form_item_change">Thay đổi</a>
+                                <div className="content_form_item_change_icon">
+                                    <FiEdit2></FiEdit2>
+                                </div>
                             </td>
                         </tr>
                         <tr className="content_form_item">
                             <td  className="content_form_item_label">
                                 <label htmlFor="">Số điện thoại</label>
                             </td>
-                            <td  className="flex content_form_item_input">
-                                <div className="w-312 w-260 content_form_item_input">*******986</div>
+                            <td  className="flex content_form_item_input content_form_change">
+                                <div className="w-312 w-260 content_form_item_input content_form_item_input_change">*******986</div>
                                 <a href="" className="content_form_item_change">Thay đổi</a>
+                                <div className="content_form_item_change_icon">
+                                    <FiEdit2></FiEdit2>
+                                </div>
                             </td>
                         </tr>
                         <tr className="content_form_item">
@@ -94,12 +101,12 @@ function UserInformation() {
                                 <input type="checkbox" className="content_form_item_input_item"/> Nữ
                             </td>
                         </tr>
-                        <tr className="content_form_item">
+                        <tr className="content_form_item ">
                             <td  className="content_form_item_label">
                                 <label htmlFor="">Ngày sinh</label>
 
                             </td>
-                            <td className="content_form_item_input">
+                            <td className="content_form_item_input content_form_birth">
                                 <input type="number" min={1} max={31} step={1} className="content_form_item_input_date"/>
                                 <input type="number" min={1} max={12} step={1} className="content_form_item_input_item content_form_item_input_date"/>
                                 <input type="number" min={1900} max={2022} step={1} className="content_form_item_input_item content_form_item_input_date"/>
@@ -108,13 +115,6 @@ function UserInformation() {
                         </tr>
                     </table>
 
-                    <div className="content_password">
-                        <div className="content_text_title">Mật khẩu</div>
-                        <div className="content_password_text">
-                            <div className="content_password_text_label">Đổi mật khẩu</div>
-                            <a href="" className="content_password_text_change">Đổi mật khẩu</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
