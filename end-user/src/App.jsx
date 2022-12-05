@@ -10,9 +10,9 @@ import RecoverPassword from './pages/RecoverPassword/RecoverPassword'
 import RecoverPasswordOTP from './pages/RecoverPasswordOTP/RecoverPasswordOTP'
 import NewPassword from './pages/NewPassword/NewPassword'
 import PageNotFound from './pages/PageNotFound/PageNotFound'
-import ProductInfo from './pages/ProductInfo'
 import ListPhone from './pages/ListPhone'
 import Cart from './pages/Cart'
+import ProductInformation from './pages/ProductInformation/ProductInformation'
 
 const router = createBrowserRouter([
 	{
@@ -45,11 +45,12 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '/ProductInfo',
-		element: <ProductInfo />,
+		element: <ProductInformation />,
 	},
 	{
 		path: '/ListPhone',
 		element: <ListPhone />,
+		errorElement: <PageNotFound />,
 	},
 	{
 		path: '/Cart',

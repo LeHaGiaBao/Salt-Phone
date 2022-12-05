@@ -25,14 +25,16 @@ function NewProduct() {
 							<h2 className='product-name'>{phone.tendienthoai}</h2>
 							<p className='product-price'>{phone.giadienthoai}</p>
 							<button className='product-buynow'>Mua ngay</button>
-							<a className='product-more' href='/ProductInfo'>
+							<a
+								className='product-more'
+								href={`/ProductInfo/${phone.id}`}>
 								Tìm hiểu thêm &gt;
 							</a>
 						</div>
 					)
 				})}
 			</div>
-			<a className='more' href='#'>
+			<a className='more' href='/ListPhone'>
 				Xem thêm sản phẩm &gt;
 			</a>
 		</div>
