@@ -13,6 +13,8 @@ import PageNotFound from './pages/PageNotFound/PageNotFound'
 import ListPhone from './pages/ListPhone'
 import Cart from './pages/Cart'
 import ProductInformation from './pages/ProductInformation/ProductInformation'
+import UserInformation from './pages/UserInformation/UserInformation'
+import PurchaseHistory from './pages/PurchaseHistory/PurchaseHistory'
 
 const router = createBrowserRouter([
 	{
@@ -55,6 +57,14 @@ const router = createBrowserRouter([
 	{
 		path: '/Cart',
 		element: <Cart />,
+	},
+	{
+		path: '/UserInfo',
+		element: <UserInformation />,
+	},
+	{
+		path: '/History',
+		element: <PurchaseHistory />,
 	},
 ])
 

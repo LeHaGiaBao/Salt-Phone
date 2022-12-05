@@ -113,4 +113,14 @@
     .content_password {
         display: block;
     }
+
+    .content_form_item_change_icon {
+        display: block;
+    }
+
+    .content_form_change {
+        display: flex;
+        justify-content: space-between;
+    }
+
 }
