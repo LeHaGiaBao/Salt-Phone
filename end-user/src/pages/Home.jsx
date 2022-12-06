@@ -1,19 +1,19 @@
-import React from 'react'
-import Header from '../containers/Header/Header'
-import Slider from '../containers/Slider/Slider'
-import NewProduct from '../components/NewProduct/NewProduct'
-import BestSellerProducts from '../components/BestSellerProducts/BestSellerProducts'
-import TopAccessory from '../components/TopAccessory/TopAccessory'
-import Footer from '../containers/Footer/Footer'
+import React, {useEffect} from 'react'
+import Footer from '../layouts/Footer/Footer'
+import Header from '../layouts/Header/Header'
+import Slider from '../layouts/Slider/Slider'
 
-function Home() {
+function Home(props) {
+	useEffect(() => {
+		document.title = 'Salt Phone'
+	}, 1)
+
 	return (
 		<div>
 			<Header />
-			<Slider />
-			<NewProduct />
-			<BestSellerProducts />
-			<TopAccessory />
+			<div className='mt-24'>
+				<Slider />
+			</div>
 			<Footer />
 		</div>
 	)
