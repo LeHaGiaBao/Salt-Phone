@@ -1,9 +1,0 @@
-.each-slide-effect > img {
-    display: flex;
-    align-items: center;
-    margin-top: 95px;
-    justify-content: center;
-    background-size: cover;
-    height: 500px;
-    width: 100%;
-}

@@ -3,6 +3,7 @@ import {Table, Input, Space, Button} from 'antd'
 import axios from 'axios'
 import Highlighter from 'react-highlight-words'
 import {SearchOutlined} from '@ant-design/icons'
+import CartDetail from '../../Drawer/Cart/CartDetail'
 
 function CartTable(props) {
 	const [state, setState] = useState([])
@@ -114,7 +115,7 @@ function CartTable(props) {
 	})
 
 	const getData = async () => {
-		await axios.get('http://127.0.0.1:8000/api/khachhang').then((res) => {})
+		await axios.get('http://127.0.0.1:8000/api/dienthoai').then((res) => {})
 	}
 
 	const columns = [
