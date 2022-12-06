@@ -13,7 +13,7 @@ function NewProduct() {
 	}, [])
 
 	return (
-		<div className='NewProduct mb-20'>
+		<div className='NewProduct'>
 			<h1 className='title'>SẢN PHẨM KINH DOANH</h1>
 			<br />
 			<div className='products'>
