@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import ProductCart from '../components/ProductCart/ProductCart'
-import Footer from '../containers/Footer/Footer'
-import Header from '../containers/Header/Header'
+import Footer from '../layouts/Footer/Footer'
+import Header from '../layouts/Header/Header'
 
 function Cart() {
 	useEffect(() => {
