@@ -1,7 +1,6 @@
 .NewProduct {
     width: 100%;
     height: fit-content;
-    margin-top: 10rem;
     text-align: center;
     position: relative;
 }
@@ -99,3 +98,4 @@
         width: 25%;
     }
 }
+

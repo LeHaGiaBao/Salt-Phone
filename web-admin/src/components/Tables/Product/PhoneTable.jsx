@@ -124,6 +124,8 @@ function PhoneTable() {
 					brand: row.hangdienthoai,
 					image: <img src={row.hinhanh} />,
 					price: row.giadienthoai,
+					ram: row.ram + 'GB',
+					memory: row.bonho + 'GB',
 					amount: row.soluong,
 					operate: (
 						<div>
@@ -177,7 +179,7 @@ function PhoneTable() {
 		{
 			title: 'Hãng điện thoại',
 			dataIndex: 'brand',
-			width: '12%',
+			width: '10%',
 			...getColumnSearchProps('brand'),
 		},
 		{
@@ -188,7 +190,19 @@ function PhoneTable() {
 		{
 			title: 'Giá tiền',
 			dataIndex: 'price',
-			width: '15%',
+			width: '10%',
+			sorter: (a, b) => a.price - b.price,
+		},
+		{
+			title: 'RAM',
+			dataIndex: 'ram',
+			width: '5%',
+			sorter: (a, b) => a.price - b.price,
+		},
+		{
+			title: 'Bộ nhớ',
+			dataIndex: 'memory',
+			width: '6%',
 			sorter: (a, b) => a.price - b.price,
 		},
 		{
@@ -200,7 +214,7 @@ function PhoneTable() {
 		{
 			title: 'Thao tác',
 			dataIndex: 'operate',
-			width: '20%',
+			width: '25%',
 		},
 	]
 

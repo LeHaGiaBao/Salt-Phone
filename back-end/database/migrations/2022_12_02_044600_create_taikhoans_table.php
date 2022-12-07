@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id()->unique()->nullable(false);
             $table->string('email')->unique()->nullable(false);
             $table->string('matkhau')->nullable(false);
-            $table->foreignId('makhachhang')->constrained('khachhangs');
             $table->timestamps();
         });
     }

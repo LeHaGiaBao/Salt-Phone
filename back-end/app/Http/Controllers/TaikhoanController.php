@@ -39,7 +39,6 @@ class TaikhoanController extends Controller
         $request->validate([
             'email' => 'required',
             'matkhau' => 'required',
-            'makhachhang' => 'required',
         ]);
 
         if (Taikhoan::where($request->all())->count() > 0) {

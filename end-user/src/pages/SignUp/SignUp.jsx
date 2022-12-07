@@ -1,18 +1,18 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './SignUp.css'
 import Form from '../../assets/image/Form.png'
 import {BsEyeFill} from 'react-icons/bs'
 import {Link} from 'react-router-dom'
 
-function SignUpForm() {
-	const [passwordShow1, setPasswordShow1] = useState(false)
-	const [passwordShow2, setPasswordShow2] = useState(false)
+function SignUp() {
+	useEffect(() => {
+		document.title = 'Đăng ký'
+	}, 1)
 
-	const togglePasswordVisibility1 = () => {
-		setPasswordShow1(passwordShow1 ? false : true)
-	}
-	const togglePasswordVisibility2 = () => {
-		setPasswordShow2(passwordShow2 ? false : true)
+	const [passwordShow, setPasswordShow] = useState(false)
+
+	const togglePasswordVisibility = () => {
+		setPasswordShow(passwordShow ? false : true)
 	}
 
 	return (
@@ -35,46 +35,23 @@ function SignUpForm() {
 								type='text'
 								name=''
 								id=''
-								placeholder='0967xxxxxx'
 								className='p-t-16px input-box p-b-8px'
 							/>
 							<div className='label-input_line'></div>
 						</div>
 
 						<div className='label-input p-t-40px'>
-							<label htmlFor=''>Email</label>
-							<br />
-							<input
-								type='email'
-								placeholder='abc@gmail.com'
-								className='p-t-16px input-box '
-							/>
-							<div className='label-input_line'></div>
-						</div>
-
-						<div className='label-input p-t-40px'>
 							<label htmlFor=''>Mật khẩu</label>
-							<br />
-							<input
-								type={passwordShow1 ? 'text' : 'password'}
-								placeholder='Nhapmatkhau'
-								className='p-t-16px input-box '
-							/>
-							<BsEyeFill
-								onClick={togglePasswordVisibility1}
-								className='ShowPassword'
-							/>
-							<div className='label-input_line'></div>
-
-							<input
-								type={passwordShow2 ? 'text' : 'password'}
-								placeholder='Nhaplaimatkhau'
-								className='p-t-16px input-box m-t-24px '
-							/>
-							<BsEyeFill
-								onClick={togglePasswordVisibility2}
-								className='ShowPassword'
-							/>
+							<div className='input-password'>
+								<input
+									type={passwordShow ? 'text' : 'password'}
+									className='p-t-16px input-box'
+								/>
+								<BsEyeFill
+									onClick={togglePasswordVisibility}
+									className='ShowPassword'
+								/>
+							</div>
 							<div className='label-input_line'></div>
 						</div>
 					</form>
@@ -90,4 +67,4 @@ function SignUpForm() {
 	)
 }
 
-export default SignUpForm
+export default SignUp
