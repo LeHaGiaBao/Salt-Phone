@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('sodienthoai')->unique()->nullable(false);
             $table->boolean('gioitinh')->nullable(false);
             $table->date('ngaysinh')->nullable(false);
+            $table->foreignId('mataikhoan')->constrained('taikhoans')->unique()->nullable(false);
             $table->timestamps();
         });
     }

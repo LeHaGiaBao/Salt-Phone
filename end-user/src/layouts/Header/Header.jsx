@@ -15,8 +15,8 @@ function Header() {
 						</li>
 					</Link>
 					<li>
-						<a href='/ListPhone'>Điện thoại</a>
-						<ul className='sub-nav-dth'>
+						<a href='/Phone'>Điện thoại</a>
+						{/* <ul className='sub-nav-dth'>
 							<li>
 								<a href='#'>iPhone</a>
 							</li>
@@ -41,11 +41,11 @@ function Header() {
 							<li>
 								<a href='#'>Nokia</a>
 							</li>
-						</ul>
+						</ul> */}
 					</li>
 					<li>
 						<a href='#'>Phụ kiện</a>
-						<ul className='sub-nav-pkien'>
+						{/* <ul className='sub-nav-pkien'>
 							<li>
 								<a href='#'>Tai nghe</a>
 							</li>
@@ -58,7 +58,7 @@ function Header() {
 							<li>
 								<a href='#'>Ốp lưng</a>
 							</li>
-						</ul>
+						</ul> */}
 					</li>
 					<li>
 						<a href='#'>Hỗ trợ</a>

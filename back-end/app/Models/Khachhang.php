@@ -15,5 +15,6 @@ class Khachhang extends Model
         'sodienthoai',
         'gioitinh',
         'ngaysinh',
+        'mataikhoan',
     ];
 }

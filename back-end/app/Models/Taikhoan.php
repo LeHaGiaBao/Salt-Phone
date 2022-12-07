@@ -12,7 +12,6 @@ class Taikhoan extends Model
     protected $fillable = [
         'email',
         'matkhau',
-        'makhachhang',
     ];
 
     protected $hidden = [

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import './ListProducts.css'
+import './PhoneHome.css'
 import axios from 'axios'
 
-function ListProducts() {
+function PhoneHome() {
 	const [phones, setPhones] = useState([])
 
 	useEffect(() => {
@@ -13,7 +13,7 @@ function ListProducts() {
 
 	return (
 		<div className='NewProduct'>
-			<h1 className='title'>SẢN PHẨM BÁN CHẠY</h1>
+			<h1 className='title'>SẢN PHẨM BÁN</h1>
 			<div className='products'>
 				{phones.map((phone) => {
 					return (
@@ -23,15 +23,18 @@ function ListProducts() {
 							<h2 className='product-name'>{phone.tendienthoai}</h2>
 							<p className='product-price'>{phone.giadienthoai}đ</p>
 							<button className='product-buynow'>Mua ngay</button>
-							<a className='product-more' href='#'>
+							<a className='product-more' href='/PhoneInfo'>
 								Tìm hiểu thêm &gt;
 							</a>
 						</div>
 					)
 				})}
 			</div>
+			<a className='more' href='/Phone'>
+				Xem thêm sản phẩm &gt;
+			</a>
 		</div>
 	)
 }
 
-export default ListProducts
+export default PhoneHome

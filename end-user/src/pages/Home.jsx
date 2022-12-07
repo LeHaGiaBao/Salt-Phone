@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
-import NewProduct from '../components/NewProduct/NewProduct'
-import ListPhone from '../containers/ListPhone'
+import PhoneHome from '../components/PhoneHome/PhoneHome'
 import Footer from '../layouts/Footer/Footer'
 import Header from '../layouts/Header/Header'
 import Slider from '../layouts/Slider/Slider'
@@ -16,10 +15,9 @@ function Home(props) {
 			<div className='mt-24'>
 				<Slider />
 			</div>
-			{/* <div className='m mb-16'>
-				<ListPhone />
-				<NewProduct />
-			</div> */}
+			<div className='mt-16 mb-16'>
+				<PhoneHome />
+			</div>
 			<Footer />
 		</div>
 	)
