@@ -9,8 +9,22 @@ import {FiShoppingCart} from 'react-icons/fi'
 import ProductInfor from '../../assets/image/ProductInfor.png'
 import Header from '../../containers/Header/Header'
 import Footer from '../../containers/Footer/Footer'
+import {useState} from 'react'
 
 function ProductInformation(props) {
+	let [count, setCount] = useState(1)
+
+	const incrementCount = () => {
+		count = count + 1
+		setCount(count)
+	}
+
+	const decrementCount = () => {
+		count = count - 1
+		if (count < 0) count = 1
+		setCount(count)
+	}
+
 	return (
 		<>
 			<Header />
@@ -52,15 +66,19 @@ function ProductInformation(props) {
 										</td>
 										<td className=''>
 											<div className='content_product-order_select_amount'>
-												<div className='content_product-order_select_amount_select_icon'>
-													<AiOutlineMinus></AiOutlineMinus>
-												</div>
+												<button
+													className='content_product-order_select_amount_select_icon'
+													onClick={decrementCount}>
+													<AiOutlineMinus />
+												</button>
 												<div className='content_product-order_select_amount_select_number'>
-													1
+													{count}
 												</div>
-												<div className='content_product-order_select_amount_select_icon'>
-													<AiOutlinePlus></AiOutlinePlus>
-												</div>
+												<button
+													className='content_product-order_select_amount_select_icon'
+													onClick={incrementCount}>
+													<AiOutlinePlus />
+												</button>
 											</div>
 										</td>
 									</tr>
@@ -68,7 +86,7 @@ function ProductInformation(props) {
 								<div className='content_product-order_select_btns'>
 									<button className='content_product-order_select_btn content_product-order_select_btn_add-to-cart'>
 										<div className='content_product-order_select_btn_icon'>
-											<FiShoppingCart></FiShoppingCart>
+											<FiShoppingCart />
 										</div>
 										<div className='content_product-order_select_btn_text'>
 											Thêm vào giỏ hàng
