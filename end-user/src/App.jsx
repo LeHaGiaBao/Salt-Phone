@@ -32,7 +32,7 @@ const router = createBrowserRouter([
 		element: <Phone />,
 	},
 	{
-		path: '/PhoneInfo',
+		path: '/PhoneInfo/:id',
 		element: <ProductInformation />,
 	},
 ])

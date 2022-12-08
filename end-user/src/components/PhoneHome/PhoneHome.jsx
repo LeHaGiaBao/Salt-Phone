@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
 import './PhoneHome.css'
 import axios from 'axios'
 
@@ -8,6 +9,7 @@ function PhoneHome() {
 	useEffect(() => {
 		axios.get('http://127.0.0.1:8000/api/dienthoai').then((response) => {
 			setPhones(response.data)
+			console.log(response.data)
 		})
 	}, [])
 
@@ -23,9 +25,11 @@ function PhoneHome() {
 							<h2 className='product-name'>{phone.tendienthoai}</h2>
 							<p className='product-price'>{phone.giadienthoai}đ</p>
 							<button className='product-buynow'>Mua ngay</button>
-							<a className='product-more' href='/PhoneInfo'>
-								Tìm hiểu thêm &gt;
-							</a>
+							<Link to={`/PhoneInfo/${phone.id}`}>
+								<a className='product-more' href='#'>
+									Tìm hiểu thêm &gt;
+								</a>
+							</Link>
 						</div>
 					)
 				})}
