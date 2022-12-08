@@ -29,7 +29,43 @@ function SignUp() {
 					{/* Điền thông tin */}
 					<form action='' className='m-t-4'>
 						<div className='label-input'>
+							<label htmlFor=''>Họ và tên</label>
+							<br />
+							<input
+								type='text'
+								name=''
+								id=''
+								className='p-t-16px input-box p-b-8px'
+							/>
+							<div className='label-input_line'></div>
+						</div>
+
+						<div className='label-input p-t-40px'>
+							<label htmlFor=''>Email</label>
+							<br />
+							<input
+								type='text'
+								name=''
+								id=''
+								className='p-t-16px input-box p-b-8px'
+							/>
+							<div className='label-input_line'></div>
+						</div>
+
+						<div className='label-input p-t-40px'>
 							<label htmlFor=''>Số điện thoại</label>
+							<br />
+							<input
+								type='text'
+								name=''
+								id=''
+								className='p-t-16px input-box p-b-8px'
+							/>
+							<div className='label-input_line'></div>
+						</div>
+
+						<div className='label-input p-t-40px'>
+							<label htmlFor=''></label>
 							<br />
 							<input
 								type='text'

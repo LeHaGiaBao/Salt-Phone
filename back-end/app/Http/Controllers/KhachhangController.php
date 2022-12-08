@@ -41,9 +41,6 @@ class KhachhangController extends Controller
             'email'  => 'required',
             'matkhau' => 'required',
             'sodienthoai'  => 'required',
-            'gioitinh'  => 'required',
-            'ngaysinh'  => 'required',
-            'mataikhoan' => 'required',
         ]);
 
         if (Khachhang::where($request->all())->count() > 0) {

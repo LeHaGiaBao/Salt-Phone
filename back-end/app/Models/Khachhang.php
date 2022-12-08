@@ -14,8 +14,5 @@ class Khachhang extends Model
         'email',
         'matkhau',
         'sodienthoai',
-        'gioitinh',
-        'ngaysinh',
-        'mataikhoan',
     ];
 }

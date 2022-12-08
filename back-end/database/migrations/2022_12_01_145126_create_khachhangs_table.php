@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('email')->unique()->nullable(false);
             $table->string('matkhau')->nullable(false);
             $table->string('sodienthoai')->unique()->nullable(false);
-            $table->boolean('gioitinh')->nullable(false);
-            $table->date('ngaysinh')->nullable(false);
             $table->timestamps();
         });
     }
