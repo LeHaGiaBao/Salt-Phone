@@ -12,6 +12,7 @@ class Khachhang extends Model
     protected $fillable = [
         'hovaten',
         'email',
+        'matkhau',
         'sodienthoai',
         'gioitinh',
         'ngaysinh',

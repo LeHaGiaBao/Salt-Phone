@@ -39,6 +39,7 @@ class KhachhangController extends Controller
         $request->validate([
             'hovaten' => 'required',
             'email'  => 'required',
+            'matkhau' => 'required',
             'sodienthoai'  => 'required',
             'gioitinh'  => 'required',
             'ngaysinh'  => 'required',

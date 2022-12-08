@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id()->unique()->nullable(false);
             $table->text('hovaten')->nullable(false);
             $table->string('email')->unique()->nullable(false);
+            $table->string('matkhau')->nullable(false);
             $table->string('sodienthoai')->unique()->nullable(false);
             $table->boolean('gioitinh')->nullable(false);
             $table->date('ngaysinh')->nullable(false);
-            $table->foreignId('mataikhoan')->constrained('taikhoans')->unique()->nullable(false);
             $table->timestamps();
         });
     }

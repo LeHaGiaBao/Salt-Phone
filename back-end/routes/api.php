@@ -29,4 +29,3 @@ Route::apiResource('khachhang', KhachhangController::class);
 Route::apiResource('donhang', DonhangController::class);
 Route::apiResource('chitietdonhang', ChitietdonhangController::class);
 Route::apiResource('taikhoan', TaikhoanController::class);
-Route::apiResource('taikhoanadmin', TaikhoanadminController::class);
