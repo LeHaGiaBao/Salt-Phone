@@ -14,51 +14,13 @@ function Header() {
 							<a href='#'>Salt Phone </a>
 						</li>
 					</Link>
-					<li>
-						<a href='/Phone'>Điện thoại</a>
-						{/* <ul className='sub-nav-dth'>
-							<li>
-								<a href='#'>iPhone</a>
-							</li>
-							<li>
-								<a href='#'>OPPO</a>
-							</li>
-							<li>
-								<a href='#'>Samsung</a>
-							</li>
-							<li>
-								<a href='#'>Realme</a>
-							</li>
-							<li>
-								<a href='#'>Xiaomi</a>
-							</li>
-							<li>
-								<a href='#'>Vivo</a>
-							</li>
-							<li>
-								<a href='#'>Asus</a>
-							</li>
-							<li>
-								<a href='#'>Nokia</a>
-							</li>
-						</ul> */}
-					</li>
+					<Link to='/Phone'>
+						<li>
+							<a href='#'>Điện thoại</a>
+						</li>
+					</Link>
 					<li>
 						<a href='#'>Phụ kiện</a>
-						{/* <ul className='sub-nav-pkien'>
-							<li>
-								<a href='#'>Tai nghe</a>
-							</li>
-							<li>
-								<a href='#'>Cáp & Sạc</a>
-							</li>
-							<li>
-								<a href='#'>Pin dự phòng</a>
-							</li>
-							<li>
-								<a href='#'>Ốp lưng</a>
-							</li>
-						</ul> */}
 					</li>
 					<li>
 						<a href='#'>Hỗ trợ</a>

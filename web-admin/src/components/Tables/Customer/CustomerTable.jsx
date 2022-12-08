@@ -114,15 +114,24 @@ function CustomerTable(props) {
 	})
 
 	const getData = async () => {
-		await axios.get('http://127.0.0.1:8000/api/khachhang').then((res) => {})
+		await axios.get('http://127.0.0.1:8000/api/khachhang/').then((res) => {
+			setState(
+				res.data.map((row) => ({
+					id: row.id,
+					name: row.hovaten,
+					email: row.email,
+					phone: row.sodienthoai,
+				}))
+			)
+		})
 	}
 
 	const columns = [
 		{
 			title: 'Họ và tên',
-			dataIndex: 'name',
+			dataIndex: 'hovaten',
 			width: '12%',
-			...getColumnSearchProps('name'),
+			...getColumnSearchProps('hovaten'),
 		},
 		{
 			title: 'Email',
@@ -135,16 +144,6 @@ function CustomerTable(props) {
 			dataIndex: 'phone',
 			width: '10%',
 			...getColumnSearchProps('phone'),
-		},
-		{
-			title: 'Giới tính',
-			dataIndex: 'gender',
-			width: '10%',
-		},
-		{
-			title: 'Năm sinh',
-			dataIndex: 'date',
-			width: '12%',
 		},
 	]
 

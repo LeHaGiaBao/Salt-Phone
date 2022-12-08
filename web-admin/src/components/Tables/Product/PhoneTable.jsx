@@ -197,19 +197,19 @@ function PhoneTable() {
 			title: 'RAM',
 			dataIndex: 'ram',
 			width: '5%',
-			sorter: (a, b) => a.price - b.price,
+			...getColumnSearchProps('ram'),
 		},
 		{
 			title: 'Bộ nhớ',
 			dataIndex: 'memory',
 			width: '6%',
-			sorter: (a, b) => a.price - b.price,
+			...getColumnSearchProps('memory'),
 		},
 		{
 			title: 'Số lượng',
 			dataIndex: 'amount',
 			width: '10%',
-			sorter: (a, b) => a.price - b.price,
+			sorter: (a, b) => a.amount - b.amount,
 		},
 		{
 			title: 'Thao tác',

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
 import './ListProducts.css'
 import axios from 'axios'
 
@@ -23,9 +24,11 @@ function ListProducts() {
 							<h2 className='product-name'>{phone.tendienthoai}</h2>
 							<p className='product-price'>{phone.giadienthoai}đ</p>
 							<button className='product-buynow'>Mua ngay</button>
-							<a className='product-more' href='#'>
-								Tìm hiểu thêm &gt;
-							</a>
+							<Link to={`/PhoneInfo/${phone.id}`}>
+								<a className='product-more' href='#'>
+									Tìm hiểu thêm &gt;
+								</a>
+							</Link>
 						</div>
 					)
 				})}
