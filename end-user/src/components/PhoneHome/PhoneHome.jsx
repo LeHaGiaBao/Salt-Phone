@@ -7,7 +7,13 @@ function PhoneHome() {
 	const [phones, setPhones] = useState([])
 
 	useEffect(() => {
-		axios.get('http://127.0.0.1:8000/api/dienthoai').then((response) => {
+		const config = {
+			params: {
+				_limit: 6,
+			},
+		}
+
+		axios.get('http://127.0.0.1:8000/api/dienthoai', config).then((response) => {
 			setPhones(response.data)
 			console.log(response.data)
 		})
