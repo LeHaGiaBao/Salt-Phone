@@ -123,15 +123,17 @@ function CustomerTable(props) {
 					phone: row.sodienthoai,
 				}))
 			)
+
+			console.log(res.data)
 		})
 	}
 
 	const columns = [
 		{
 			title: 'Họ và tên',
-			dataIndex: 'hovaten',
+			dataIndex: 'name',
 			width: '12%',
-			...getColumnSearchProps('hovaten'),
+			...getColumnSearchProps('name'),
 		},
 		{
 			title: 'Email',
@@ -147,7 +149,7 @@ function CustomerTable(props) {
 		},
 	]
 
-	return <Table columns={columns} />
+	return <Table columns={columns} dataSource={state} pagination={{pageSize: 6}} />
 }
 
 export default CustomerTable

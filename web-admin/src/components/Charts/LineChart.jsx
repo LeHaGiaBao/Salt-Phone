@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom'
 import {Line} from '@ant-design/plots'
+import axios from 'axios'
 
 const LineChart = () => {
 	const [data, setData] = useState([])
@@ -10,15 +11,17 @@ const LineChart = () => {
 	}, [])
 
 	const asyncFetch = () => {
-		fetch(
+		axios.get(
 			'https://gw.alipayobjects.com/os/bmw-prod/e00d52f4-2fa6-47ee-a0d7-105dd95bde20.json'
-		)
-			.then((response) => response.json())
-			.then((json) => setData(json))
-			.catch((error) => {
-				console.log('fetch data failed', error)
-			})
+		).then((res) => {
+			setData(res.data)
+		})
+
+		// axios.get('http://127.0.0.1:8000/api/dienthoai').then((res) => {
+		// 	setData(res.data)
+		// })
 	}
+
 	const config = {
 		data,
 		xField: 'year',
@@ -33,7 +36,6 @@ const LineChart = () => {
 			position: 'top',
 		},
 		smooth: true,
-		// @TODO 后续会换一种动画方式
 		animation: {
 			appear: {
 				animation: 'path-in',
