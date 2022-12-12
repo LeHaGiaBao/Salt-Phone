@@ -9,6 +9,7 @@ import {SearchOutlined} from '@ant-design/icons'
 
 function PhoneTable() {
 	const [state, setstate] = useState([])
+
 	useEffect(() => {
 		getData()
 	}, [])

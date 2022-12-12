@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom'
 import {Column} from '@ant-design/plots'
+import axios from 'axios'
 
 function ColumnChart() {
 	const [data, setData] = useState([])
@@ -10,12 +11,11 @@ function ColumnChart() {
 	}, [])
 
 	const asyncFetch = () => {
-		fetch('https://gw.alipayobjects.com/os/antfincdn/PC3daFYjNw/column-data.json')
-			.then((response) => response.json())
-			.then((json) => setData(json))
-			.catch((error) => {
-				console.log('fetch data failed', error)
-			})
+		axios.get(
+			'https://gw.alipayobjects.com/os/antfincdn/PC3daFYjNw/column-data.json'
+		).then((res) => {
+			setData(res.data)
+		})
 	}
 	const config = {
 		data,
