@@ -19,13 +19,15 @@ function Header() {
 							<a href='#'>Điện thoại</a>
 						</li>
 					</Link>
-					<li>
-						<a href='#'>Phụ kiện</a>
-					</li>
+					<Link to='/SearchPhone'>
+						<li>
+							<a href='#'>Tìm kiếm</a>
+						</li>
+					</Link>
 					<li>
 						<a href='#'>Hỗ trợ</a>
 					</li>
-					<li>
+					{/* <li>
 						<a href='#'>
 							<FiSearch />
 						</a>
@@ -34,7 +36,7 @@ function Header() {
 							<input type='text' placeholder='Tìm kiếm sản phẩm' />
 							<FiX />
 						</div>
-					</li>
+					</li> */}
 					<li>
 						<a href='/Cart'>
 							<FiShoppingCart />

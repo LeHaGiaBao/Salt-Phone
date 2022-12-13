@@ -6,11 +6,11 @@ import Swal from 'sweetalert2'
 function DeletePhone(props) {
 	const handleDelete = () => {
 		Swal.fire({
-			title: 'Do you want to save the changes?',
+			title: 'Bạn có chắc chắn xoá sản phẩm không?',
 			showDenyButton: true,
 			showCancelButton: true,
-			confirmButtonText: 'Save',
-			denyButtonText: `Don't save`,
+			confirmButtonText: 'Chắc chắn',
+			denyButtonText: `Không`,
 		}).then((result) => {
 			/* Read more about isConfirmed, isDenied below */
 			if (result.isConfirmed) {

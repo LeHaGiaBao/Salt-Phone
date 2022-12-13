@@ -1,72 +1,155 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useReducer, useRef} from 'react'
+import {Table, Input, Space, Button} from 'antd'
 import axios from 'axios'
-import {Table} from 'ant-table-extensions'
-import PhoneDetail from '../../Drawer/Product/PhoneDetail'
-import DeletePhone from '../../Drawer/Product/DeletePhone'
-import EditPhone from '../../Drawer/Product/EditPhone'
-import {BsEyeFill} from 'react-icons/bs'
+import Highlighter from 'react-highlight-words'
+import {SearchOutlined} from '@ant-design/icons'
 
-function AccountTable() {
-	const [state, setstate] = useState([])
+function AccountTable(props) {
+	const [state, setState] = useState([])
+
 	useEffect(() => {
 		getData()
 	}, [])
 
-	const [passwordShown, setPasswordShow] = useState(false)
+	const [searchText, setSearchText] = useState('')
+	const [searchedColumn, setSearchedColumn] = useState('')
 
-	const togglePasswordVisiblity = () => {
-		setPasswordShow(passwordShown ? false : true)
+	const searchInput = useRef(null)
+
+	const handleSearch = (selectedKeys, confirm, dataIndex) => {
+		confirm()
+		setSearchText(selectedKeys[0])
+		setSearchedColumn(dataIndex)
 	}
 
+	const handleReset = (clearFilters) => {
+		clearFilters()
+		setSearchText('')
+	}
+
+	const getColumnSearchProps = (dataIndex) => ({
+		filterDropdown: ({
+			setSelectedKeys,
+			selectedKeys,
+			confirm,
+			clearFilters,
+			close,
+		}) => (
+			<div
+				style={{
+					padding: 8,
+				}}
+				onKeyDown={(e) => e.stopPropagation()}>
+				<Input
+					ref={searchInput}
+					placeholder={`Search ${dataIndex}`}
+					value={selectedKeys[0]}
+					onChange={(e) =>
+						setSelectedKeys(e.target.value ? [e.target.value] : [])
+					}
+					onPressEnter={() =>
+						handleSearch(selectedKeys, confirm, dataIndex)
+					}
+					style={{
+						marginBottom: 8,
+						display: 'block',
+					}}
+				/>
+				<Space>
+					<Button
+						type='primary'
+						onClick={() =>
+							handleSearch(selectedKeys, confirm, dataIndex)
+						}
+						icon={<SearchOutlined />}
+						size='small'
+						style={{
+							width: 90,
+							backgroundColor: '#EE8488',
+						}}>
+						Search
+					</Button>
+					<Button
+						type='link'
+						size='small'
+						onClick={() => {
+							close()
+						}}>
+						close
+					</Button>
+				</Space>
+			</div>
+		),
+
+		filterIcon: (filtered) => (
+			<SearchOutlined
+				style={{
+					color: filtered ? '#1890ff' : undefined,
+				}}
+			/>
+		),
+		onFilter: (value, record) =>
+			record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
+		onFilterDropdownOpenChange: (visible) => {
+			if (visible) {
+				setTimeout(() => searchInput.current?.select(), 100)
+			}
+		},
+		render: (text) =>
+			searchedColumn === dataIndex ? (
+				<Highlighter
+					highlightStyle={{
+						backgroundColor: '#EE8488',
+						color: 'white',
+						fontWeight: 'bolder',
+						padding: 0,
+					}}
+					searchWords={[searchText]}
+					autoEscape
+					textToHighlight={text ? text.toString() : ''}
+				/>
+			) : (
+				text
+			),
+	})
+
 	const getData = async () => {
-		await axios.get('http://127.0.0.1:8000/api/taikhoanadmin').then((res) => {
-			setstate(
+		await axios.get('http://127.0.0.1:8000/api/khachhang/').then((res) => {
+			setState(
 				res.data.map((row) => ({
-					number: 'TK' + row.id,
+					id: row.id,
+					name: row.hovaten,
 					email: row.email,
-					password: row.matkhau,
-					operate: (
-						<div>
-							<DeletePhone id={row.id} />
-						</div>
-					),
+					phone: row.sodienthoai,
 				}))
 			)
+
+			console.log(res.data)
 		})
 	}
 
 	const columns = [
 		{
-			title: 'Số thứ tự',
-			dataIndex: 'number',
-			width: '8%',
+			title: 'Họ và tên',
+			dataIndex: 'name',
+			width: '12%',
+			...getColumnSearchProps('name'),
 		},
 		{
 			title: 'Email',
 			dataIndex: 'email',
-			width: '20%',
+			width: '10%',
+			...getColumnSearchProps('email'),
 		},
 		{
-			title: 'Mật khẩu',
-			dataIndex: 'password',
-			width: '20%',
-		},
-		{
-			title: 'Thao tác',
-			dataIndex: 'operate',
-			width: '5%',
+			title: 'Số điện thoại',
+			dataIndex: 'phone',
+			width: '10%',
+			...getColumnSearchProps('phone'),
 		},
 	]
 
-	return (
-		<Table
-			columns={columns}
-			dataSource={state}
-			pagination={{pageSize: 5}}
-			// searchable
-			// scroll={{y: 240}}
-		/>
-	)
+	return <Table columns={columns} dataSource={state} pagination={{pageSize: 6}} />
 }
 
 export default AccountTable

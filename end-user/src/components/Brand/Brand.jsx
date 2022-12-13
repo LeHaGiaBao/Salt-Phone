@@ -24,10 +24,6 @@ function Brand() {
 					<div className='brand-item brand-realme'>REALME</div>
 					<div className='brand-item brand-vivo'>VIVO</div>
 					<div className='brand-item brand-techno'>TECHNO</div>
-					<div className='brand-item brand-xiaomi'>XIAOMI</div>
-					<div className='brand-item brand-asus'>ASUS</div>
-					<div className='brand-item brand-masstel'>MASTEL</div>
-					<div className='brand-item brand-nokia'>NOKIA</div>
 				</div>
 
 				<div className='type'>

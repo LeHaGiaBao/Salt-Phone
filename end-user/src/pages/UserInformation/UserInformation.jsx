@@ -6,7 +6,7 @@ import {BsPen} from 'react-icons/bs'
 import {AiOutlineUser} from 'react-icons/ai'
 import {TbReportMoney} from 'react-icons/tb'
 import {FiEdit2} from 'react-icons/fi'
-import Header from '../../containers/Header/Header'
+import Header from '../../layouts/Header/Header'
 
 function UserInformation() {
 	return (

@@ -54,12 +54,6 @@ function SignInForm() {
 					text: 'Tài khoản đăng nhập không đúng',
 				})
 			}
-			// axios.get('http://127.0.0.1:8000/api/dienthoai').then((response) => {
-			// 	setData(response.data)
-			// })
-			// for (let key in data) {
-
-			// }
 		} else {
 			Swal.fire({
 				icon: 'warning',

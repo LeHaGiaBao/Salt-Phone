@@ -7,7 +7,7 @@ function Footer() {
 	return (
 		<footer>
 			<div>
-				<a href='#'>
+				<a href='/'>
 					<b>SALTPHONE</b>
 				</a>
 			</div>
@@ -17,33 +17,30 @@ function Footer() {
 						<b className='title'>Sản phẩm</b>
 					</li>
 					<li>
-						<a href='#'>Điện thoại</a>
+						<a href='/Phone'>Điện thoại</a>
 					</li>
 				</ul>
 			</div>
 			<div>
 				<ul>
 					<li>
-						<b className='title'>Phụ kiện</b>
+						<b className='title'>Hổ trợ</b>
 					</li>
 					<li>
-						<a href='#'>Tai nghe</a>
+						<a href='/SearchPhone'>Tìm kiếm điện thoại</a>
 					</li>
 					<li>
-						<a href='#'>Pin dự phòng</a>
+						<a href='/SignIn'>Đăng nhập</a>
 					</li>
 					<li>
-						<a href='#'>Sạc & Cáp sạc</a>
-					</li>
-					<li>
-						<a href='#'>Ốp lưng</a>
+						<a href='/SignUp'>Đăng ký</a>
 					</li>
 				</ul>
 			</div>
 			<div>
 				<ul>
 					<li>
-						<b className='title'>Hỗ trợ</b>
+						<b className='title'>Giới thiệu</b>
 					</li>
 					<li>
 						<a href='#'>Chính sách mua hàng</a>
