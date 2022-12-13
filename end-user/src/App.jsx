@@ -1,6 +1,6 @@
 import '../src/assets/css/base.css'
 import '../src/assets/css/style.css'
-import {createBrowserRouter, RouterProvider, Route} from 'react-router-dom'
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Home from './pages/Home'
 import PageNotFound from './pages/PageNotFound/PageNotFound'
 import SignIn from './pages/SignIn/SignIn'
@@ -9,6 +9,10 @@ import Cart from './pages/Cart'
 import Phone from './pages/Phone'
 import ProductInformation from './components/ProductInformation/ProductInformation'
 import Search from './pages/Search'
+import UserInfo from './pages/UserInfo'
+import UserInformation from './pages/UserInformation/UserInformation'
+import History from './pages/History'
+import Setting from './pages/Setting'
 
 const router = createBrowserRouter([
 	{
@@ -39,6 +43,22 @@ const router = createBrowserRouter([
 	{
 		path: '/SearchPhone',
 		element: <Search />,
+	},
+	{
+		path: '/UserInfo',
+		element: <UserInfo />,
+	},
+	{
+		path: '/UserInformation',
+		element: <UserInformation />,
+	},
+	{
+		path: '/History',
+		element: <History />,
+	},
+	{
+		path: '/Setting',
+		element: <Setting />,
 	},
 ])
 

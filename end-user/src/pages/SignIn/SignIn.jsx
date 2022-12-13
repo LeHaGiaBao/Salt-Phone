@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './SignIn.css'
 import Form from '../../assets/image/Form.png'
-import google from '../../assets/image/google.png'
 import {BsEyeFill} from 'react-icons/bs'
 import {Link, useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
@@ -47,7 +46,7 @@ function SignInForm() {
 		if (input.email !== '' && input.password !== '') {
 			customer.map((user) => {
 				if (input.email === user.email && input.password === user.matkhau) {
-					history('/')
+					history('/UserInfo')
 					Swal.fire({
 						icon: 'success',
 						title: 'Đăng nhập thành công',

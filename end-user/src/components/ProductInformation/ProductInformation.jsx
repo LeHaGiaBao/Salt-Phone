@@ -8,7 +8,7 @@ import {FiShoppingCart} from 'react-icons/fi'
 import Header from '../../layouts/Header/Header'
 import Footer from '../../layouts/Footer/Footer'
 import axios from 'axios'
-import {json, parsePath, useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 
 function ProductInformation() {
 	const [phone, setPhone] = useState({
