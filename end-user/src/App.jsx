@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp/SignUp'
 import Cart from './pages/Cart'
 import Phone from './pages/Phone'
 import ProductInformation from './components/ProductInformation/ProductInformation'
+import Search from './pages/Search'
 
 const router = createBrowserRouter([
 	{
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
 	{
 		path: '/PhoneInfo/:id',
 		element: <ProductInformation />,
+	},
+	{
+		path: '/SearchPhone',
+		element: <Search />,
 	},
 ])
 

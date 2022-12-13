@@ -21,6 +21,8 @@
 		"react-router-dom": "^6.4.4",
 		"react-scripts": "5.0.1",
 		"redux": "^4.2.0",
+		"semantic-ui-css": "^2.5.0",
+		"semantic-ui-react": "^2.1.4",
 		"styled-components": "^5.3.6",
 		"sweetalert2": "^11.6.15",
 		"web-vitals": "^2.1.4"
