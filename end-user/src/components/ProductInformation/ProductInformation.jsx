@@ -65,14 +65,6 @@ function ProductInformation() {
 									{phone.giadienthoai} đ
 								</div>
 								<table className='content_product-order_select'>
-									{/* <tr className='content_product-order_select_item'>
-										<td className='content_product-order_select_label'>
-											Vận chuyển
-										</td>
-										<td className='content_product-order_select_ship'>
-											Chọn địa chỉ nhận hàng
-										</td>
-									</tr> */}
 									<tr className='content_product-order_select_item'>
 										<td className='content_product-order_select_label'>
 											Số lượng
