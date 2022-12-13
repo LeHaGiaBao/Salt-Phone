@@ -14,7 +14,7 @@ function ListProducts() {
 
 	return (
 		<div className='NewProduct'>
-			<h1 className='title'>SẢN PHẨM BÁN CHẠY</h1>
+			<h1 className='title'>SẢN PHẨM</h1>
 			<div className='products'>
 				{phones.map((phone) => {
 					return (
