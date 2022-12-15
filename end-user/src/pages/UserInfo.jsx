@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import {Layout, Menu, Col, Row} from 'antd'
 import SiderMenu from '../layouts/Sider/SiderMenu'
 import Header from '../layouts/Header/Header'
+import UserInformation from '../components/UserInformation/UserInformation'
 
 const {Content, Sider} = Layout
 
@@ -26,7 +27,11 @@ function UserInfo(props) {
 								height: '100%',
 								margin: 0,
 								minHeight: 280,
-							}}></Content>
+							}}>
+							<div className='mt-20 ml-20'>
+								<UserInformation />
+							</div>
+						</Content>
 					</Layout>
 				</Layout>
 			</Layout>

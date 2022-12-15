@@ -19,7 +19,7 @@ const getItem = (label, key, icon) => {
 }
 
 const items = [
-	getItem(<a href={`UserInfo`}>Tài khoản</a>, 'sub1', <MdManageAccounts />),
+	getItem(<a href={`UserInfo`}>Thông tin cá nhân</a>, 'sub1', <MdManageAccounts />),
 	getItem(<a href={`History`}>Lịch sủ đơn hàng</a>, 'sub2', <BsFillCartCheckFill />),
 	getItem(<a href={`Setting`}>Cài đặt</a>, 'sub3', <IoMdSettings />),
 	getItem(<a href={`/`}>Đăng xuất</a>, 'sub4', <BiLogOut />),
