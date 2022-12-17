@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
 import AccountTable from '../components/Tables/Account/AccountTable'
+import NewAccount from '../components/Drawer/Account/NewAccount'
 
 const {Header, Content, Sider} = Layout
 
@@ -64,6 +65,9 @@ function Account(props) {
 								}}>
 								Danh sách tài khoản
 							</h1>
+							<div className='float-right mb-5 bg-first rounded-lg'>
+								<NewAccount />
+							</div>
 							<AccountTable />
 						</Content>
 					</Layout>

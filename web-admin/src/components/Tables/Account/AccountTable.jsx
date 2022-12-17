@@ -3,6 +3,7 @@ import {Table, Input, Space, Button} from 'antd'
 import axios from 'axios'
 import Highlighter from 'react-highlight-words'
 import {SearchOutlined} from '@ant-design/icons'
+import DeleteAccount from '../../Drawer/Account/DeleteAccount'
 
 function AccountTable(props) {
 	const [state, setState] = useState([])
@@ -114,13 +115,17 @@ function AccountTable(props) {
 	})
 
 	const getData = async () => {
-		await axios.get('http://127.0.0.1:8000/api/khachhang/').then((res) => {
+		await axios.get('http://127.0.0.1:8000/api/taikhoanadmin/').then((res) => {
 			setState(
 				res.data.map((row) => ({
 					id: row.id,
-					name: row.hovaten,
 					email: row.email,
-					phone: row.sodienthoai,
+					matkhau: row.matkhau,
+					operate: (
+						<div>
+							<DeleteAccount id={row.id} />
+						</div>
+					),
 				}))
 			)
 
@@ -130,22 +135,21 @@ function AccountTable(props) {
 
 	const columns = [
 		{
-			title: 'Họ và tên',
-			dataIndex: 'name',
-			width: '12%',
-			...getColumnSearchProps('name'),
-		},
-		{
 			title: 'Email',
 			dataIndex: 'email',
-			width: '10%',
+			width: '25%',
 			...getColumnSearchProps('email'),
 		},
 		{
-			title: 'Số điện thoại',
-			dataIndex: 'phone',
+			title: 'Mật khẩu',
+			dataIndex: 'matkhau',
+			width: '25%',
+			...getColumnSearchProps('password'),
+		},
+		{
+			title: 'Thao tác',
+			dataIndex: 'operate',
 			width: '10%',
-			...getColumnSearchProps('phone'),
 		},
 	]
 

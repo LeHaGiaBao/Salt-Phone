@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('taikhoanadmins', function (Blueprint $table) {
-            $table->id();
-            $table->text('email')->unique()->nullable(false);
+            $table->id()->unique()->nullable(false);
+            $table->string('email')->unique()->nullable(false);
             $table->text('matkhau')->nullable(false);
             $table->timestamps();
         });

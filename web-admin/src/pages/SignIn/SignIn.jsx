@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import './SignIn.css'
 import Form from '../../assets/image/Form.png'
-import google from '../../assets/image/google.png'
 import {BsEyeFill} from 'react-icons/bs'
 import {Link, useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
 import axios from 'axios'
 
 function SignInForm() {
+	const [customer, setCustomer] = useState([])
+
 	const [passwordShown, setPasswordShow] = useState(false)
 	const togglePasswordVisiblity = () => {
 		setPasswordShow(passwordShown ? false : true)
@@ -35,25 +36,31 @@ function SignInForm() {
 		e.preventDefault()
 	}
 
-	useEffect(() => {})
-
 	const handleSignIn = () => {
+		console.log(input)
+
+		axios.get('http://127.0.0.1:8000/api/taikhoanadmin/').then((res) => {
+			setCustomer(res.data)
+		})
+
 		if (input.email !== '' && input.password !== '') {
-			if (input.email === 'admin@gmail.com' && input.password === '123') {
-				history('/Dashboard')
-				Swal.fire({
-					icon: 'success',
-					title: 'Đăng nhập thành công',
-					showConfirmButton: false,
-					timer: 1500,
-				})
-			} else {
-				Swal.fire({
-					icon: 'error',
-					title: 'Oops...',
-					text: 'Tài khoản đăng nhập không đúng',
-				})
-			}
+			customer.map((user) => {
+				if (input.email === user.email && input.password === user.matkhau) {
+					history('/Dashboard')
+					Swal.fire({
+						icon: 'success',
+						title: 'Đăng nhập thành công',
+						showConfirmButton: false,
+						timer: 1500,
+					})
+				} else {
+					Swal.fire({
+						icon: 'error',
+						title: 'Oops...',
+						text: 'Tài khoản đăng nhập không đúng',
+					})
+				}
+			})
 		} else {
 			Swal.fire({
 				icon: 'warning',
@@ -103,12 +110,14 @@ function SignInForm() {
 							</div>
 							<div className='label-input_line'></div>
 						</div>
-						<button
-							className='sign-in-btn bg-color-blue-color mt-16'
-							type='submit'
-							onClick={handleSignIn}>
-							Đăng nhập
-						</button>
+						<div className='mt-10'>
+							<button
+								className='sign-in-btn bg-color-blue-color m-t-24px'
+								type='submit'
+								onClick={handleSignIn}>
+								Đăng nhập
+							</button>
+						</div>
 					</form>
 					<br />
 				</div>
