@@ -1,120 +1,63 @@
-import React from 'react'
-import {
-	Button,
-	Col,
-	DatePicker,
-	Divider,
-	Drawer,
-	Form,
-	Input,
-	Row,
-	Select,
-	Space,
-	Modal,
-} from 'antd'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+import {Col, Row} from 'antd'
+import avatar from '../../assets/image/avatar.png'
+import {useParams} from 'react-router-dom'
 
 function UserInformation(props) {
+	const [user, setUser] = useState({
+		hovaten: '',
+		email: '',
+		sodienthoai: '',
+	})
+
+	let param = useParams()
+
+	useEffect(() => {
+		axios.get(`http://127.0.0.1:8000/api/khachhang/${param.id}`).then(
+			(response) => {
+				setUser(response.data)
+			}
+		)
+	}, [])
+
 	return (
-		<Row>
-			<Col span={5} className='mt-8 ml-10 text-xl'>
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>Điện thoại: </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>Hãng: </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>Giá tiền: </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>Màn hình: </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>Camera sau: </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>Camera trước: </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>Hệ điều hành: </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>CPU: </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>RAM: </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>Bộ nhớ: </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>Pin: </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='text-right font-bold'>Số lượng: </p>
-				</div>
-			</Col>
-			<Col span={12} className='mt-8 text-xl'>
-				<div className='inline-flex'>
-					<p className='text-right'>{props.tendienthoai}</p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='right-0'>{props.hangdienthoai} </p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='right-0'>{props.giadienthoai}đ</p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='right-0'>{props.manhinh}</p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='right-0'>{props.camerasau}</p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='right-0'>{props.cameratruoc}</p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='right-0'>{props.hedieuhanh}</p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='right-0'>{props.cpu}</p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='right-0'>{props.ram}GB</p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='right-0'>{props.bonho}GB</p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='right-0'>{props.dungluongpin}mAh</p>
-				</div>
-				<br />
-				<div className='inline-flex'>
-					<p className='right-0'>{props.soluong}</p>
-				</div>
-			</Col>
-		</Row>
+		<div>
+			<h1 className='font-bold text-xl pt-10'>Hồ sơ của tôi</h1>
+			<Row>
+				<img src={avatar} className='w-56 h-60 mt-14' />
+				<Col span={5} className='mt-24 ml-28 text-xl'>
+					<div className='inline-flex'>
+						<p className='text-right font-bold mb-10'>Họ và tên: </p>
+					</div>
+					<br />
+					<div className='inline-flex'>
+						<p className='text-right font-bold mb-10'>Email: </p>
+					</div>
+					<br />
+					<div className='inline-flex'>
+						<p className='text-right font-bold mb-10'>
+							Số điện thoại:{' '}
+						</p>
+					</div>
+					<br />
+				</Col>
+				<Col span={10} className='mt-24 text-xl'>
+					<div className='inline-flex'>
+						<p className='text-right mb-10'>{user.hovaten}</p>
+					</div>
+					<br />
+					<div className='inline-flex'>
+						<p className='right-0 mb-10'>{user.email}</p>
+					</div>
+					<br />
+					<div className='inline-flex'>
+						<p className='right-0 mb-10'>{user.sodienthoai}</p>
+					</div>
+					<br />
+				</Col>
+			</Row>
+		</div>
 	)
 }
 

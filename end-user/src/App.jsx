@@ -10,9 +10,7 @@ import Phone from './pages/Phone'
 import ProductInformation from './components/ProductInformation/ProductInformation'
 import Search from './pages/Search'
 import UserInfo from './pages/UserInfo'
-import UserInformation from './pages/UserInformation/UserInformation'
 import History from './pages/History'
-import Setting from './pages/Setting'
 
 const router = createBrowserRouter([
 	{
@@ -37,28 +35,20 @@ const router = createBrowserRouter([
 		element: <Phone />,
 	},
 	{
-		path: '/PhoneInfo/:id',
-		element: <ProductInformation />,
-	},
-	{
 		path: '/SearchPhone',
 		element: <Search />,
 	},
 	{
-		path: '/UserInfo',
+		path: '/PhoneInfo/:id',
+		element: <ProductInformation />,
+	},
+	{
+		path: '/UserInfo/:id',
 		element: <UserInfo />,
 	},
 	{
-		path: '/UserInformation',
-		element: <UserInformation />,
-	},
-	{
-		path: '/History',
+		path: '/History/:id',
 		element: <History />,
-	},
-	{
-		path: '/Setting',
-		element: <Setting />,
 	},
 ])
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import {useLocation, useHistory} from 'react-router-dom'
+import {useLocation, useHistory, useParams} from 'react-router-dom'
 import {Menu} from 'antd'
 import {RiDashboardFill} from 'react-icons/ri'
 import {BsFillPhoneFill} from 'react-icons/bs'
@@ -18,29 +18,35 @@ const getItem = (label, key, icon) => {
 	}
 }
 
-const items = [
-	getItem(<a href={`UserInfo`}>Thông tin cá nhân</a>, 'sub1', <MdManageAccounts />),
-	getItem(<a href={`History`}>Lịch sủ đơn hàng</a>, 'sub2', <BsFillCartCheckFill />),
-	getItem(<a href={`Setting`}>Cài đặt</a>, 'sub3', <IoMdSettings />),
-	getItem(<a href={`/`}>Đăng xuất</a>, 'sub4', <BiLogOut />),
-]
-
 function SiderMenu(props) {
+	let param = useParams()
+
 	const location = useLocation()
+
+	const items = [
+		getItem(
+			<a href={`UserInfo/${param.id}`}>Thông tin cá nhân</a>,
+			'sub1',
+			<MdManageAccounts />
+		),
+		getItem(
+			<a href={`/History/${param.id}`}>Lịch sủ đơn hàng</a>,
+			'sub2',
+			<BsFillCartCheckFill />
+		),
+		getItem(<a href={`/`}>Đăng xuất</a>, 'sub3', <BiLogOut />),
+	]
 
 	const getKey = (location) => {
 		switch (location.pathname) {
-			case '/UserInfo':
+			case `/UserInfo/${param.id}`:
 				return ['sub1']
 				break
-			case '/History':
+			case `/History/${param.id}`:
 				return ['sub2']
 				break
-			case '/Setting':
-				return ['sub3']
-				break
 			case '/':
-				return ['sub4']
+				return ['sub3']
 				break
 		}
 	}

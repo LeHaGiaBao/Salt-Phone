@@ -20,6 +20,7 @@ const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <SignIn />,
+		errorElement: <PageNotFound />,
 	},
 	{
 		path: '/RecoverPassword',
@@ -32,10 +33,6 @@ const router = createBrowserRouter([
 	{
 		path: '/NewPassword',
 		element: <NewPassword />,
-	},
-	{
-		path: '/404',
-		element: <PageNotFound />,
 	},
 	{
 		path: '/Dashboard',
