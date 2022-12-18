@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import {Layout, Menu, Col, Row} from 'antd'
 import SiderMenu from '../layouts/Sider/SiderMenu'
 import Header from '../layouts/Header/Header'
+import HistoryCart from '../components/HistoryCart/HistoryCart'
 
 const {Content, Sider} = Layout
 
@@ -26,7 +27,11 @@ function History(props) {
 								height: '100%',
 								margin: 0,
 								minHeight: 280,
-							}}></Content>
+							}}>
+							<div className='ml-16 mt-32'>
+								<HistoryCart />
+							</div>
+						</Content>
 					</Layout>
 				</Layout>
 			</Layout>
