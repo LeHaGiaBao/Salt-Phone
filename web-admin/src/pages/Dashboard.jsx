@@ -67,11 +67,8 @@ function Dashboard(props) {
 								<Col span={12}>
 									<ColumnChart />
 								</Col>
-								<Col span={6}>
+								<Col span={12}>
 									<PieChart />
-								</Col>
-								<Col span={6}>
-									<GaugeChart />
 								</Col>
 							</Row>
 							<Row gutter={16}>

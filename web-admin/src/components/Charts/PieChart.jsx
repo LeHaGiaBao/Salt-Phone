@@ -1,8 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom'
 import {Pie} from '@ant-design/plots'
+import axios from 'axios'
 
 function PieChart() {
+	// const [data, setData] = useState([])
+
+	// useEffect(() => {
+	// 	asyncFetch()
+	// }, [])
+
+	// const asyncFetch = () => {
+	// 	axios.get('http://127.0.0.1:8000/api/dienthoai').then((res) => {
+	// 		setData(res.data)
+	// 	})
+	// }
+
 	const data = [
 		{
 			type: '分类一',
@@ -29,6 +42,7 @@ function PieChart() {
 			value: 5,
 		},
 	]
+
 	const config = {
 		appendPadding: 10,
 		data,
