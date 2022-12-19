@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import ReactDOM from 'react-dom'
 import {Pie} from '@ant-design/plots'
 import axios from 'axios'
 

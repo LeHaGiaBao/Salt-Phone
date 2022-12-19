@@ -83,7 +83,7 @@ function EditPhone(props) {
 				Cập nhật
 			</Button>
 			<Drawer
-				title='Thêm sản phẩm mới'
+				title='Cập nhật thông tin'
 				width={600}
 				onClose={onClose}
 				open={open}
@@ -250,7 +250,7 @@ function EditPhone(props) {
 						type='submit'
 						className='block mt-5 uppercase mx-auto shadow font-bold bg-primary hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded'
 						onClick={handleSubmitButton}>
-						submit
+						Cập nhật
 					</button>
 				</form>
 			</Drawer>

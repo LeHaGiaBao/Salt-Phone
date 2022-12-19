@@ -1,8 +1,11 @@
 import React from 'react'
 import './ProductCart.css'
-import {HiOutlineTrash} from 'react-icons/hi'
+import {useSelector} from 'react-redux'
+import ProductCartItem from './ProductCartItem'
 
 function ProductCart() {
+	const {cartItems, totalAmount, quantity} = useSelector((state) => state.cart)
+
 	return (
 		<div className='ProductCart'>
 			<p>
@@ -13,8 +16,8 @@ function ProductCart() {
 					<tbody>
 						<tr>
 							<td>
-								<input type='checkbox' />
-								<span>Tất cả (3 sản phẩm)</span>
+								{/* <input type='checkbox' /> */}
+								<span>Sản phẩm</span>
 							</td>
 							<td>
 								<span>Đơn giá</span>
@@ -25,85 +28,13 @@ function ProductCart() {
 							<td>
 								<span>Thành tiền</span>
 							</td>
-							<td>
-								<HiOutlineTrash />
-							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-			<div className='products'>
-				<div className='product'>
-					<table>
-						<tbody>
-							<tr>
-								<td>
-									<input type='checkbox' />
-									<img
-										src='https://cdn.tgdd.vn/Products/Images/42/251192/iphone-14-pro-max-tim-thumb-600x600.jpg'
-										alt=''
-									/>
-									<div>
-										<p>Apple iPhone 14 Plus</p>
-										<p>128GB, Purple</p>
-									</div>
-								</td>
-								<td>
-									<span>29.999.000đ</span>
-								</td>
-								<td>
-									<div>
-										<button>-</button>
-										<span>1</span>
-										<button>+</button>
-									</div>
-								</td>
-								<td>
-									<span>29.999.000đ</span>
-								</td>
-								<td>
-									<HiOutlineTrash />
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div className='product'>
-					<table>
-						<tbody>
-							<tr>
-								<td>
-									<input type='checkbox' />
-									<img
-										src='https://tainghe.com.vn/media/lib/21-10-2021/apple-airpods-3rd-generation-2021-14.png'
-										alt=''
-									/>
-									<div>
-										<p>AirPods 3 Wireless...</p>
-										<p>White</p>
-									</div>
-								</td>
-								<td>
-									<span>4.490.000đ</span>
-								</td>
-								<td>
-									<div>
-										<button>-</button>
-										<span>2</span>
-										<button>+</button>
-									</div>
-								</td>
-								<td>
-									<span>8.980.000đ</span>
-								</td>
-								<td>
-									<HiOutlineTrash />
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+			{cartItems.map((item) => (
+				<ProductCartItem key={item.id} {...item} />
+			))}
 			<div className='details'>
 				<div className='address'>
 					<div>
@@ -120,9 +51,9 @@ function ProductCart() {
 				</div>
 				<div className='totalprice'>
 					<div>
-						<p>Tổng số sản phẩm: 3</p>
+						<p>Tổng số sản phẩm: {quantity}</p>
 						<span>Tổng thanh toán: </span>
-						<span>38.979.000đ</span>
+						<span>{totalAmount}đ</span>
 					</div>
 					<button>Mua hàng</button>
 				</div>
