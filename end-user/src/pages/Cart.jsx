@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
+import CartList from '../components/CartList'
 import ProductCart from '../components/ProductCart/ProductCart'
-import ViewCart from '../components/ViewCart'
 import Footer from '../layouts/Footer/Footer'
 import Header from '../layouts/Header/Header'
 
@@ -13,8 +13,9 @@ function Cart() {
 		<div>
 			<Header />
 			<ProductCart />
-			{/* <ViewCart /> */}
-			<Footer />
+
+			{/* <CartList /> */}
+			{/* <Footer /> */}
 		</div>
 	)
 }

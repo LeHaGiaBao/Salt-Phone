@@ -64,7 +64,13 @@ export default function SearchPhone() {
 										{phone.tendienthoai}
 									</h2>
 									<p className='product-price'>
-										{phone.giadienthoai}đ
+										{phone.giadienthoai.toLocaleString(
+											'it-IT',
+											{
+												style: 'currency',
+												currency: 'VND',
+											}
+										)}
 									</p>
 									<button className='product-buynow'>
 										Mua ngay
@@ -86,7 +92,13 @@ export default function SearchPhone() {
 										{phone.tendienthoai}
 									</h2>
 									<p className='product-price'>
-										{phone.giadienthoai}đ
+										{phone.giadienthoai.toLocaleString(
+											'it-IT',
+											{
+												style: 'currency',
+												currency: 'VND',
+											}
+										)}
 									</p>
 									<button className='product-buynow'>
 										Mua ngay

@@ -22,7 +22,12 @@ function ListProducts() {
 							<img src={phone.hinhanh} alt='' />
 							<p className='product-newtag'>Mới</p>
 							<h2 className='product-name'>{phone.tendienthoai}</h2>
-							<p className='product-price'>{phone.giadienthoai}đ</p>
+							<p className='product-price'>
+								{phone.giadienthoai.toLocaleString('it-IT', {
+									style: 'currency',
+									currency: 'VND',
+								})}
+							</p>
 							<button className='product-buynow'>Mua ngay</button>
 							<Link to={`/PhoneInfo/${phone.id}`}>
 								<a className='product-more' href='#'>

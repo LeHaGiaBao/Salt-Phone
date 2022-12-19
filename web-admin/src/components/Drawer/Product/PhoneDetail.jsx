@@ -104,7 +104,12 @@ function PhoneDetail(props) {
 						</div>
 						<br />
 						<div className='inline-flex'>
-							<p className='right-0'>{props.giadienthoai}đ</p>
+							<p className='right-0'>
+								{props.giadienthoai.toLocaleString('it-IT', {
+									style: 'currency',
+									currency: 'VND',
+								})}
+							</p>
 						</div>
 						<br />
 						<div className='inline-flex'>

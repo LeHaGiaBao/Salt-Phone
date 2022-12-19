@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import PhoneHome from '../components/PhoneHome/PhoneHome'
-import ViewCart from '../components/ViewCart'
+import ProductCart from '../components/ProductCart/ProductCart'
 import Footer from '../layouts/Footer/Footer'
 import Header from '../layouts/Header/Header'
 import Slider from '../layouts/Slider/Slider'
@@ -19,6 +19,7 @@ function Home(props) {
 			<div className='mt-16 mb-16'>
 				<PhoneHome />
 			</div>
+			<ProductCart />
 			<Footer />
 		</div>
 	)

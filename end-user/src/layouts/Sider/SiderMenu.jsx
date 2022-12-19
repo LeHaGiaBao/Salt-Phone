@@ -1,13 +1,8 @@
 import React from 'react'
 import {useLocation, useHistory, useParams} from 'react-router-dom'
 import {Menu} from 'antd'
-import {RiDashboardFill} from 'react-icons/ri'
-import {BsFillPhoneFill} from 'react-icons/bs'
-import {HiUserGroup} from 'react-icons/hi'
 import {BsFillCartCheckFill} from 'react-icons/bs'
-import {BsFillBarChartFill} from 'react-icons/bs'
 import {MdManageAccounts} from 'react-icons/md'
-import {IoMdSettings} from 'react-icons/io'
 import {BiLogOut} from 'react-icons/bi'
 
 const getItem = (label, key, icon) => {

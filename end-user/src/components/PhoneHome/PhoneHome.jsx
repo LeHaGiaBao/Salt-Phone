@@ -2,17 +2,15 @@ import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import './PhoneHome.css'
 import axios from 'axios'
-
 import {useDispatch} from 'react-redux'
-import {addToCart} from '../../redux/Slice/CartSlice'
+import {addToCart} from '../../redux/Reducer/CartReducer'
 
-function PhoneHome({product}) {
+function PhoneHome({id, tendienthoai, hinhanh, giadienthoai}) {
 	const [phones, setPhones] = useState([])
 
 	useEffect(() => {
 		axios.get('http://127.0.0.1:8000/api/dienthoai').then((response) => {
 			setPhones(response.data)
-			// console.log(response.data)
 		})
 	}, [])
 
@@ -32,13 +30,15 @@ function PhoneHome({product}) {
 									{phone.tendienthoai}
 								</h2>
 								<p className='product-price'>
-									{phone.giadienthoai}đ
+									{phone.giadienthoai.toLocaleString('it-IT', {
+										style: 'currency',
+										currency: 'VND',
+									})}
 								</p>
 								<button
 									className='product-buynow'
 									onClick={() => {
 										dispatch(addToCart(phone))
-										console.log(phone)
 									}}>
 									Mua ngay
 								</button>

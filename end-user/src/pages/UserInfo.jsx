@@ -3,9 +3,9 @@ import axios from 'axios'
 import {Layout, Menu, Col, Row} from 'antd'
 import SiderMenu from '../layouts/Sider/SiderMenu'
 import Header from '../layouts/Header/Header'
-import UserInformation from '../components/UserInformation/UserInformation'
 import avatar from '../assets/image/avatar.png'
 import {useParams} from 'react-router-dom'
+import EditCustomer from '../components/Customer/EditCustomer'
 
 const {Content, Sider} = Layout
 
@@ -103,6 +103,14 @@ function UserInfo(props) {
 											<br />
 										</Col>
 									</Row>
+									<div className='mt-10 ml-8'>
+										<EditCustomer
+											id={user.id}
+											hovaten={user.hovaten}
+											email={user.email}
+											sodienthoai={user.sodienthoai}
+										/>
+									</div>
 								</div>
 							</div>
 						</Content>

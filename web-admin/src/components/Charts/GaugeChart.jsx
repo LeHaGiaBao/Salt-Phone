@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import ReactDOM from 'react-dom'
 import {Gauge} from '@ant-design/plots'
 
 function GaugeChart() {
