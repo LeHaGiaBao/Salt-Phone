@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('taikhoanadmins', function (Blueprint $table) {
             $table->id()->unique()->nullable(false);
             $table->string('email')->unique()->nullable(false);
-            $table->text('matkhau')->nullable(false);
+            $table->string('matkhau')->nullable(false);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('taikhoanadmins');
+        //
     }
 };

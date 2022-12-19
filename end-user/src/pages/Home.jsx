@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import PhoneHome from '../components/PhoneHome/PhoneHome'
+import ViewCart from '../components/ViewCart'
 import Footer from '../layouts/Footer/Footer'
 import Header from '../layouts/Header/Header'
 import Slider from '../layouts/Slider/Slider'

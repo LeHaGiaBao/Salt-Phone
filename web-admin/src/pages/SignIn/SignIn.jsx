@@ -46,7 +46,13 @@ function SignInForm() {
 		if (input.email !== '' && input.password !== '') {
 			customer.map((user) => {
 				if (input.email === user.email && input.password === user.matkhau) {
-					history('Dashboard')
+					history('/Dashboard')
+					Swal.fire({
+						icon: 'success',
+						title: 'Đăng nhập thành công',
+						showConfirmButton: false,
+						timer: 1500,
+					})
 				} else {
 					Swal.fire({
 						icon: 'error',

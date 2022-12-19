@@ -3,15 +3,20 @@ import {Link} from 'react-router-dom'
 import './PhoneHome.css'
 import axios from 'axios'
 
-function PhoneHome() {
+import {useDispatch} from 'react-redux'
+import {addToCart} from '../../redux/Slice/CartSlice'
+
+function PhoneHome({product}) {
 	const [phones, setPhones] = useState([])
 
 	useEffect(() => {
 		axios.get('http://127.0.0.1:8000/api/dienthoai').then((response) => {
 			setPhones(response.data)
-			console.log(response.data)
+			// console.log(response.data)
 		})
 	}, [])
+
+	const dispatch = useDispatch()
 
 	return (
 		<div className='NewProduct'>
@@ -29,7 +34,12 @@ function PhoneHome() {
 								<p className='product-price'>
 									{phone.giadienthoai}đ
 								</p>
-								<button className='product-buynow'>
+								<button
+									className='product-buynow'
+									onClick={() => {
+										dispatch(addToCart(phone))
+										console.log(phone)
+									}}>
 									Mua ngay
 								</button>
 								<Link to={`/PhoneInfo/${phone.id}`}>
