@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('chitietdonhangs', function (Blueprint $table) {
-            $table->foreignId('madonhang')->unique()->nullable(false)->constrained('donhangs');
-            $table->foreignId('masanpham')->unique()->nullable(false)->constrained('dienthoais');
+            $table->foreignId('madonhang')->nullable(false)->constrained('donhangs');
+            $table->foreignId('masanpham')->nullable(false)->constrained('dienthoais');
             $table->integer('soluong');
             $table->timestamps();
         });

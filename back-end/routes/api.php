@@ -6,7 +6,6 @@ use App\Http\Controllers\DonhangController;
 use App\Http\Controllers\KhachhangController;
 use App\Http\Controllers\TaikhoanadminController;
 use App\Http\Controllers\TaikhoanController;
-use App\Models\Taikhoanadmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

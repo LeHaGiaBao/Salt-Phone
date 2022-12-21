@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import './ListProducts.css'
 import axios from 'axios'
+import {addToCart} from '../../redux/Reducer/CartReducer'
+import {useDispatch} from 'react-redux'
 
 function ListProducts() {
 	const [phones, setPhones] = useState([])
@@ -11,6 +13,8 @@ function ListProducts() {
 			setPhones(response.data)
 		})
 	}, [])
+
+	const dispatch = useDispatch()
 
 	return (
 		<div className='NewProduct'>
@@ -28,7 +32,13 @@ function ListProducts() {
 									currency: 'VND',
 								})}
 							</p>
-							<button className='product-buynow'>Mua ngay</button>
+							<button
+								className='product-buynow'
+								onClick={() => {
+									dispatch(addToCart(phone))
+								}}>
+								Mua ngay
+							</button>
 							<Link to={`/PhoneInfo/${phone.id}`}>
 								<a className='product-more' href='#'>
 									Tìm hiểu thêm &gt;

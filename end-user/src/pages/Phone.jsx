@@ -8,10 +8,10 @@ function Phone() {
 	return (
 		<div>
 			<Header />
-			<div className='mt-36'>
+			{/* <div className='mt-36'>
 				<Brand />
-			</div>
-			<div className='mt-20'>
+			</div> */}
+			<div className='mt-36'>
 				<ListProducts />
 			</div>
 			<Footer />
