@@ -9,6 +9,8 @@ import Header from '../../layouts/Header/Header'
 import Footer from '../../layouts/Footer/Footer'
 import axios from 'axios'
 import {useParams} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import {addToCart} from '../../redux/Reducer/CartReducer'
 
 function ProductInformation() {
 	const [phone, setPhone] = useState({
@@ -35,6 +37,8 @@ function ProductInformation() {
 			}
 		)
 	}, [])
+
+	const dispatch = useDispatch()
 
 	return (
 		<div>
@@ -89,12 +93,13 @@ function ProductInformation() {
 										<div className='content_product-order_select_btn_icon'>
 											<FiShoppingCart />
 										</div>
-										<div className='content_product-order_select_btn_text'>
+										<button
+											className='content_product-order_select_btn_text'
+											onClick={() => {
+												dispatch(addToCart(phone))
+											}}>
 											Thêm vào giỏ hàng
-										</div>
-									</button>
-									<button className='content_product-order_select_btn content_product-order_select_btn_buy'>
-										Mua hàng
+										</button>
 									</button>
 								</div>
 							</div>

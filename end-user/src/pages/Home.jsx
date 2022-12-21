@@ -19,7 +19,6 @@ function Home(props) {
 			<div className='mt-16 mb-16'>
 				<PhoneHome />
 			</div>
-			<ProductCart />
 			<Footer />
 		</div>
 	)

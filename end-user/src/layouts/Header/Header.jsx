@@ -3,8 +3,12 @@ import './Header.css'
 import {Link} from 'react-router-dom'
 import {FiSearch, FiShoppingCart, FiX} from 'react-icons/fi'
 import {HiMenu, HiOutlineUserCircle} from 'react-icons/hi'
+import {Avatar, Badge, Space} from 'antd'
+import {useSelector} from 'react-redux'
 
 function Header() {
+	const {quantity} = useSelector((state) => state.cart)
+
 	return (
 		<header>
 			<ul className='main-nav'>
@@ -25,21 +29,18 @@ function Header() {
 						</li>
 					</Link>
 					<li>
-						<a href='#'>Hỗ trợ</a>
-					</li>
-					{/* <li>
-						<a href='#'>
-							<FiSearch />
-						</a>
-						<div className='searchBox'>
-							<FiSearch />
-							<input type='text' placeholder='Tìm kiếm sản phẩm' />
-							<FiX />
-						</div>
-					</li> */}
-					<li>
 						<a href='/Cart'>
-							<FiShoppingCart />
+							<Badge count={quantity} showZero>
+								<div className=''>
+									<Avatar
+										// shape='square'
+										size='large'
+										icon={
+											<FiShoppingCart className='pl-3' />
+										}
+									/>
+								</div>
+							</Badge>
 						</a>
 					</li>
 					<Link to='/SignIn'>

@@ -4,6 +4,8 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 import {AudioOutlined} from '@ant-design/icons'
 import {Input, Space} from 'antd'
+import {addToCart} from '../../redux/Reducer/CartReducer'
+import {useDispatch} from 'react-redux'
 
 const {Search} = Input
 
@@ -25,6 +27,8 @@ export default function SearchPhone() {
 			setAPIData(response.data)
 		})
 	}, [])
+
+	const dispatch = useDispatch()
 
 	const searchItems = (searchValue) => {
 		setSearchInput(searchValue)
@@ -72,7 +76,11 @@ export default function SearchPhone() {
 											}
 										)}
 									</p>
-									<button className='product-buynow'>
+									<button
+										className='product-buynow'
+										onClick={() => {
+											dispatch(addToCart(phone))
+										}}>
 										Mua ngay
 									</button>
 									<Link to={`/PhoneInfo/${phone.id}`}>
@@ -100,7 +108,11 @@ export default function SearchPhone() {
 											}
 										)}
 									</p>
-									<button className='product-buynow'>
+									<button
+										className='product-buynow'
+										onClick={() => {
+											dispatch(addToCart(phone))
+										}}>
 										Mua ngay
 									</button>
 									<Link to={`/PhoneInfo/${phone.id}`}>
