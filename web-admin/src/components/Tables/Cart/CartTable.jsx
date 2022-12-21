@@ -1,12 +1,14 @@
 import React, {useState, useEffect, useReducer, useRef} from 'react'
-import {Table, Input, Space, Button} from 'antd'
+import {Table, Input, Space, Button, Tag} from 'antd'
 import axios from 'axios'
 import Highlighter from 'react-highlight-words'
 import {SearchOutlined} from '@ant-design/icons'
 import CartDetail from '../../Drawer/Cart/CartDetail'
+import GetName from './GetName'
 
 function CartTable(props) {
 	const [state, setState] = useState([])
+	const [customer, setCustomer] = useState([])
 
 	useEffect(() => {
 		getData()
@@ -115,7 +117,24 @@ function CartTable(props) {
 	})
 
 	const getData = async () => {
-		await axios.get('http://127.0.0.1:8000/api/dienthoai').then((res) => {})
+		await axios.get('http://127.0.0.1:8000/api/donhang').then((res) => {
+			setState(
+				res.data.map((row) => ({
+					id: row.id,
+					cartid: 'ĐH' + row.id,
+					date: row.ngaymuahang,
+					money: row.tongsotien,
+					address: row.diachigiaohang,
+					status: row.trangthaidonhang,
+					customer: (
+						<>
+							<GetName id={row.makhachhang} />
+						</>
+					),
+					operate: <CartDetail />,
+				}))
+			)
+		})
 	}
 
 	const columns = [
@@ -128,6 +147,11 @@ function CartTable(props) {
 		{
 			title: 'Ngày mua hàng',
 			dataIndex: 'date',
+			width: '7%',
+		},
+		{
+			title: 'Tổng số tiền',
+			dataIndex: 'money',
 			width: '7%',
 		},
 		{
@@ -145,16 +169,15 @@ function CartTable(props) {
 			title: 'Khách hàng',
 			dataIndex: 'customer',
 			width: '9%',
-			...getColumnSearchProps('customer'),
 		},
 		{
 			title: 'Thao tác',
 			dataIndex: 'operate',
-			width: '10%',
+			width: '5%',
 		},
 	]
 
-	return <Table columns={columns} />
+	return <Table columns={columns} dataSource={state} />
 }
 
 export default CartTable

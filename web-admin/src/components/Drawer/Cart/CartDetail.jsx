@@ -1,21 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import {ExclamationCircleFilled, PlusOutlined} from '@ant-design/icons'
-import {
-	Button,
-	Col,
-	DatePicker,
-	Divider,
-	Drawer,
-	Form,
-	Input,
-	Row,
-	Select,
-	Space,
-	Modal,
-} from 'antd'
-import {BiEdit} from 'react-icons/bi'
+import {Button, Drawer, Row, Table} from 'antd'
 import axios from 'axios'
-import Swal from 'sweetalert2'
+import GetPhoneName from './GetPhoneName'
+import GetPhoneImage from './GetPhoneImage'
+import GetPhonePrice from './GetPhonePrice'
 
 function CartDetail(props) {
 	const [open, setOpen] = useState(false)
@@ -27,6 +15,49 @@ function CartDetail(props) {
 		setOpen(false)
 	}
 
+	const [state, setState] = useState([])
+
+	useEffect(() => {
+		getData()
+	}, [])
+
+	const getData = async () => {
+		await axios.get('http://127.0.0.1:8000/api/chitietdonhang').then((res) => {
+			setState(
+				res.data.map((row) => ({
+					id: row.id,
+					name: <GetPhoneName id={row.masanpham} />,
+					image: <GetPhoneImage id={row.masanpham} />,
+					price: <GetPhonePrice id={row.masanpham} />,
+					quantity: row.soluong,
+				}))
+			)
+		})
+	}
+
+	const columns = [
+		{
+			title: 'Tên điện thoại',
+			dataIndex: 'name',
+			width: '15%',
+		},
+		{
+			title: 'Hình ảnh',
+			dataIndex: 'image',
+			width: '15%',
+		},
+		{
+			title: 'Giá điện thoại',
+			dataIndex: 'price',
+			width: '15%',
+		},
+		{
+			title: 'Số lượng mua',
+			dataIndex: 'quantity',
+			width: '10%',
+		},
+	]
+
 	return (
 		<>
 			<Button
@@ -36,7 +67,7 @@ function CartDetail(props) {
 				Chi tiết
 			</Button>
 			<Drawer
-				title='THÔNG TIN CHI TIẾT SẢN PHẨM'
+				title='THÔNG TIN CHI TIẾT ĐƠN HÀNG'
 				width={1000}
 				onClose={onClose}
 				open={open}
@@ -44,107 +75,14 @@ function CartDetail(props) {
 					paddingBottom: 80,
 				}}>
 				<Row>
-					<img src={props.hinhanh} className='w-56 h-56 mt-20' />
-					<Col span={5} className='mt-8 ml-10 text-xl'>
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>Điện thoại: </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>Hãng: </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>Giá tiền: </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>Màn hình: </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>Camera sau: </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>Camera trước: </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>Hệ điều hành: </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>CPU: </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>RAM: </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>Bộ nhớ: </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>Pin: </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='text-right font-bold'>Số lượng: </p>
-						</div>
-					</Col>
-					<Col span={12} className='mt-8 text-xl'>
-						<div className='inline-flex'>
-							<p className='text-right'>{props.tendienthoai}</p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='right-0'>{props.hangdienthoai} </p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='right-0'>{props.giadienthoai}đ</p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='right-0'>{props.manhinh}</p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='right-0'>{props.camerasau}</p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='right-0'>{props.cameratruoc}</p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='right-0'>{props.hedieuhanh}</p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='right-0'>{props.cpu}</p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='right-0'>{props.ram}GB</p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='right-0'>{props.bonho}GB</p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='right-0'>{props.dungluongpin}mAh</p>
-						</div>
-						<br />
-						<div className='inline-flex'>
-							<p className='right-0'>{props.soluong}</p>
-						</div>
-					</Col>
+					<div className='w-full'>
+						<Table
+							columns={columns}
+							dataSource={state}
+							pagination={{pageSize: 6}}
+						/>
+					</div>
 				</Row>
-				<Divider />
 			</Drawer>
 		</>
 	)
