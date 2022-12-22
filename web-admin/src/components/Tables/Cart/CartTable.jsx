@@ -173,11 +173,11 @@ function CartTable(props) {
 			dataIndex: 'customer',
 			width: '9%',
 		},
-		{
-			title: 'Thao tác',
-			dataIndex: 'operate',
-			width: '5%',
-		},
+		// {
+		// 	title: 'Thao tác',
+		// 	dataIndex: 'operate',
+		// 	width: '5%',
+		// },
 	]
 
 	return <Table columns={columns} dataSource={state} />

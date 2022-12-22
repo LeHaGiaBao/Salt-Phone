@@ -29,7 +29,7 @@ const items = [
 	getItem(<a href={`Account`}>Tài khoản</a>, 'sub6', <MdManageAccounts />),
 	// getItem(<a href={`Voucher`}>Mã giảm giá</a>, 'sub7', <TbDiscount2 />),
 	// getItem(<a href={`Office`}>Chi nhánh</a>, 'sub8', <FaBuilding />),
-	getItem(<a href={`Setting`}>Cài đặt</a>, 'sub9', <IoMdSettings />),
+	// getItem(<a href={`Setting`}>Cài đặt</a>, 'sub9', <IoMdSettings />),
 	getItem(<a href={`/`}>Đăng xuất</a>, 'sub10', <BiLogOut />),
 ]
 

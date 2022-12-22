@@ -48,17 +48,6 @@ function ProductCart() {
 				.catch((error) => console.log(error))
 
 			console.log(cartItems)
-
-			// axios.post('http://127.0.0.1:8000/api/chitietdonhang', cartItems)
-			// 	.then((response) => console.log(response))
-			// 	.catch((error) => console.log(error))
-
-			// setCartDetail((cartDetail) => (cartDetail = cartItems))
-			// console.log(cartDetail)
-
-			// console.log(cartDetail)
-
-			// console.log(cartItems)
 			history('/')
 			Swal.fire('Mua hàng thành công!', '', 'success')
 			dispatch(buyProduct())
