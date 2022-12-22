@@ -118,6 +118,7 @@ function CustomerTable(props) {
 			setState(
 				res.data.map((row) => ({
 					id: row.id,
+					ID: 'KH' + row.id,
 					name: row.hovaten,
 					email: row.email,
 					phone: row.sodienthoai,
@@ -129,6 +130,12 @@ function CustomerTable(props) {
 	}
 
 	const columns = [
+		{
+			title: 'Mã khách hàng',
+			dataIndex: 'ID',
+			width: '12%',
+			...getColumnSearchProps('ID'),
+		},
 		{
 			title: 'Họ và tên',
 			dataIndex: 'name',
@@ -149,7 +156,7 @@ function CustomerTable(props) {
 		},
 	]
 
-	return <Table columns={columns} dataSource={state} pagination={{pageSize: 6}} />
+	return <Table columns={columns} dataSource={state} />
 }
 
 export default CustomerTable

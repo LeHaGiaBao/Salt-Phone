@@ -38,11 +38,17 @@ function SignUp() {
 				.then((response) => console.log(response))
 				.catch((error) => console.log(error))
 			history('/')
-			Swal.fire('Tạo tài khoản thành công!', '', 'success')
+			Swal.fire({
+				title: 'Tạo tài khoản thành công!',
+				icon: 'success',
+				// html: 'Mã khách hàng của quý khách là: ' ,
+				showCloseButton: true,
+			})
 		} else {
 			Swal.fire({
 				icon: 'warning',
 				text: 'Có trường vẫn chưa được nhập',
+				showCloseButton: true,
 			})
 		}
 	}

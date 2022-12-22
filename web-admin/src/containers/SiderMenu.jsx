@@ -21,11 +21,11 @@ const getItem = (label, key, icon) => {
 }
 
 const items = [
-	getItem(<a href={`Dashboard`}>Trang chủ</a>, 'sub1', <RiDashboardFill />),
+	// getItem(<a href={`Dashboard`}>Trang chủ</a>, 'sub1', <RiDashboardFill />),
 	getItem(<a href={`Product`}>Sản phẩm</a>, 'sub2', <BsFillPhoneFill />),
 	getItem(<a href={`Customer`}>Khách hàng</a>, 'sub3', <HiUserGroup />),
 	getItem(<a href={`Cart`}>Giỏ hàng</a>, 'sub4', <BsFillCartCheckFill />),
-	getItem(<a href={`Statistics`}>Thống kê</a>, 'sub5', <BsFillBarChartFill />),
+	// getItem(<a href={`Statistics`}>Thống kê</a>, 'sub5', <BsFillBarChartFill />),
 	getItem(<a href={`Account`}>Tài khoản</a>, 'sub6', <MdManageAccounts />),
 	// getItem(<a href={`Voucher`}>Mã giảm giá</a>, 'sub7', <TbDiscount2 />),
 	// getItem(<a href={`Office`}>Chi nhánh</a>, 'sub8', <FaBuilding />),
