@@ -38,9 +38,7 @@ class DonhangController extends Controller
     {
         $request->validate([
             'tongsotien' => 'required',
-            'ngaymuahang' => 'required',
             'diachigiaohang' => 'required',
-            'trangthaidonhang' => 'required',
             'makhachhang' => 'required',
         ]);
 

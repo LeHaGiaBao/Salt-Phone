@@ -16,9 +16,8 @@ return new class extends Migration
         Schema::create('donhangs', function (Blueprint $table) {
             $table->id()->unique()->nullable(false);
             $table->integer('tongsotien')->nullable(false);
-            $table->date('ngaymuahang')->nullable(false);
             $table->text('diachigiaohang')->nullable(false);
-            $table->enum('trangthaidonhang', ['Đặt hàng', 'Đang giao dịch', 'Hoàn thành', 'Kết thúc', 'Huỷ'])->nullable(false);
+            $table->enum('trangthaidonhang', ['Đặt hàng', 'Đang giao dịch', 'Hoàn thành', 'Kết thúc', 'Huỷ']);
             $table->foreignId('makhachhang')->constrained('khachhangs');
             $table->timestamps();
         });
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donhangs');
+        //
     }
 };
