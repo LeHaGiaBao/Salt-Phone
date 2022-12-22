@@ -10,7 +10,6 @@ class Chitietdonhang extends Model
     use HasFactory;
 
     protected $fillable = [
-        'madonhang',
         'masanpham',
         'soluong',
     ];

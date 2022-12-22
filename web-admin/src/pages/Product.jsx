@@ -3,6 +3,7 @@ import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
 import PhoneTable from '../components/Tables/Product/PhoneTable'
 import NewPhone from '../components/Drawer/Product/NewPhone'
+import StatisticMenu from '../components/Statistics/StatisticsMenu'
 
 const {Header, Content, Sider} = Layout
 
@@ -58,9 +59,11 @@ function Product(props) {
 								margin: 0,
 								minHeight: 280,
 							}}>
+							<StatisticMenu />
 							<h1
 								style={{
 									fontSize: '20px',
+									marginTop: '20px',
 								}}>
 								Điện thoại
 							</h1>

@@ -122,16 +122,19 @@ function CartTable(props) {
 				res.data.map((row) => ({
 					id: row.id,
 					cartid: 'ĐH' + row.id,
-					date: row.ngaymuahang,
-					money: row.tongsotien,
+					date: row.created_at,
+					money: row.tongsotien.toLocaleString('it-IT', {
+						style: 'currency',
+						currency: 'VND',
+					}),
 					address: row.diachigiaohang,
-					status: row.trangthaidonhang,
+					// status: row.trangthaidonhang,
 					customer: (
 						<>
 							<GetName id={row.makhachhang} />
 						</>
 					),
-					operate: <CartDetail />,
+					operate: <CartDetail id={row.id} />,
 				}))
 			)
 		})
@@ -160,21 +163,21 @@ function CartTable(props) {
 			width: '10%',
 			...getColumnSearchProps('address'),
 		},
-		{
-			title: 'Trạng thái đơn hàng',
-			dataIndex: 'status',
-			width: '9%',
-		},
+		// {
+		// 	title: 'Trạng thái đơn hàng',
+		// 	dataIndex: 'status',
+		// 	width: '9%',
+		// },
 		{
 			title: 'Khách hàng',
 			dataIndex: 'customer',
 			width: '9%',
 		},
-		{
-			title: 'Thao tác',
-			dataIndex: 'operate',
-			width: '5%',
-		},
+		// {
+		// 	title: 'Thao tác',
+		// 	dataIndex: 'operate',
+		// 	width: '5%',
+		// },
 	]
 
 	return <Table columns={columns} dataSource={state} />

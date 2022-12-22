@@ -66,9 +66,12 @@ function ProductInformation() {
 									/>
 								</div>
 								<div className='content_product-order_price'>
-									{phone.giadienthoai} đ
+									{phone.giadienthoai.toLocaleString('it-IT', {
+										style: 'currency',
+										currency: 'VND',
+									})}
 								</div>
-								<table className='content_product-order_select'>
+								{/* <table className='content_product-order_select'>
 									<tr className='content_product-order_select_item'>
 										<td className='content_product-order_select_label'>
 											Số lượng
@@ -87,7 +90,7 @@ function ProductInformation() {
 											</div>
 										</td>
 									</tr>
-								</table>
+								</table> */}
 								<div className='content_product-order_select_btns'>
 									<button className='content_product-order_select_btn content_product-order_select_btn_add-to-cart'>
 										<div className='content_product-order_select_btn_icon'>

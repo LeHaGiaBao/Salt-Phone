@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import {Layout, Menu} from 'antd'
 import SiderMenu from '../containers/SiderMenu'
 import CustomerTable from '../components/Tables/Customer/CustomerTable'
+import StatisticMenu from '../components/Statistics/StatisticsMenu'
 
 const {Header, Content, Sider} = Layout
 
@@ -57,12 +58,13 @@ function Customer(props) {
 								margin: 0,
 								minHeight: 280,
 							}}>
+							<StatisticMenu />
 							<h1
 								style={{
 									fontSize: '20px',
-									paddingBottom: 20,
+									marginTop: '20px',
 								}}>
-								Danh sách khách hàng
+								Khách hàng
 							</h1>
 							<CustomerTable />
 						</Content>

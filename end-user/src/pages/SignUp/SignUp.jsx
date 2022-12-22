@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import './SignUp.css'
 import Form from '../../assets/image/Form.png'
 import {BsEyeFill} from 'react-icons/bs'
-import {Link, useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
@@ -22,26 +22,33 @@ function SignUp() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		axios.post('http://127.0.0.1:8000/api/khachhang/', customer)
-			.then((response) => console.log(response))
-			.catch((error) => console.log(error))
 	}
 
 	const history = useNavigate()
 
 	const handleSubmitButton = () => {
+		console.log(customer)
 		if (
 			customer.email !== '' &&
 			customer.matkhau !== '' &&
 			customer.sodienthoai !== '' &&
 			customer.hovaten !== ''
 		) {
+			axios.post('http://127.0.0.1:8000/api/khachhang/', customer)
+				.then((response) => console.log(response))
+				.catch((error) => console.log(error))
 			history('/')
-			Swal.fire('Tạo tài khoản thành công!', '', 'success')
+			Swal.fire({
+				title: 'Tạo tài khoản thành công!',
+				icon: 'success',
+				// html: 'Mã khách hàng của quý khách là: ' ,
+				showCloseButton: true,
+			})
 		} else {
 			Swal.fire({
 				icon: 'warning',
 				text: 'Có trường vẫn chưa được nhập',
+				showCloseButton: true,
 			})
 		}
 	}

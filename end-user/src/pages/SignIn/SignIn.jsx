@@ -5,6 +5,8 @@ import {BsEyeFill} from 'react-icons/bs'
 import {Link, useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
 import axios from 'axios'
+import {useDispatch} from 'react-redux'
+import {setLogin} from '../../redux/Reducer/LoginReducer'
 
 function SignInForm() {
 	const [customer, setCustomer] = useState([])
@@ -22,6 +24,8 @@ function SignInForm() {
 		email: '',
 		password: '',
 	})
+
+	const dispatch = useDispatch()
 
 	const [data, setData] = useState(null)
 
@@ -47,6 +51,8 @@ function SignInForm() {
 			customer.map((user) => {
 				if (input.email === user.email && input.password === user.matkhau) {
 					history(`/UserInfo/${user.id}`)
+					// history('/')
+					dispatch(setLogin())
 					Swal.fire({
 						icon: 'success',
 						title: 'Đăng nhập thành công',

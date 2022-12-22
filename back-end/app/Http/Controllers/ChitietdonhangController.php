@@ -37,7 +37,6 @@ class ChitietdonhangController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'madonhang'  => 'required',
             'masanpham'  => 'required',
             'soluong' => 'required',
         ]);

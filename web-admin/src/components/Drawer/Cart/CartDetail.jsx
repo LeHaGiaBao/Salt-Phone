@@ -22,17 +22,19 @@ function CartDetail(props) {
 	}, [])
 
 	const getData = async () => {
-		await axios.get('http://127.0.0.1:8000/api/chitietdonhang').then((res) => {
-			setState(
-				res.data.map((row) => ({
-					id: row.id,
-					name: <GetPhoneName id={row.masanpham} />,
-					image: <GetPhoneImage id={row.masanpham} />,
-					price: <GetPhonePrice id={row.masanpham} />,
-					quantity: row.soluong,
-				}))
-			)
-		})
+		await axios
+			.get(`http://127.0.0.1:8000/api/chitietdonhang?madonhang=${props.id}`)
+			.then((res) => {
+				setState(
+					res.data.map((row) => ({
+						id: row.id,
+						name: <GetPhoneName id={row.masanpham} />,
+						image: <GetPhoneImage id={row.masanpham} />,
+						price: <GetPhonePrice id={row.masanpham} />,
+						quantity: row.soluong,
+					}))
+				)
+			})
 	}
 
 	const columns = [

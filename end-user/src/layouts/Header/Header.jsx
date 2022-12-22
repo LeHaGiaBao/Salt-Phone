@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Header.css'
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import {FiSearch, FiShoppingCart, FiX} from 'react-icons/fi'
 import {HiMenu, HiOutlineUserCircle} from 'react-icons/hi'
 import {Avatar, Badge, Space} from 'antd'
@@ -43,11 +43,13 @@ function Header() {
 							</Badge>
 						</a>
 					</li>
-					<Link to='/SignIn'>
-						<li>
-							<a href='#'>Đăng nhập</a>
-						</li>
-					</Link>
+					<li>
+						<Link to='/SignIn'>
+							<li>
+								<a href='#'>Đăng nhập</a>
+							</li>
+						</Link>
+					</li>
 				</div>
 				<div className='mobile'>
 					<li>
